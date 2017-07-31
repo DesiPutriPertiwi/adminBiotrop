@@ -27,9 +27,11 @@ Route::resource('user-management', 'UserManagementController');
 Route::resource('invasive', 'InvasiveController');
 Route::post('invasive/search', 'InvasiveController@search')->name('invasive.search');
 
-Route::resource('herbarium/weedherba', 'HerbariumController');
-//Route::resource('herbarium/weedherba', 'HerbariumController');
+Route::resource('herbarium-management/weedherba', 'WeedHerbaController');
+Route::post('herbarium-management/weedherba/search', 'WeedHerbaController@search')->name('weedherba.search');
 
+Route::resource('herbarium-management/forestherba', 'ForestHerbaController');
+Route::post('herbarium-management/forestherba/search', 'ForestHerbaController@search')->name('weedherba.search');
 
 Route::resource('system-management/department', 'DepartmentController');
 Route::post('system-management/department/search', 'DepartmentController@search')->name('department.search');
