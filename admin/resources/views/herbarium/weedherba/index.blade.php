@@ -1,0 +1,1 @@
+@extends('herbarium.base')
