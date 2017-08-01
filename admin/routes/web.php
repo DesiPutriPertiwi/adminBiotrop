@@ -24,8 +24,11 @@ Route::get('/profile', 'ProfileController@index');
 Route::post('user-management/search', 'UserManagementController@search')->name('user-management.search');
 Route::resource('user-management', 'UserManagementController');
 
+
 Route::resource('invasive', 'InvasiveController');
 Route::post('invasive/search', 'InvasiveController@search')->name('invasive.search');
+Route::post('invasive/createdesc', 'InvasiveController@createdesc')->name('invasive.createdesc');
+Route::post('invasive/createloc', 'InvasiveController@createloc')->name('invasive.createloc');
 
 Route::resource('herbarium-management/weedherba', 'WeedHerbaController');
 Route::post('herbarium-management/weedherba/search', 'WeedHerbaController@search')->name('weedherba.search');

@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Invasive;
+use App\Model\Species;
+use App\Model\Genus;
+use App\Model\Family;
+use App\Model\ControlIas;
+use App\Model\Location;
+use App\Model\Verified;
+use App\Model\AuthorIdent;
+use App\User;
 
 class InvasiveController extends Controller
 {
@@ -32,19 +40,40 @@ class InvasiveController extends Controller
      */
     public function index()
     {
-        $speciment_ias = Invasive::paginate(5);
-
+        $speciment_ias = DB::table('speciment_ias')
+        ->leftJoin('species', 'speciment_ias.species_id', '=', 'species_id')
+        ->leftJoin('control_ias', 'speciment_ias.control_id', '=', 'control_id')
+        ->leftJoin('location', 'speciment_ias.location_id','=', 'location_id')
+        ->leftJoin('verified', 'speciment_ias.verifiedData_id','=', 'verifiedData_id')
+        ->leftJoin('author_identification', 'speciment_ias.authorIdentification_id', '=', 'authorIdentification_id')
+        ->select('speciment_ias.*', 'species.name_species as species','species.id_species as id_species', 'species.origin_species as origin','species.habitat as invaded_habitat',
+        'species.species_synonim as synonim', 'species.genus_id as genus_id', 'genus.id_genus as genus_id','genus.name_genus as genus', 'genus.family_id as family_id', 'family.name_family as family',
+        'speciment_ias.id_ias',' speciment_ias.prevention', 'speciment_ias.utilization', 'speciment_ias.risk_analisis', 'speciment_ias.reference', 'control_ias.id_controll as id_controll', 'control_ias.chemical_ctrl as chemical_ctrl',
+        'control_ias.manual_ctrl as manual_ctrl', 'control_ias.biologycal_ctrl as biologycal_ctrl' , 'author_identification.name_author as contact', 'verified.status_verified as status_verified' ,
+        'species.vernacular_id as vernacular_id','vernacular.id_vernacular as vernacular_id', 'vernacular.common_name as common_name', 'species.description_species as description', 'location.id_location as location_id', 'location.distribution_specimen as distribution',
+        'species.ecology as ecology')
+        ->paginate(10);
         return view('invasive/index', ['speciment_ias' => $speciment_ias]);
     }
 
     /**
-     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('invasive/create');
+        $speciment_ias = Invasive::all();
+      return view('invasive/create', ['speciment_ias'=> $speciment_ias]);
+    }
+    public function createdesc()
+    {
+      $speciment_ias = Invasive::all();
+    return view('invasive/createdesc' , ['speciment_ias'=> $speciment_ias]);
+    }
+    public function createloc()
+    {
+      $speciment_ias = Invasive::all();
+      return view('invasive/createloc', ['speciment_ias'=> $speciment_ias]);
     }
 
     /**
@@ -57,28 +86,32 @@ class InvasiveController extends Controller
     {
         $this->validateInput($request);
          Invasive::create([
-                  // -> join ('species', 'species_id', '=', 'id_species')
-                  // -> join('genus', 'genus_id', '=', 'id_genus')
-                  // -> join('family', 'family_id', '=', 'id_family')
-                  // -> select('speciment_ias.*', 'species_id')
-                  // -> get("name_family"); => $request['family'],
-            'name_family' => $request ['family'],
-            'name_genus' => $request ['genus'],
-            'name_species' => $request ['species'],
-            'species_synonim' => $request ['synonim'],
-            'common_name' => $request ['common_name'],
-            'origin_species' => $request ['origin'],
-            'habitat' => $request ['indvaded_habitat'],
-            'description_species' => $request ['description'],
-            'distribution_specimen' => $request ['distribution'],
-            'ecology' => $request ['ecology'],
-            'chemical_ctrl'=> $request ['chemical_ctrl'],
-            'manual_ctrl' => $request ['manual_ctrl'],
-            'biologycal_ctrl' => $request ['biological_ctrl'],
-            'prevention' => $request ['prevention'],
-            'utilzation' => $request ['utilization'],
-            'risk_analisis' => $request ['risk_analisis'],
-            'contact_person' => $request ['contact']
+            'family' => $request['family'],
+            'genus'=> $request['genus'],
+            'species'=> $request['species'],
+            'synonim' => $request['synonim'],
+            'common_name' => $request['common_name'],
+            'invaded_habitat' => $request['invaded_habitat'],
+            'description' => $request['description'],
+            'distribution' => $request['distribution'],
+            'ecology' => $request['ecology'],
+            'chemical_ctrl' => $request['chemical_ctrl'],
+            'manual_ctrl' => $request['manual_ctrl'],
+            'biologycal_ctrl' => $request['biological_ctrl'],
+            'prevention' => $request['prevention'],
+            'utilization' => $request['utilization'],
+            'risk_analisis' => $request['risk_analisis'],
+            'contact' => $request['contact'],
+            'reference' => $request['reference'],
+          //   dd($family, $genus, $species, $synonim, $common_name, $description, $invaded_habitat, $distribution
+          //   ,$ecology, $chemical_ctrl, $manual_ctrl, $biological_ctrl, $prevention, $utilization, $risk_analisis, $contact,$reference),
+          //  //Proses mendapatkan judul dan memindahkan letak gambar ke folder image
+          //   $file = $request -> file ('gambar'),      //untuk mendapatkan gambar
+          //   $fileName =$file -> getCLientOriginName(), // untuk mendapatkan nama asli gambar
+          //   $request->file('gambar')-> move("image/", $fileName), //untuk memindahka gambar ke folsder yang telah disediakan
+           //
+          //   'gambar' => $fileName,
+          //    save()
         ]);
         return redirect()->intended('/invasive');
     }
@@ -102,13 +135,13 @@ class InvasiveController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $speciment_ias = Invasive::find($id);
         // Redirect to user list if updating user wasn't existed
-        if ($user == null || count($user) == 0) {
-            return redirect()->intended('/invasive-management');
+        if ($speciment_ias == null || count($speciment_ias) == 0) {
+            return redirect()->intended('/invasive');
         }
 
-        return view('invasive/edit', ['user' => $user]);
+        return view('invasive/edit', ['speciment_ias' => $speciment_ias]);
     }
 
     /**
@@ -150,7 +183,7 @@ class InvasiveController extends Controller
      */
     public function destroy($id)
     {
-        User::where('id', $id)->delete();
+        Invasive::where('id', $id)->delete();
          return redirect()->intended('/invasive-management');
     }
 
