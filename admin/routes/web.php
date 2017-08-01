@@ -29,6 +29,7 @@ Route::post('invasive/search', 'InvasiveController@search')->name('invasive.sear
 
 Route::resource('herbarium-management/weedherba', 'WeedHerbaController');
 Route::post('herbarium-management/weedherba/search', 'WeedHerbaController@search')->name('weedherba.search');
+Route::get('herbarium-management/weedherba/create1', 'WeedHerbaController@create1')->name('weedherba.create1');
 
 Route::resource('herbarium-management/forestherba', 'ForestHerbaController');
 Route::post('herbarium-management/forestherba/search', 'ForestHerbaController@search')->name('weedherba.search');

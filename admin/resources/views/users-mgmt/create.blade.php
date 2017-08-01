@@ -13,7 +13,7 @@
                                     <h4>Add New User</h4>
                                 </div>
                                 <div class="box">
-                                    <form class="form-horizontal" role="form" style="margin-top:10px"  method="POST" action="{{ route('user-management.store') }}">
+                                    <form class="form-horizontal" role="form"   method="POST" action="{{ route('user-management.store') }}" style="margin-top:10px">
                                         {{ csrf_field() }}
 
                                         <div class="form-group{{ $errors->has('user_type') ? ' has-error' : '' }}">

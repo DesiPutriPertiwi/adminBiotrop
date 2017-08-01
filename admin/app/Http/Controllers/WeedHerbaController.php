@@ -15,7 +15,24 @@ class WeedHerbaController extends Controller
 
      protected function create()
      {
-         return view('herbarium/weedherba/create');
+         return view('herbarium/weedherba/createAuthor');
+     }
+
+     protected function create1()
+     {
+         return view('herbarium/weedherba/createAuthor');
+     }
+
+     protected function createNext()
+     {
+        /*$this -> validateInput($request);
+        WeedHerba:: create([
+            'name_family'=> $request['family'],
+            'name_genus' => $request['genus'],
+            'name_species' => $request['name_species']
+        ]);
+        return redirect()-> intended('/herbarium/weedherba/create');*/
+        return view('herbarium/weedherba/createSpecimen');
      }
 
     protected function store()
@@ -25,7 +42,6 @@ class WeedHerbaController extends Controller
             'name_family'=> $request['family'],
             'name_genus' => $request['genus'],
             'name_species' => $request['name_species']
-
         ]);
         return redirect()-> intended('/herbarium/weedherba');
     }

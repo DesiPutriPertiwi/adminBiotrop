@@ -13,7 +13,12 @@ class ForestHerbaController extends Controller
 
     protected function create()
     {
-        return view('herbarium/forestherba/create');
+        return view('herbarium/forestherba/createAuthor');
+    }
+
+    protected function createNext()
+    {
+        return view('herbarium/forestherba/createSpecimen');
     }
 
     protected function store()
