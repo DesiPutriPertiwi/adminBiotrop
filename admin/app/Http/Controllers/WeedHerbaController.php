@@ -18,12 +18,7 @@ class WeedHerbaController extends Controller
          return view('herbarium/weedherba/createAuthor');
      }
 
-     protected function create1()
-     {
-         return view('herbarium/weedherba/createAuthor');
-     }
-
-     protected function createNext()
+     protected function createnext()
      {
         /*$this -> validateInput($request);
         WeedHerba:: create([

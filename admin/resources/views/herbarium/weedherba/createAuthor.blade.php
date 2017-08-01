@@ -19,7 +19,7 @@
                                         <h6> Formulir 1 of 2</h6>
                                     </div>
                                     <div class="box">
-                                        <form class="form-horizontal" role="form" method="POST" action="{{ route('weedherba.createNext') }}" style="margin-top:10px">
+                                        <form class="form-horizontal" role="form" method="POST" action="{{ route('weedherba.createnext') }}" style="margin-top:10px">
                                         {{ csrf_field() }}
                                         
                                             <!--Collector-->
@@ -65,14 +65,14 @@
                                                     </div>
                                                 </div>
                                     
-                                                <div class="form-group{{ $errors->has('number_collector') ? ' has-error' : '' }}" >
-                                                    <label for="number_collector" class="col-md-2 col-md-offset-1"  style="text-align= left ">Number of Collector</label>
+                                                <div class="form-group{{ $errors->has('number_collection') ? ' has-error' : '' }}" >
+                                                    <label for="number_collection" class="col-md-2 col-md-offset-1"  style="text-align= left ">Number of Collection</label>
                                                     <div class="col-md-2">
-                                                        <input id="number_collector" type="text" class="form-control" placeholder="Number collector" name="number_collector" value="{{ old('number_collector') }}" required autofocus>
+                                                        <input id="number_collection" type="text" class="form-control" placeholder="Number collection" name="number_collection" value="{{ old('number_collector') }}" required autofocus>
 
-                                                        @if ($errors->has('number_collector'))
+                                                        @if ($errors->has('number_collection'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('number_collector') }}</strong>
+                                                                <strong>{{ $errors->first('number_collection') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
@@ -197,60 +197,60 @@
                                             <label style="text-align= right margin-button:5px">
                                                 <h5 style="text:arial narrow">Determinate Data :</h5>
                                             </label>
-                                                <div class="form-group{{ $errors->has('name_collector') ? ' has-error' : '' }}" >
-                                                    <label for="name_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Determinate Name</label>
+                                                <div class="form-group{{ $errors->has('name_author') ? ' has-error' : '' }}" >
+                                                    <label for="name_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Determinate Name</label>
                                                     <div class="col-md-6">
-                                                        <input id="name_collector"   placeholder="Determinate Name" type="text" class="form-control" name="name_collector" value="{{ old('name_collector') }}" required autofocus>
+                                                        <input id="name_author"   placeholder="Determinate Name" type="text" class="form-control" name="name_collector" value="{{ old('name_collector') }}" required autofocus>
 
-                                                        @if ($errors->has('name_collector'))
+                                                        @if ($errors->has('name_author'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('name_collector') }}</strong>
+                                                                <strong>{{ $errors->first('name_author') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('name_collector') ? ' has-error' : '' }}" >
-                                                    <label for="name_collector" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determinate Email</label>
+                                                <div class="form-group{{ $errors->has('email_author') ? ' has-error' : '' }}" >
+                                                    <label for="email_author" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determinate Email</label>
                                                     <div class="col-md-6">
-                                                        <input id="name_collector" type="text" class="form-control"   placeholder="Determinate Email" name="name_collector" value="{{ old('name_collector') }}"autofocus>
+                                                        <input id="email_author" type="text" class="form-control"   placeholder="Determinate Email" name="email_author" value="{{ old('email_author') }}"autofocus>
 
-                                                        @if ($errors->has('name_collector'))
+                                                        @if ($errors->has('email_author'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('name_collector') }}</strong>
+                                                                <strong>{{ $errors->first('email_author') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('date_collector') ? ' has-error' : '' }}" >
-                                                    <label for="date_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Date Identification</label>
+                                                <div class="form-group{{ $errors->has('date_author') ? ' has-error' : '' }}" >
+                                                    <label for="date_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Date Identification</label>
                                                     <div class="col-md-6">
-                                                        <input id="date_collector" type="date" class="date-control" name="date_collector" value="{{ old('date_collector') }}" required autofocus>
+                                                        <input id="date_author" type="date" class="date-author" name="date_author" value="{{ old('date_author') }}" required autofocus>
 
-                                                        @if ($errors->has('date_collector'))
+                                                        @if ($errors->has('date_author'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('date_collector') }}</strong>
+                                                                <strong>{{ $errors->first('date_author') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
                                                 </div>
                 
-                                                <div class="form-group{{ $errors->has('name_collector') ? ' has-error' : '' }}" >
-                                                    <label for="name_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Institude/Agency Of Determinate</label>
+                                                <div class="form-group{{ $errors->has('institude_agency') ? ' has-error' : '' }}" >
+                                                    <label for="institude_agency" class="col-md-2 col-md-offset-1" style="text-align= left ">Institude/Agency Of Determinate</label>
                                                     <div class="col-md-6">
-                                                        <textarea id="name_collector" row="3" cols="5" oneKeyPress placeholder="Enter Origin of Determinate " class="form-control" name="name_collector" value="{{ old('name_collector') }}" required autofocus></textarea>
+                                                        <textarea id="institude_agency" row="3" cols="5" oneKeyPress placeholder="Enter Origin of Determinate " class="form-control" name="name_collector" value="{{ old('name_collector') }}"autofocus></textarea>
 
-                                                        @if ($errors->has('name_collector'))
+                                                        @if ($errors->has('institude_agency'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('name_collector') }}</strong>
+                                                                <strong>{{ $errors->first('institude_agency') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
                                                 </div>
                                             <div class="form-group">
                                                 <div class="col-md-6 col-md-offset-4 text-right">
-                                                    <button type="submit" class="btn btn-primary" >Submit</button>
+                                                    <button type="submit" class="btn btn-primary" >Next</button>
                                                     <button type="button" class="btn btn-secondary" onclick="window.location='{{ url("herbarium-management/weedherba") }}'" style="margin-left:10px">Cancel</button>
                                                 </div>
                                             </div>
