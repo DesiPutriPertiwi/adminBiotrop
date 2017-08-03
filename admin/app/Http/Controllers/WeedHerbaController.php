@@ -22,11 +22,24 @@ class WeedHerbaController extends Controller
      {
         /*$this -> validateInput($request);
         WeedHerba:: create([
-            'name_family'=> $request['family'],
-            'name_genus' => $request['genus'],
-            'name_species' => $request['name_species']
+            'name_collector'=> $request['name_collector'],
+            'tim_collector' => $request['tim_collector'],
+            'date_collector' => $request['date_collector'],
+            'number_collection'=> $request['number_collection'],
+            'name_state' => $request['name_state'],
+            'name_province' => $request['name_province'],
+            'name_city'=> $request['name_city'],
+            'name_district' => $request['name_district'],
+            'name_vilage' => $request['name_vilage'],
+            'latitude'=> $request['latitude'],
+            'longitude' => $request['longitude'],
+            'atitude' => $request['atitude'],
+            'name_author'=> $request['name_author'],
+            'email_author' => $request['email_author'],
+            'date_author' => $request['date_author'],
+            'institude_agency' => $request['institude_agency']
         ]);
-        return redirect()-> intended('/herbarium/weedherba/create');*/
+        return redirect()-> intended('/herbarium/weedherba/createSpecimen');*/
         return view('herbarium/weedherba/createSpecimen');
      }
 
@@ -34,9 +47,30 @@ class WeedHerbaController extends Controller
     {
         $this -> validateInput($request);
         WeedHerba:: create([
+            'type_status' => $request['type_status'],
+            'label_weed'=> $request['label_weed'],
             'name_family'=> $request['family'],
             'name_genus' => $request['genus'],
-            'name_species' => $request['name_species']
+            'name_herbarium' => $request['name_herbarium'],
+            'subspecies' => $request['subspecies'],
+            'forma' => $request['forma'],
+            'origin_species' => $request['origin_species'],
+            'species_synonim' => $request['species_synonim'],
+            'venacular_name' => $request['venacular_name'],
+            'venacular_name_indo' => $request['venacular_name_indo'],
+            'venacular_name_local' => $request['venacular_name_local'],
+            'habitat' => $request['habitat'],
+            'phenology' => $request['phenology'],
+            'ecology' => $request['ecology'],
+            'biology' => $request['biology'],
+            'habitus' => $request['habitus'],
+            'description_leaf' => $request['description_leaf'],
+            'description_root' => $request['description_root'],
+            'description_fruit'=> $request['description_fruit'],
+            'description_steam' => read_exif_data['description_steam'],
+            'agricimport' =>$request['agricimport'],
+            'inflorencence' => $request['inflorencence'],
+            'picture' => $request['picture']
         ]);
         return redirect()-> intended('/herbarium/weedherba');
     }

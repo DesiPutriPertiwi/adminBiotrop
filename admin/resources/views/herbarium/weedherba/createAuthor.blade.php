@@ -11,7 +11,7 @@
                     <div class="col-md-8">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-11">
+                                <div class="col-md-17 col-md-offset-1">
                                     <div class="box-title">
                                         <h4> Add new Collection</h4>
                                     </div>
@@ -42,7 +42,7 @@
                                                 <div class="form-group{{ $errors->has('tim_collector') ? ' has-error' : '' }}" >
                                                     <label for="tim_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Collector Team</label>
                                                     <div class="col-md-6">
-                                                        <input id="tim_collector" type="text" class="form-control" placeholder="Another of collector" name="tim_collector" value="{{ old('tim_collector') }}" required autofocus>
+                                                        <input id="tim_collector" type="text" class="form-control" placeholder="Another of collector" name="tim_collector" value="{{ old('tim_collector') }}" autofocus>
 
                                                         @if ($errors->has('tim_collector'))
                                                             <span class="help-block">
@@ -68,7 +68,7 @@
                                                 <div class="form-group{{ $errors->has('number_collection') ? ' has-error' : '' }}" >
                                                     <label for="number_collection" class="col-md-2 col-md-offset-1"  style="text-align= left ">Number of Collection</label>
                                                     <div class="col-md-2">
-                                                        <input id="number_collection" type="text" class="form-control" placeholder="Number collection" name="number_collection" value="{{ old('number_collector') }}" required autofocus>
+                                                        <input id="number_collection" type="number" class="form-control" placeholder="Number collection" name="number_collection" value="{{ old('number_collector') }}" required autofocus>
 
                                                         @if ($errors->has('number_collection'))
                                                             <span class="help-block">

@@ -24,6 +24,8 @@ Route::get('/profile', 'ProfileController@index');
 Route::post('user-management/search', 'UserManagementController@search')->name('user-management.search');
 Route::resource('user-management', 'UserManagementController');
 
+Route::get('add','AddMoreController@create');
+Route::post('add','AddMoreController@store');
 
 Route::resource('invasive', 'InvasiveController');
 Route::post('invasive/search', 'InvasiveController@search')->name('invasive.search');
@@ -33,9 +35,12 @@ Route::post('invasive/createloc', 'InvasiveController@createloc')->name('invasiv
 Route::resource('herbarium-management/weedherba', 'WeedHerbaController');
 Route::post('herbarium-management/weedherba/search', 'WeedHerbaController@search')->name('weedherba.search');
 Route::post('herbarium-management/weedherba/createnext', 'WeedHerbaController@createnext')->name('weedherba.createnext');
+Route::post('herbarium-management/weedherba/create', 'WeedHerbaController@create')->name('weedherba.create');
+
 
 Route::resource('herbarium-management/forestherba', 'ForestHerbaController');
 Route::post('herbarium-management/forestherba/search', 'ForestHerbaController@search')->name('weedherba.search');
+Route::post('herbarium-management/forestherba/createnext', 'ForestHerbaController@createnext')->name('forestherba.createnext');
 
 Route::resource('system-management/department', 'DepartmentController');
 Route::post('system-management/department/search', 'DepartmentController@search')->name('department.search');

@@ -93,25 +93,78 @@
       user experience. Slimscroll is required when using the
       fixed layout. -->
       <script>
-      $(document).ready(function() {
-        //Date picker
-        $('#birthDate').datepicker({
-          autoclose: true,
-          format: 'yyyy/mm/dd'
+          $(document).ready(function() {
+            //Date picker
+            $('#birthDate').datepicker({
+              autoclose: true,
+              format: 'yyyy/mm/dd'
+            });
+            $('#hiredDate').datepicker({
+              autoclose: true,
+              format: 'yyyy/mm/dd'
+            });
+            $('#from').datepicker({
+              autoclose: true,
+              format: 'yyyy/mm/dd'
+            });
+            $('#to').datepicker({
+              autoclose: true,
+              format: 'yyyy/mm/dd'
+            });
+          });
+      </script>
+      
+      <!--JS Active SlideBar-->
+       <script type='text/javascript'>
+        $(document).ready(function() {
+            $(".nav a").on("click", function(){
+              $(".nav").find(".active").removeClass("active");
+              $(this).parent().addClass("active");
+            });
         });
-        $('#hiredDate').datepicker({
-          autoclose: true,
-          format: 'yyyy/mm/dd'
+      </script>
+
+      <!--untuk editor text-->
+    <script type="text/javascript" src="{{ asset('/js/tinymce/js/tinymce/tinymce.min.js') }}"></script>
+    <script type="text/javascript">
+            tinymce.init({
+                selector : "textarea",
+                plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste"],
+                toolbar : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+    </script>
+
+    <!--Add field-->
+    <script>
+        $(document).ready(function() {
+            var max_fields      = 5; //maximum input boxes allowed
+            var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+            var add_button      = $(".add_field_button"); //Add button ID
+
+            var x = 1; //initlal text box count
+            $(add_button).click(function(e){ //on add input button click
+                e.preventDefault();
+                if(x < max_fields){ //max input box allowed
+                    x++; //text box increment
+                    $("#rm").remove(); 
+                    if(x%2==0){
+                        $(wrapper).append('<div class="col-md-6"><div class="col-md-6"><input type="file" name="gambar" id="inputgambar" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div></div>'); //add input box
+                       // $(wrapper).append('<div class="col-md-2 col-md-offset-2">')
+                    }else{
+                        $(wrapper).append('<div class="col-md-6"><div class="col-md-6"><input type="file" name="gambar" id="inputgambar" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div></div>'); //add input box
+                    }
+                }
+            });
+
+            $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                e.preventDefault(); $("#divs").remove(); x--;
+                $("#divs").remove(); x--;
+                $("#divs").remove(); x--;
+                $("#divs").remove(); x--;
+
+                })
         });
-        $('#from').datepicker({
-          autoclose: true,
-          format: 'yyyy/mm/dd'
-        });
-        $('#to').datepicker({
-          autoclose: true,
-          format: 'yyyy/mm/dd'
-        });
-    });
-</script>
+    </script>
+
   </body>
 </html>

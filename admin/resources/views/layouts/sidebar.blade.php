@@ -30,26 +30,26 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('invasive') }}"><i class="fa fa-file-text"></i> <span>IAS Management</span></a></li>
-        <li class="treeview">
+        <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="/"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li {{{ (Request::is('invasive') ? 'class=active' : '') }}}><a href="{{ url('invasive') }}"><i class="fa fa-file-text"></i> <span>IAS Management</span></a></li>
+        <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
           <a href="#"><i class="fa fa-file-text"></i> <span>Herbarium Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a></li>
-            <li><a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a></li>
-            <li><a href="{{ url('system-management/country') }}">Country</a></li>
-            <li><a href="{{ url('system-management/state') }}">State</a></li>
-            <li><a href="{{ url('system-management/city') }}">City</a></li>
-            <li><a href="{{ url('system-management/report') }}">Report</a></li>
+            <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a></li>
+            <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a></li>
           </ul>
         </li>
-        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User Management</span></a></li>
+        <li {{{ (Request::is('user-management') ? 'class=active' : '') }}}><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User Management</span></a></li>
       </ul>
+      
+      
+      
       <!-- /.sidebar-menu -->
     </section>
+   
     <!-- /.sidebar -->
   </aside>
