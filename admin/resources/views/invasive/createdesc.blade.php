@@ -21,6 +21,13 @@
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">Add new collection</div>
+        
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+              <span class="sr-only">30% Complete (success)</span>
+            </div>
+          </div>
+       
             <div class="panel-body">
               <form class="form-horizontal" role="form" method="POST" action="{{ route('invasive.createloc') }}">
                 {{ csrf_field() }}
@@ -37,10 +44,10 @@
               </div>
           </div>
 
-          <div class="form-group{{ $errors->has('distribution') ? ' has-error' : '' }}">
+          <div class="form-group">
             <label for="distribution" class="col-md-2 control-label">Distribution:</label>
                 <div class="col-md-8">
-                    <textarea id="distribution" rows="7" cols="3" oneKeyPressclass placeholder="Enter distribution" class="form-control" name="distribution" value="{{ old('distribution') }}" required autofocus></textarea>
+                    <textarea id="distribution" rows="7" cols="3" oneKeyPressclass placeholder="Enter distribution" class="form-control" name="distribution" value="{{ old('distribution') }}"></textarea>
                     @if ($errors->has('distribution'))
                       <span class="help-block">
                         <strong>{{ $errors->first('distribution') }}</strong>
@@ -48,6 +55,7 @@
                     @endif
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="ecology" class="col-md-2 control-label">Ecology:</label>
                   <div class="col-md-8">
@@ -144,18 +152,23 @@
                   </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4 text-right">
-                      <button type="button" class="btn btn-primary" onclick="window.location='{{ route('invasive.create') }}'" style="margin-right:50px">Previous</button>
-                      <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('invasive.createloc') }}'">Next</button>
-                    </div>
-                </div>
+             <div class="col-md-12">
+                <ul class="pager">
+                  <div class="col-md-6">
+                    <li class="previous"><button type="submit" class="btn btn-primary" onclick="window.location='{{ route('invasive.create') }}'"><span aria-hidden="true">&larr;</span>previous</button></li>
+                  </div>
+                  <div class="col-md-6">
+                    <li class="next"><button type="submit" class="btn btn-primary" onclick="window.location='{{ route('invasive.createloc') }}'">Next<span aria-hidden="true">&rarr;</span></button></li>
+                  </div>
+              </ul>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 <script type="text/javascript">
   tinymce.init({

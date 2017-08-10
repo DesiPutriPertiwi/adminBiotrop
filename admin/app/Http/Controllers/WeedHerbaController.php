@@ -77,6 +77,19 @@ class WeedHerbaController extends Controller
 
     protected function show()
     {
-
+        return view('herbarium/weedherba/show');
     }
+    
+    public function search(Request $request) {
+        $constraints = [
+            'username' => $request['username'],
+            'firstname' => $request['firstname'],
+            'lastname' => $request['lastname'],
+            'department' => $request['department']
+            ];
+
+       $users = $this->doSearchingQuery($constraints);
+       return view('users-mgmt/index', ['users' => $users, 'searchingVals' => $constraints]);
+    }
+    
 }

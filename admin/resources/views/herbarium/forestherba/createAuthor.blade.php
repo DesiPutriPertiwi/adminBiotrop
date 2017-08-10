@@ -12,14 +12,21 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-17 col-md-offset-1">
-                                    <div class="box-title">
+                                    <div class="row bs-wizard" style="border-bottom">
                                         <h4> Add new Collection</h4>
-                                    </div>
-                                    <div class="box-title text-right">
-                                        <h6> Formulir 1 of 2</h6>
+                                        <div class="col-xs-6 bs-wizard-step active">
+                                            <div class="text-center bs-wizard-stepnum">Step 1</div>
+                                            <div class="progress"><div class="progress-bar"></div></div>
+                                            <a href="#" class="bs-wizard-dot"></a>
+                                        </div>
+                                        <div class="col-xs-6 bs-wizard-step disabled">
+                                            <div class="text-center bs-wizard-stepnum">Step 2</div>
+                                            <div class="progress"><div class="progress-bar"></div></div>
+                                            <a href="#" class="bs-wizard-dot"></a>
+                                        </div>
                                     </div>
                                     <div class="box">
-                                        <form class="form-horizontal" role="form" method="POST" action="{{ route('forestherba.createnext') }}" style="margin-top:10px">
+                                        <form class="form-horizontal" role="form" method="POST" action="{{ route('weedherba.createnext') }}" style="margin-top:10px">
                                         {{ csrf_field() }}
                                         
                                             <!--Collector-->
@@ -40,9 +47,9 @@
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('tim_collector') ? ' has-error' : '' }}" >
-                                                    <label for="tim_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Collector Team</label>
+                                                    <label for="tim_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Collectors</label>
                                                     <div class="col-md-6">
-                                                        <input id="tim_collector" type="text" class="form-control" placeholder="Another of collector" name="tim_collector" value="{{ old('tim_collector') }}" required autofocus>
+                                                        <input id="tim_collector" type="text" class="form-control" placeholder="Another of collector" name="tim_collector" value="{{ old('tim_collector') }}" autofocus>
 
                                                         @if ($errors->has('tim_collector'))
                                                             <span class="help-block">
@@ -53,7 +60,7 @@
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('date_collector') ? ' has-error' : '' }}" >
-                                                    <label for="date_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Date Collector</label>
+                                                    <label for="date_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Collector Date</label>
                                                     <div class="col-md-6">
                                                         <input id="date_collector" type="date" class="date-control" name="date_collector" value="{{ old('date_collector') }}" required autofocus>
 
@@ -66,9 +73,9 @@
                                                 </div>
                                     
                                                 <div class="form-group{{ $errors->has('number_collection') ? ' has-error' : '' }}" >
-                                                    <label for="number_collection" class="col-md-2 col-md-offset-1"  style="text-align= left ">Number of Collection</label>
+                                                    <label for="number_collection" class="col-md-2 col-md-offset-1"  style="text-align= left ">Collector Number</label>
                                                     <div class="col-md-2">
-                                                        <input id="number_collection" type="text" class="form-control" placeholder="Number collection" name="number_collection" value="{{ old('number_collector') }}" required autofocus>
+                                                        <input id="number_collection" type="number" class="form-control" placeholder="Number collection" name="number_collection" value="{{ old('number_collector') }}" required autofocus>
 
                                                         @if ($errors->has('number_collection'))
                                                             <span class="help-block">
@@ -79,7 +86,7 @@
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('name_state') ? ' has-error' : '' }}" >
-                                                    <label for="name_state" class="col-md-2 col-md-offset-1" style="text-align= left ">State</label>
+                                                    <label for="name_state" class="col-md-2 col-md-offset-1" style="text-align= left ">Country</label>
                                                     <div class="col-md-6">
                                                         <select id="name_state" type="name_state" class="form-control" placeholder="State Name" name="name_state" value="{{ old('name_collector') }}" autofocus>
                                                             <option>-- Select --</option>
@@ -198,9 +205,9 @@
                                                 <h5 style="text:arial narrow">Determinate Data :</h5>
                                             </label>
                                                 <div class="form-group{{ $errors->has('name_author') ? ' has-error' : '' }}" >
-                                                    <label for="name_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Determinate Name</label>
+                                                    <label for="name_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Determine Name</label>
                                                     <div class="col-md-6">
-                                                        <input id="name_author"   placeholder="Determinate Name" type="text" class="form-control" name="name_collector" value="{{ old('name_collector') }}" required autofocus>
+                                                        <input id="name_author"   placeholder="Determine Name" type="text" class="form-control" name="name_collector" value="{{ old('name_collector') }}" required autofocus>
 
                                                         @if ($errors->has('name_author'))
                                                             <span class="help-block">
@@ -211,9 +218,9 @@
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('email_author') ? ' has-error' : '' }}" >
-                                                    <label for="email_author" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determinate Email</label>
+                                                    <label for="email_author" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determine Email</label>
                                                     <div class="col-md-6">
-                                                        <input id="email_author" type="text" class="form-control"   placeholder="Determinate Email" name="email_author" value="{{ old('email_author') }}"autofocus>
+                                                        <input id="email_author" type="text" class="form-control"   placeholder="Determine Email" name="email_author" value="{{ old('email_author') }}"autofocus>
 
                                                         @if ($errors->has('email_author'))
                                                             <span class="help-block">
@@ -224,7 +231,7 @@
                                                 </div>
 
                                                 <div class="form-group{{ $errors->has('date_author') ? ' has-error' : '' }}" >
-                                                    <label for="date_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Date Identification</label>
+                                                    <label for="date_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Determine Date</label>
                                                     <div class="col-md-6">
                                                         <input id="date_author" type="date" class="date-author" name="date_author" value="{{ old('date_author') }}" required autofocus>
 
@@ -237,7 +244,7 @@
                                                 </div>
                 
                                                 <div class="form-group{{ $errors->has('institude_agency') ? ' has-error' : '' }}" >
-                                                    <label for="institude_agency" class="col-md-2 col-md-offset-1" style="text-align= left ">Institude/Agency Of Determinate</label>
+                                                    <label for="institude_agency" class="col-md-2 col-md-offset-1" style="text-align= left ">Addres</label>
                                                     <div class="col-md-6">
                                                         <textarea id="institude_agency" row="3" cols="5" oneKeyPress placeholder="Enter Origin of Determinate " class="form-control" name="name_collector" value="{{ old('name_collector') }}"autofocus></textarea>
 
@@ -249,9 +256,10 @@
                                                     </div>
                                                 </div>
                                             <div class="form-group">
-                                                <div class="col-md-6 col-md-offset-4 text-right">
-                                                    <button type="submit" class="btn btn-primary" >Next</button>
-                                                    <button type="button" class="btn btn-secondary" onclick="window.location='{{ url("herbarium-management/weedherba") }}'" style="margin-left:10px">Cancel</button>
+                                                <br><br><br><br><br>
+                                                <div class="col-md-12 col-md-offset-8 text-right" >
+                                                    <button type="button" class="col-md-2 btn btn-secondary" onclick="window.location='{{ url("herbarium-management/weedherba") }}'" >Cancel</button>
+                                                    <button type="submit" class="col-md-2 btn btn-primary" style="margin-left:10px" >Next</button>
                                                 </div>
                                             </div>
                                         </form>

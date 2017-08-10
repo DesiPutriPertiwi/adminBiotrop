@@ -40,19 +40,34 @@ class InvasiveController extends Controller
      */
     public function index()
     {
+       // $speciment_ias = Invasive::paginate(10);
         $speciment_ias = DB::table('speciment_ias')
-        ->leftJoin('species', 'speciment_ias.species_id', '=', 'species_id')
-        ->leftJoin('control_ias', 'speciment_ias.control_id', '=', 'control_id')
-        ->leftJoin('location', 'speciment_ias.location_id','=', 'location_id')
-        ->leftJoin('verified', 'speciment_ias.verifiedData_id','=', 'verifiedData_id')
-        ->leftJoin('author_identification', 'speciment_ias.authorIdentification_id', '=', 'authorIdentification_id')
-        ->select('speciment_ias.*', 'species.name_species as species','species.id_species as id_species', 'species.origin_species as origin','species.habitat as invaded_habitat',
-        'species.species_synonim as synonim', 'species.genus_id as genus_id', 'genus.id_genus as genus_id','genus.name_genus as genus', 'genus.family_id as family_id', 'family.name_family as family',
-        'speciment_ias.id_ias',' speciment_ias.prevention', 'speciment_ias.utilization', 'speciment_ias.risk_analisis', 'speciment_ias.reference', 'control_ias.id_controll as id_controll', 'control_ias.chemical_ctrl as chemical_ctrl',
-        'control_ias.manual_ctrl as manual_ctrl', 'control_ias.biologycal_ctrl as biologycal_ctrl' , 'author_identification.name_author as contact', 'verified.status_verified as status_verified' ,
-        'species.vernacular_id as vernacular_id','vernacular.id_vernacular as vernacular_id', 'vernacular.common_name as common_name', 'species.description_species as description', 'location.id_location as location_id', 'location.distribution_specimen as distribution',
-        'species.ecology as ecology')
+        ->join('species','speciment_ias.species_id', '=', 'species.id_species')
+        ->join('control_ias', 'speciment_ias.control_id', '=', 'control_ias.id_controll')
+        ->join('location', 'speciment_ias.location_id','=', 'location.id_location')
+        ->join('verified', 'speciment_ias.verifiedData_id','=', 'verified.id_verified')
+        ->join('author_identification', 'speciment_ias.authorIdentification_id', '=', 'author_identification.id_author')
+        ->select('speciment_ias.*', 'name_species', 'contact_person', 'description_species', 'genus_id','vernacular_id','species_synonim', 'habitat', 'ecology', 'character_id', 'origin_species', 'chemical_ctrl', 'manual_ctrl', 'biologycal_ctrl', 'latitude', 'longitude', 'altitude', 'village_id', 'distribution_specimen', 'status_verified','contact_person')
         ->paginate(10);
+
+        // $species = DB::table('species')
+        // ->join('genus', 'species.genus_id', '=', 'genus.id_genus')
+        // ->join('vernacular', 'species.vernacular_id', '=', 'vernacular.id_vernacular')
+        // ->select('species.*', 'name_genus', 'family_id','common_name')
+        // ->get();
+        
+        $genus= DB::table('genus')
+        ->join('family', 'genus.family_id','=', 'family.id_family')
+        ->get();
+        
+        // $location = DB::table('location')
+        // ->join('village', 'location.village_id','=','village.id_village')
+        // ->get();
+        
+        // $village = DB::table('village')
+        // ->join('district', 'village.district_id', '=','district.id_district' )
+        // ->get();
+
         return view('invasive/index', ['speciment_ias' => $speciment_ias]);
     }
 
@@ -84,35 +99,11 @@ class InvasiveController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validateInput($request);
-         Invasive::create([
-            'family' => $request['family'],
-            'genus'=> $request['genus'],
-            'species'=> $request['species'],
-            'synonim' => $request['synonim'],
-            'common_name' => $request['common_name'],
-            'invaded_habitat' => $request['invaded_habitat'],
-            'description' => $request['description'],
-            'distribution' => $request['distribution'],
-            'ecology' => $request['ecology'],
-            'chemical_ctrl' => $request['chemical_ctrl'],
-            'manual_ctrl' => $request['manual_ctrl'],
-            'biologycal_ctrl' => $request['biological_ctrl'],
-            'prevention' => $request['prevention'],
-            'utilization' => $request['utilization'],
-            'risk_analisis' => $request['risk_analisis'],
-            'contact' => $request['contact'],
-            'reference' => $request['reference'],
-          //   dd($family, $genus, $species, $synonim, $common_name, $description, $invaded_habitat, $distribution
-          //   ,$ecology, $chemical_ctrl, $manual_ctrl, $biological_ctrl, $prevention, $utilization, $risk_analisis, $contact,$reference),
-          //  //Proses mendapatkan judul dan memindahkan letak gambar ke folder image
-          //   $file = $request -> file ('gambar'),      //untuk mendapatkan gambar
-          //   $fileName =$file -> getCLientOriginName(), // untuk mendapatkan nama asli gambar
-          //   $request->file('gambar')-> move("image/", $fileName), //untuk memindahka gambar ke folsder yang telah disediakan
-           //
-          //   'gambar' => $fileName,
-          //    save()
-        ]);
+      $newcreate = new Invasive;
+      $newcreate -> name_family = $request-> input('family');
+      $newcreate -> name_genus = $request-> input('genus');
+      $newcreate -> name_species = $request-> input('species');      
+
         return redirect()->intended('/invasive');
     }
 
@@ -183,7 +174,7 @@ class InvasiveController extends Controller
      */
     public function destroy($id)
     {
-        Invasive::where('id', $id)->delete();
+        Invasive::where('id_ias', $id_ias)->delete();
          return redirect()->intended('/invasive-management');
     }
 

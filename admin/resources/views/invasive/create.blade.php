@@ -4,7 +4,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Add new collection</div>
+         <div class="panel-heading">Add new collection</div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+              <span class="sr-only">30% Complete (success)</span>
+            </div>
+          </div>
+
+         
             <div class="panel-body">
               <form class="form-horizontal" role="form" method="POST" action="{{ route('invasive.createdesc') }}">
                 {{ csrf_field() }}
@@ -12,8 +19,8 @@
               <div class="form-group{{ $errors->has('family') ? ' has-error' : '' }}">
                   <label for="family" class="col-md-3 control-label">Family:</label>
                       <div class="col-md-6">
-                        <input id="family" type="text" placeholder="Enter Family name" class="form-control" name="family" value="{{ old('family') }}" required autofocus>
-
+                            <input id="family" type="text" placeholder="Enter Family name" class="form-control" name="family" value="{{ old('family') }}" required autofocus>
+                       
                             @if ($errors->has('family'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('family') }}</strong>
@@ -25,9 +32,8 @@
               <div class="form-group{{ $errors->has('genus') ? ' has-error' : '' }}">
                 <label for="genus" class="col-md-3 control-label">Genus:</label>
                     <div class="col-md-6">
-
-                        <input id="genus" type="text" placeholder="Enter Genus name" class="form-control" name="genus" value="{{ old('genus') }}" required autofocus>
-
+                           <input id="genus" type="text" placeholder="Enter Genus name" class="form-control" name="genus" value="{{ old('genus') }}" required autofocus>
+                     
                             @if ($errors->has('genus'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('genus') }}</strong>
@@ -54,7 +60,7 @@
                 <label for="synonim" class="col-md-3 control-label">Synonim:</label>
                     <div class="col-md-6">
                     <i>
-                      <input id="synonim" type="text" class="form-control"  placeholder="Enter Synonim" name="synonim" value="{{ old('synonim') }}" required autofocus>
+                      <textarea id="synonim" type="text" class="form-control" rows="3" oneKeyPress  placeholder="Enter Synonim" name="synonim" value="{{ old('synonim') }}" required autofocus></textarea>
                     </i>
                             @if ($errors->has('synonim'))
                               <span class="help-block">
@@ -92,7 +98,7 @@
                 <label for="invaded_habitat" class="col-md-3 control-label">Invaded Habitat:</label>
 
                 <div class="col-md-6">
-                    <input id="invaded_habitat" placeholder="Enter invaded habitat" class="form-control" name="invaded_habitat" value="{{ old('invaded_habitat') }}" required autofocus>
+                    <textarea id="invaded_habitat" rows="3" oneKeyPress placeholder="Enter invaded habitat" class="form-control" name="invaded_habitat" value="{{ old('invaded_habitat') }}" required autofocus></textarea
 
                     @if ($errors->has('invaded_habitat'))
                         <span class="help-block">
@@ -102,17 +108,23 @@
                 </div>
             </div>
 
-          <div class="form-group">
-            <div class="col-md-9 text-right">
-              <button type="submit" class="btn btn-primary">
+           <!--  <div class="form-group">
+              <div class="col-md-9 text-right">
+                <button type="submit" class="btn btn-primary">
                     Next
-              </button>
-            </div>
+                </button>
+              </div>
+            </div> -->
+          <div class="col-md-12 ">
+            <ul class="pager">
+              <li><button type="submit" class="btn btn-primary">Next</button></li>
+            </ul>
           </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
-</div>
+
 @endsection

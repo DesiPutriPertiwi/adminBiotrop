@@ -52,7 +52,7 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="3%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Id: activate to sort column descending" aria-sort="ascending">No</th>
+                <th width="2%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Id: activate to sort column descending" aria-sort="ascending">No</th>
                 <th width="10%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Family: activate to sort column ascending">Family</th>
                 <th width="10%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Genus: activate to sort column ascending">Genus</th>
                 <th width="10%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Species: activate to sort column ascending">Species Name</th>
@@ -70,8 +70,8 @@
                   <td>{{ $speciment_ias->family }}</td>
                   <td >{{ $speciment_ias->genus }}</td>
                   <td >{{ $speciment_ias->species }}</td>
-                  <td class="hidden-xs">{{ $speciment_ias->synonim }}</td>
-                  <td class="hidden-xs">{{ $speciment_ias->common_name }}</td>
+                  <td class="hidden-xs">{{ $speciment_ias->species_synonim }}</td>
+                  <td class="hidden-xs">{{ $species->common_name }}</td>
                   <td class="hidden-xs">{{ $speciment_ias->origin }}</td>
                   <td class="hidden-xs">{{ $speciment_ias->description }}</td>
                   <td>

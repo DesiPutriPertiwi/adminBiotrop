@@ -6,7 +6,9 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Seameo</b>Biotrop</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{ config('app.name', 'HerbariumManagement') }}</span>
+      <span class="logo-lg" style="font-family: arial black" >
+       <h3> SEAMEO <b>BIOTROP</b></h3>
+      </span>
     </a>
 
     <!-- Header Navbar -->

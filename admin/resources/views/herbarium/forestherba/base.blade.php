@@ -5,7 +5,8 @@
             <h1>Forest Herbarium </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    Forest Herbarium
+                    <i class="fa fa-file-text"></i>
+                    Herbarium Management > Forest Herbarium
                 </li>
             </ol>
         </section>

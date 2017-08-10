@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Seameo Biotrop | Herbarium Collection</title>
+  <title>Seameo Biotrop | Herbarium Collection & IAS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -81,7 +81,7 @@ desired effect
             <div class="col-sm-12">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
+                    <div class="info-box bg-blue">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
@@ -95,19 +95,21 @@ desired effect
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
+                                <a href="{{route('view-weedherba.index')}}">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
+                    <div class="info-box bg-green">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tree fa-5x"></i>
+                                    <i class="glyphicon glyphicon-tree-deciduous fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><h2>100</h2></div>
@@ -117,15 +119,68 @@ desired effect
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
+                                <a href="{{route('view-forestherba.index')}}">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
                             </div>
                         </a>
                     </div>
                 </div>
+                
                 <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
+                    <div class="info-box bg-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="glyphicon glyphicon-grain fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><h2>100</h2></div>
+                                    <div><h4>Briovitas Herbarium</h4></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <a href="{{route('view-brioherba.index')}}">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box bg-purple">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-certificate fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><h2>100</h2></div>
+                                    <div><h4>Lichen Herbarium</h4></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <a href="{{route('view-lichenherba.index')}}">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box bg-red">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
@@ -139,31 +194,11 @@ desired effect
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-user-secret fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>90</h2></div>
-                                    <div><h4>Collector</h4></div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
+                                <a href="{{route('view-invasive.index')}}">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
                             </div>
                         </a>
                     </div>

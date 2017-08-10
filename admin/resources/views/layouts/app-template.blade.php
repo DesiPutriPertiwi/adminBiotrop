@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Herbarium Management</title>
+    <title>Seameo Biotrop | Herbarium Collection & IAS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -137,7 +137,7 @@
     <!--Add field-->
     <script>
         $(document).ready(function() {
-            var max_fields      = 5; //maximum input boxes allowed
+            var max_fields      = 6; //maximum input boxes allowed
             var wrapper         = $(".input_fields_wrap"); //Fields wrapper
             var add_button      = $(".add_field_button"); //Add button ID
 
@@ -147,12 +147,10 @@
                 if(x < max_fields){ //max input box allowed
                     x++; //text box increment
                     $("#rm").remove(); 
-                    if(x%2==0){
-                        $(wrapper).append('<div class="col-md-6"><div class="col-md-6"><input type="file" name="gambar" id="inputgambar" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div></div>'); //add input box
+                   
+                        $(wrapper).append('<div class="col-md-6"><input type="file" name="gambar['+x+']" id="inputgambar'+x+'" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar'+x+'" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div><script type="text/javascript">function readURL(input) {if (input.files && input.files[0]) {var reader = new FileReader();reader.onload = function (e) {$("#showgambar'+x+'").attr("src", e.target.result);}reader.readAsDataURL(input.files[0]);}}$("#inputgambar'+x+'").change(function () {readURL(this);})</' + 'script>'); //add input box
                        // $(wrapper).append('<div class="col-md-2 col-md-offset-2">')
-                    }else{
-                        $(wrapper).append('<div class="col-md-6"><div class="col-md-6"><input type="file" name="gambar" id="inputgambar" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div></div>'); //add input box
-                    }
+                   
                 }
             });
 
@@ -165,6 +163,102 @@
                 })
         });
     </script>
+    <!--Capcha-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
+    <!--show image-->
+    <script type="text/javascript">
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#showgambar1').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+      }
+    $("#inputgambar1").change(function () {
+        readURL(this);
+    });
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block"; 
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+   
+
+   <script type="text/javascript">
+        // Activate Carousel
+        $("#myCarousel").carousel();
+
+        // Enable Carousel Indicators
+        $(".item").click(function(){
+            $("#myCarousel").carousel(1);
+        });
+
+        // Enable Carousel Controls
+        $(".left").click(function(){
+            $("#myCarousel").carousel("prev");
+        });
+
+
+        $(document).ready(function(){
+          // Initializes the carousel
+            $(".start-slide").click(function(){
+              $("#myCarousel").carousel('cycle');
+            });
+          // Stops the carousel
+            $(".pause-slide").click(function(){
+              $("#myCarousel").carousel('pause');
+            });
+          // Cycles to the previous item
+            $(".prev-slide").click(function(){
+              $("#myCarousel").carousel('prev');
+            });
+          // Cycles to the next item
+            $(".next-slide").click(function(){
+              $("#myCarousel").carousel('next');
+            });
+          // Cycles the carousel to a particular frame 
+            $(".slide-one").click(function(){
+              $("#myCarousel").carousel(0);
+            });
+            $(".slide-two").click(function(){
+              $("#myCarousel").carousel(1);
+            });
+            $(".slide-three").click(function(){
+              $("#myCarousel").carousel(2);
+            });
+        });
+  </script>
   </body>
 </html>
+
+      

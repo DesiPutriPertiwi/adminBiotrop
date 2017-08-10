@@ -111,9 +111,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <div class="col-md-6 col-md-offset-4 text-right">
-                                                    <button type="submit" class="btn btn-primary">Update</button>
-                                                    <button type="button" class="btn btn-secondary"  onclick="window.location='{{ url("user-management") }}'" style="margin-left:5px">Cancel</button>
+                                                <br><br><br>
+                                                <div class="col-md-12 col-md-offset-8 text-right">
+                                                    <button type="button" class="btn btn-secondary col-md-2"  onclick="window.location='{{ url("user-management") }}'" >Cancel</button>
+                                                    <button type="submit" class="btn btn-primary col-md-2" style="margin-left:5px">Update</button>
+                                                    
                                                 </div>
                                             </div>
                                         </form>

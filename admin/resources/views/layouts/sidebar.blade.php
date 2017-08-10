@@ -41,6 +41,8 @@
           <ul class="treeview-menu">
             <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a></li>
             <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a></li>
+            <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a></li>
+            <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a></li>
           </ul>
         </li>
         <li {{{ (Request::is('user-management') ? 'class=active' : '') }}}><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User Management</span></a></li>

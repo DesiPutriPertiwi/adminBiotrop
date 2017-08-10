@@ -8,7 +8,10 @@
 
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-        <li class="active">User Management</li>
+        <li class="active">
+          <i class="fa fa-link"></i>
+          User Management
+        </li>
       </ol>
     </section>
     @yield('action-content')

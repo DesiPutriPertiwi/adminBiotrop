@@ -28,7 +28,8 @@
                                 <div class="input-group">
                                 <input type="text" name="search" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn">
-                                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                            <i class="fa fa-search"></i>
                                         </button>
                                     </span>
                                 </div>
@@ -42,20 +43,21 @@
                         <div class="col-sm-12">
                             <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                                 <thead>
-                                    <tr role="row" >
-                                        <th width="5%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Id: activate to sort column descending" aria-sort="ascending" style="text-align: center">No</th>
-                                        <th width="10%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Family: activate to sort column ascending" style="text-align: center">Family</th>
-                                        <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Genus: activate to sort column ascending" style="text-align: center">Genus</th>
-                                        <th width="10%" class="sorting " tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Species: activate to sort column ascending" style="text-align: center">Species Name</th>
-                                        <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Synonim: activate to sort column ascending" style="text-align: center">Synonim</th>
-                                        <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Common_name: activate to sort column ascending" style="text-align: center">Common Name</th>
-                                        <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Origin: activate to sort column ascending" style="text-align: center">Origin</th>
-                                        <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="text-aligh: center">Description</th>
-                                        <th width= "15" tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                                    <tr role="row">
+                                        <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Label_Herbarium: activate to sort column descending" aria-sort="ascending" style="text-align: center">Specimen Number</th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Species: activate to sort column descending" aria-sort="ascending" style="text-align:center">Species</th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Collector: activate to sort column descending" aria-sort="ascending" style="text-align:center">Collector</th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Determinate: activate to sort column descending" aria-sort="ascending" style="text-align:center">Determine</th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-lable="Id: activate to sort column descending" aria-sort="ascending" style="text-align:center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
+                                </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
