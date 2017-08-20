@@ -22,5 +22,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'lastname' => null,
         'firstname' => null,
         'remember_token' => str_random(10),
+        'type_user' => $faker->type,
     ];
 });

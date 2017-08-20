@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,8 @@ class District extends Model
      *
      * @var string
      */
-    protected $table = 'district';
+    public $timestamps = false ;
+    protected $table = 'districts';
 
 
     /**

@@ -207,7 +207,7 @@
                                         
                                             <div  class="form-group"> <!--form-group{{ URL::to('upload') }}-->
                                                 <label for="picture" class="col-md-2 col-md-offset-1" style="text-align:left">Select Image to Update</label>
-                                                <div class="col-md-7">
+                                                <div class="col-md-8">
                                                     <a class="add_field_button  col-md-offset-10">Add More Fields</a>
                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
                                                 </div>
@@ -226,7 +226,7 @@
 
                                             <div class="form-group" >
                                                 <div class="col-md-12 col-md-offset-8 text-right" style="margin-top:100px"> 
-                                                    <a type="submit" class="btn btn-primary col-md-2" href="{{route('weedherba.create')}}">Previous</a>
+                                                    <a type="submit" class="btn btn-info col-md-2" href="{{route('weedherba.create')}}">Previous</a>
                                                     <a type="submit" class="btn btn-primary col-md-2" href="{{route('weedherba.store')}}"  style="margin-left:10px">Submit</a>
                                                 </div>
                                             </div>

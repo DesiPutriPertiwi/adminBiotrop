@@ -68,27 +68,21 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                              </div>
+                              @endif
+                           </div>
+                        </div>
+                          
+                          <div class="form-group{{$errors->has('g-recaptcha-response') ? ' has-errors' : '' }}" data-sitekey="6LfItCwUAAAAAAmNqvnMq37Ajr1qAljxp3rZxmFG">
+                            <label for="g-recaptcha-response" class="col-md-4 control-label"></label>
+
+                            <div class="col-md-6">
+                                {!! app('captcha')->display()!!}
+                                {!! $errors->first('g-recaptcha-response', '<p class="help-block"><span style="color:red">The g-recaptcha response field is required</span></p>')!!}
+                            </div>
                           </div>
 
-                        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Captcha</label>
-
-                            <script  src="{{ asset ("/bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js") }}" type="text/javascript" ></script>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4 ">
+                        <div class="form-group"> 
+                            <div class="col-md-8 col-md-offset-4" style="margin-top:10px">
                                 <button type="submit col-md-6" class="btn btn-primary">
                                     Login
                                 </button>

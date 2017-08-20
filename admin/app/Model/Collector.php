@@ -1,23 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Collector extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+    public $timestamps =false;
     protected $table = 'collector';
 
-
-    /**
-    * The attributes that aren't mass assignable.
-    *
-    * @var array
-    */
-    protected $guarded = [];
+    protected $fillable =['name_collector', 'date_collection','number_collection'];
 }

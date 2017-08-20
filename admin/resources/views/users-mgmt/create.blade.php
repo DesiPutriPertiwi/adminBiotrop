@@ -20,11 +20,12 @@
                                             <label for="user_type" class="col-md-2 col-md-offset-1" style="text-align= left">User Type</label>
 
                                             <div class="col-md-6">
-                                                <select id="user_type" type="user_type" class="form-control" name="user_type" required>
+                                                <select id="user_type"  class="form-control" name="user_type" value="{{ old('user_type') }}" required>
                                                     <option>-- Select --</option>
                                                     <option value="1">Operator</option>
                                                     <option value="2">Verifikator</option>>
                                                 </select>
+
                                                 @if ($errors->has('user_type'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('user_type') }}</strong>

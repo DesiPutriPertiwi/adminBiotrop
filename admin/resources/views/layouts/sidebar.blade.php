@@ -28,26 +28,166 @@
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <!-- Optionally, you can add icons to the links -->
-        <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="/"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-        <li {{{ (Request::is('invasive') ? 'class=active' : '') }}}><a href="{{ url('invasive') }}"><i class="fa fa-file-text"></i> <span>IAS Management</span></a></li>
-        <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
-          <a href="#"><i class="fa fa-file-text"></i> <span>Herbarium Management</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a></li>
-            <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a></li>
-            <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a></li>
-            <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}><a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a></li>
-          </ul>
-        </li>
-        <li {{{ (Request::is('user-management') ? 'class=active' : '') }}}><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User Management</span></a></li>
-      </ul>
-      
+      <ul class="sidebar-menu" >
+        <!--Admin-->
+        @if (Auth::user()-> user_type  == 0)
+            <li {{{ (Request::is('/') ? 'class=active' : '') }}}>
+              <a href="/">
+                <i class="fa fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            
+            <li {{{ (Request::is('invasive') ? 'class=active' : '') }}}>
+              <a href="{{ url('invasive') }}">
+                <i class="fa fa-file-text"></i> 
+                <span>IAS Management</span>
+              </a>
+            </li>
+
+            <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
+              <a href="#">
+                <i class="fa fa-file-text"></i> 
+                <span>Herbarium Management</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                </li>
+              </ul>
+            </li>
+
+            <li {{{ (Request::is('user-management') ? 'class=active' : '') }}}>
+              <a href="{{ route('user-management.index') }}">
+                <i class="fa fa-link"></i> 
+                <span>User Management</span>
+              </a>
+            </li>
+            
+        <!--Operator-->
+        @elseif (Auth::user()-> user_type  == 1)
+            <li {{{ (Request::is('/') ? 'class=active' : '') }}}>
+              <a href="/">
+                <i class="fa fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            
+            <li {{{ (Request::is('invasive') ? 'class=active' : '') }}}>
+              <a href="{{ url('invasive') }}">
+                <i class="fa fa-file-text"></i> 
+                <span>IAS Management</span>
+              </a>
+            </li>
+
+            <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
+              <a href="#">
+                <i class="fa fa-file-text"></i> 
+                <span>Herbarium Management</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                </li>
+              </ul>
+            </li>
+
+          <!--Verifikator-->
+          @elseif (Auth::user()-> user_type  == 2)
+            <li {{{ (Request::is('/') ? 'class=active' : '') }}}>
+              <a href="/">
+                <i class="fa fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            
+            <li {{{ (Request::is('invasive') ? 'class=active' : '') }}}>
+              <a href="{{ url('invasive') }}">
+                <i class="fa fa-file-text"></i> 
+                <span>IAS Management</span>
+              </a>
+            </li>
+
+            <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
+              <a href="#">
+                <i class="fa fa-file-text"></i> 
+                <span>Herbarium Management</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li {{{ (Request::is('herbarium-management/weedherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/weedherba') }}">Weed Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/forestherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
+                </li>
+                <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a>
+                <i class="fa fa-check-square-o"></i> 
+                <span>IAS Verifcation</span>
+              </a>
+            </li>
+
+            <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
+              <a href="#">
+                <i class="fa fa-check-square-o"></i> 
+                <span>Herbarium Verifcation</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li >
+                  <a >Weed Herbarium</a>
+                </li>
+                <li >
+                  <a >Forest Herbarium</a>
+                </li>
+                <li >
+                  <a >Briovitas Herbarium</a>
+                </li>
+                <li >
+                  <a >Liken Herbarium</a>
+                </li>
+              </ul>
+            </li>       
+          @endif
+        </ul>
       
       
       <!-- /.sidebar-menu -->
@@ -55,3 +195,5 @@
    
     <!-- /.sidebar -->
   </aside>
+
+

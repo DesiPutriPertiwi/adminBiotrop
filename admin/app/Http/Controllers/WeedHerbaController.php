@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Herbarium;
+use App\Model\Collector;
+use App\Model\AuthorIdent;
+use App\Model\State;
+use App\Model\Province;
+use App\Model\District;
+use App\Model\City;
+use View;
 
 class WeedHerbaController extends Controller
 {
@@ -15,32 +21,33 @@ class WeedHerbaController extends Controller
 
      protected function create()
      {
+         
          return view('herbarium/weedherba/createAuthor');
      }
 
-     protected function createnext()
+     protected function createnext(Request $request)
      {
-        /*$this -> validateInput($request);
-        WeedHerba:: create([
-            'name_collector'=> $request['name_collector'],
-            'tim_collector' => $request['tim_collector'],
-            'date_collector' => $request['date_collector'],
-            'number_collection'=> $request['number_collection'],
-            'name_state' => $request['name_state'],
-            'name_province' => $request['name_province'],
-            'name_city'=> $request['name_city'],
-            'name_district' => $request['name_district'],
-            'name_vilage' => $request['name_vilage'],
-            'latitude'=> $request['latitude'],
-            'longitude' => $request['longitude'],
-            'atitude' => $request['atitude'],
-            'name_author'=> $request['name_author'],
-            'email_author' => $request['email_author'],
-            'date_author' => $request['date_author'],
-            'institude_agency' => $request['institude_agency']
-        ]);
-        return redirect()-> intended('/herbarium/weedherba/createSpecimen');*/
-        return view('herbarium/weedherba/createSpecimen');
+        //dd($request);
+        $data_set = new Collector;
+        $data_set -> name_collector                     = $request -> input('name_collector');
+        $data_set -> tim_collector                      = $request -> input('tim_collector');
+        $data_set -> date_collection                    = $request -> input('date_collector');
+        $data_set -> number_collection                  = $request -> input('number_collector');   
+
+ 
+        $data_set2 = new AuthorIdent;
+        $data_set2 -> name_author                       = $request -> input('name_author');
+        $data_set2 -> email_author                      = $request -> input('email_author');
+        $data_set2 -> phone_author                      = $request -> input('phone_author');
+        $data_set2 -> date_ident                        = $request -> input('date_ident');
+        $data_set2 -> agency                            = $request -> input('agency');
+       
+        
+        $data_set -> save();
+        $data_set2 -> save();
+        
+        /*return redirect()-> intended('/herbarium/weedherba/createSpecimen');*/
+        return view('/herbarium/weedherba/createSpecimen');
      }
 
     protected function store()
@@ -72,7 +79,18 @@ class WeedHerbaController extends Controller
             'inflorencence' => $request['inflorencence'],
             'picture' => $request['picture']
         ]);
+        //dd('$this');
         return redirect()-> intended('/herbarium/weedherba');
+    }
+    
+    protected function edit()
+    {
+        return view('herbarium/weedherba/editAuthor');
+    }
+
+    protected function editnext()
+    {
+        return view('herbarium/weedherba/editSpeciment');
     }
 
     protected function show()
@@ -92,4 +110,19 @@ class WeedHerbaController extends Controller
        return view('users-mgmt/index', ['users' => $users, 'searchingVals' => $constraints]);
     }
     
+     public function showlabel() {
+         return view('herbarium/weedherba/label');
+    } 
+
+    public function destination(){
+        
+        $state = State::orderBy('name', 'asc')->get();   
+        return view('herbarium.weedherba.createAuthor', ['state' => $state]);
+    }
+
+    public function findDestination(Request $request)
+    {
+        $data= Destination::select('prov', 'id_prov')-> where ('state_id', $request->id_state)->get();
+        return response()->json($data);
+    }
 }

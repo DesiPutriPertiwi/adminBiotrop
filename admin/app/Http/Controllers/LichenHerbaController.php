@@ -55,6 +55,6 @@ class LichenHerbaController extends Controller
 
     protected function show()
     {
-
+        return view('herbarium/lichenherba/show');
     }
 }

@@ -31,16 +31,6 @@ class LoginController extends Controller
         return "username";
     }
 
-    public function loginPost($request)
-   {
-       $this->validate($request, [
-           'username' => 'required',
-           'password' => 'required',
-           'g-recaptcha-response' => 'required|captcha',
-       ]);
-       print('done');
-   }
-
      /**
      * Determine if the user has too many failed login attempts.
      *
@@ -48,7 +38,7 @@ class LoginController extends Controller
      * @return bool
      */
     protected function hasTooManyLoginAttempts ($request) {
-        $maxLoginAttempts = 30;
+        $maxLoginAttempts = 5;
         $lockoutTime = 5; // 5 minutes
         return $this->limiter()->tooManyAttempts(
             $this->throttleKey($request), $maxLoginAttempts, $lockoutTime

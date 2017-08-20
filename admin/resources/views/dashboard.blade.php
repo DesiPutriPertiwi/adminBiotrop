@@ -68,8 +68,13 @@ desired effect
         Dashboard
       </h1>
       <ol class="breadcrumb">
-        <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-
+        @if(Auth::user()-> user_type  == 0)
+            <li><a href="#"><i class="fa fa-dashboard"></i>Admin</a></li>
+        @elseif (Auth::user()-> user_type  == 1)   
+            <li><a href="#"><i class="fa fa-dashboard"></i>Operator</a></li>
+        @elseif (Auth::user()-> user_type  == 2)
+            <li><a href="#"><i class="fa fa-dashboard"></i>Verificator</a></li>
+        @endif
       </ol>
     </section>
 
