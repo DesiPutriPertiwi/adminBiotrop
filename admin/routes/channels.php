@@ -14,3 +14,7 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+Broadcast::channel('App.Ias.{id_ias}', function ($ias, $id_ias) {
+    return (int) $ias->id_ias === (int) $id_ias;
+});

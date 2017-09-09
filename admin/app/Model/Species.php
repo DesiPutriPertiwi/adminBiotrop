@@ -1,23 +1,32 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Species extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+    public $timestamps = false;
     protected $table = 'species';
+    protected $primaryKey = 'id_species';
 
+    public function genus()
+    {
+        return $this->belongsTo('App\Model\Genus', 'genus_id','id_genus');
+    }
 
-    /**
-    * The attributes that aren't mass assignable.
-    *
-    * @var array
-    */
-    protected $guarded = [];
+    public function family()
+    {
+        return $this->belongsTo('App\Model\Family', 'family_id', 'id_family');
+    }
+
+    public function character()
+    {
+        return $this->belongsTo('App\Model\CharacterSpecies' ,'character_id', 'id_character');
+    }
+
+    public function venacular()
+    {
+        return $this->belongsTo('App\Model\Vernacular' ,'vernacular_id', 'id_venacular');
+    }
 }

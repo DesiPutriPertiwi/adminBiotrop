@@ -6,10 +6,6 @@
             <div class="box-header">
                 <div class="row">
                     <div class="dt-button btn-group col-sm-offtet-10">
-                        <a class="btn btn-default button-download buttons-html5 btn-md" tabindex="0" aria-controls="datatable-buttons" href="#" >
-                            <i class="fa fa-cloud-download"> </i>
-                            Download
-                        </a>
                         <a class="btn btn-default buttons-print btn-md" tabindex="0" aria-controls="datatable-buttons" href="window.print();">
                             <i class="fa fa-print"> </i>
                             Print

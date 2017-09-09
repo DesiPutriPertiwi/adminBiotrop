@@ -93,7 +93,7 @@ desired effect
                                     <i class="glyphicon glyphicon-leaf fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>{{count(Auth::user())}}</h2></div>
+                                    <div class="huge"><h2>{{ $weed }}</h2></div>
                                     <div><h4>Weed Herbarium</h4></div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ desired effect
                                     <i class="glyphicon glyphicon-tree-deciduous fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>100</h2></div>
+                                    <div class="huge"><h2>{{ $forest }}</h2></div>
                                     <div><h4>Forest Herbarium</h4></div>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@ desired effect
                                     <i class="glyphicon glyphicon-grain fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>100</h2></div>
+                                    <div class="huge"><h2>{{ $brio }}</h2></div>
                                     <div><h4>Briovitas Herbarium</h4></div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ desired effect
                                     <i class="fa fa-certificate fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>100</h2></div>
+                                    <div class="huge"><h2>{{ $lichen }}</h2></div>
                                     <div><h4>Lichen Herbarium</h4></div>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@ desired effect
                                     <i class="fa fa-pagelines fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><h2>50</h2></div>
+                                    <div class="huge"><h2>{{ $ias }}</h2></div>
                                     <div><h4>Invasive Alien Species</h4></div>
                                 </div>
                             </div>

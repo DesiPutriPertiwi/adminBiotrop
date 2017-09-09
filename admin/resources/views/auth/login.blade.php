@@ -68,11 +68,11 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                              @endif
-                           </div>
-                        </div>
-                          
-                          <div class="form-group{{$errors->has('g-recaptcha-response') ? ' has-errors' : '' }}" data-sitekey="6LfItCwUAAAAAAmNqvnMq37Ajr1qAljxp3rZxmFG">
+                                @endif
+                              </div>
+                          </div>
+
+                        <div class="form-group{{$errors->has('g-recaptcha-response') ? ' has-errors' : '' }}" data-sitekey="6LfItCwUAAAAAAmNqvnMq37Ajr1qAljxp3rZxmFG">
                             <label for="g-recaptcha-response" class="col-md-4 control-label"></label>
 
                             <div class="col-md-6">
@@ -81,8 +81,8 @@
                             </div>
                           </div>
 
-                        <div class="form-group"> 
-                            <div class="col-md-8 col-md-offset-4" style="margin-top:10px">
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4 ">
                                 <button type="submit col-md-6" class="btn btn-primary">
                                     Login
                                 </button>

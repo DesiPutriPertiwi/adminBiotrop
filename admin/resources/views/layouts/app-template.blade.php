@@ -12,7 +12,6 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
-  
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -29,7 +28,6 @@
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/_all-skins.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app-template.css') }}" rel="stylesheet">
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/summernote/summernote.css")}}" rel="stylesheet" type="text/css" />
-    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,7 +35,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <!--
+  <!-- 
     BODY TAG OPTIONS:
     =================
     Apply one or more of the following classes to get the
@@ -71,8 +69,6 @@
     <!-- REQUIRED JS SCRIPTS -->
     <!-- jQuery 2.1.3 -->
     <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
-    
-    
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
     <script  src="{{ asset ("/bower_components/AdminLTE/plugins/datatables/jquery.dataTables.min.js") }}" type="text/javascript" ></script>
@@ -138,35 +134,7 @@
             });
     </script>
 
-    <!--Add field-->
-    <script>
-        $(document).ready(function() {
-            var max_fields      = 6; //maximum input boxes allowed
-            var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-            var add_button      = $(".add_field_button"); //Add button ID
-
-            var x = 1; //initlal text box count
-            $(add_button).click(function(e){ //on add input button click
-                e.preventDefault();
-                if(x < max_fields){ //max input box allowed
-                    x++; //text box increment
-                    $("#rm").remove(); 
-                   
-                        $(wrapper).append('<div class="col-md-6"><input type="file" name="gambar['+x+']" id="inputgambar'+x+'" clas="validate"/><input type="hidden" value="{{ csrf_token() }}" name="_token"><img src="http://placehold.it/200x200" id="showgambar'+x+'" style="max-width: 200px;max-height:200px;float:left;"/><a href="#" id="rm" class="remove_field">Remove</a></div><script type="text/javascript">function readURL(input) {if (input.files && input.files[0]) {var reader = new FileReader();reader.onload = function (e) {$("#showgambar'+x+'").attr("src", e.target.result);}reader.readAsDataURL(input.files[0]);}}$("#inputgambar'+x+'").change(function () {readURL(this);})</' + 'script>'); //add input box
-                       // $(wrapper).append('<div class="col-md-2 col-md-offset-2">')
-                   
-                }
-            });
-
-            $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-                e.preventDefault(); $("#divs").remove(); x--;
-                $("#divs").remove(); x--;
-                $("#divs").remove(); x--;
-                $("#divs").remove(); x--;
-
-                })
-        });
-    </script>
+   
     <!--Capcha-->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -177,17 +145,18 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#showgambar1').attr('src', e.target.result);
+                $('#showgambar').attr('src', e.target.result);
             }
 
             reader.readAsDataURL(input.files[0]);
         }
       }
-    $("#inputgambar1").change(function () {
+    $("#inputgambar").change(function () {
         readURL(this);
     });
     </script>
 
+    <!--Slide show-->
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
@@ -217,7 +186,7 @@
         }
     </script>
    
-    <!--Slide bar-->
+
    <script type="text/javascript">
         // Activate Carousel
         $("#myCarousel").carousel();
@@ -262,10 +231,6 @@
             });
         });
   </script>
-
-  <!--Select2-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
-
   </body>
 </html>
 

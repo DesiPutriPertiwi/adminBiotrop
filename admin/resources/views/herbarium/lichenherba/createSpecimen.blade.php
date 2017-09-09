@@ -28,6 +28,11 @@
                                     <div class="box">
                                         <form class="form-horizontal" role="form" method="POST" action="{{ route('lichenherba.store') }}" style="margin-top:10px">
                                         {{ csrf_field() }}
+
+                                            <input type="hidden" name="data1" value="{{$data['location']}}">
+                                            <input type="hidden" name="data2" value="{{$data['collect']}}">
+                                            <input type="hidden" name="data3" value="{{$data['author']}}">
+                                            
                                             <div class="form-group{{ $errors->has('label_lichen') ? ' has-error' : '' }}" >
                                                 <label for="label_lichen" class="col-md-2 col-md-offset-1" style="text-align:left">Label Weed</label>
                                                 <div class="col-md-2">

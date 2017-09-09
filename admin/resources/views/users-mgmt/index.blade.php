@@ -24,10 +24,10 @@
       <form method="POST" action="{{ route('user-management.search') }}">
           {{ csrf_field() }}
           @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['User Name', 'First Name'],
-          'oldVals' => [isset($searchingVals) ? $searchingVals['username'] : '', isset($searchingVals) ? $searchingVals['firstname'] : '']])
-          @endcomponent
-          </br>
+            @component('layouts.two-cols-search-row', ['items' => ['User Name', 'First Name'],
+            'oldVals' => [isset($searchingVals) ? $searchingVals['username'] : '', isset($searchingVals) ? $searchingVals['firstname'] : '']])
+            @endcomponent
+            </br>
           @endcomponent
       </form>
     
@@ -38,7 +38,7 @@
             <thead>
               <tr role="row">
                 <th width="15%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending" style="text-align:center">User Name</th>
-                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="text-align:center">Email</th>
+                <th width="18%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="text-align:center">Email</th>
                 <th width="15%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="text-align:center">First Name</th>
                 <th width="15%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="text-align:center">Last Name</th>
                 <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="text-align:center">User Type</th>

@@ -64,7 +64,7 @@
                   <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
                 </li>
                 <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
-                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Lichen Herbarium</a>
                 </li>
               </ul>
             </li>
@@ -111,7 +111,7 @@
                   <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
                 </li>
                 <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
-                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Lichen Herbarium</a>
                 </li>
               </ul>
             </li>
@@ -151,16 +151,27 @@
                   <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
                 </li>
                 <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
-                  <a href="{{ url('herbarium-management/lichenherba') }}">Liken Herbarium</a>
+                  <a href="{{ url('herbarium-management/lichenherba') }}">Lichen Herbarium</a>
                 </li>
               </ul>
             </li>
 
             <li>
-              <a>
-                <i class="fa fa-check-square-o"></i> 
+              <a href="#">
+                <i class="fa fa-check-square-o"></i>  
                 <span>IAS Verifcation</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
               </a>
+              <ul class="treeview-menu">
+                <li {{{ (Request::is('verificationIAS/verified') ? 'class=active' : '') }}}>
+                  <a href="{{ url('verificationIAS/verified') }}">Verified</a>
+                </li>
+                <li {{{ (Request::is('verificationIAS') ? 'class=active' : '') }}}>
+                  <a href="{{ url('verificationIAS') }}">Unverified</a>
+                </li>
+              </ul>
             </li>
 
             <li class="treeview" {{{ (Request::is('#') ? 'class=active' : '') }}}>
@@ -173,19 +184,71 @@
               </a>
               <ul class="treeview-menu">
                 <li >
-                  <a >Weed Herbarium</a>
+                  <a href="#"> 
+                    <span>Weed Herbarium</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li {{{ (Request::is('verificationWeedHerba/verified') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationWeedHerba/verified') }}">Verified</a>
+                    </li>
+                    <li {{{ (Request::is('verificationWeedHerba') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationWeedHerba') }}">Unverified</a>
+                    </li>
+                  </ul>
                 </li>
                 <li >
-                  <a >Forest Herbarium</a>
+                  <a href="#">
+                    <span>Forest Herbarium</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li {{{ (Request::is('verificationForestHerba/verified') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationForestHerba/verified') }}">Verified</a>
+                    </li>
+                    <li {{{ (Request::is('verificationForestHerba') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationForestHerba') }}">Unverified</a>
+                    </li>
+                  </ul>
                 </li>
+
                 <li >
-                  <a >Briovitas Herbarium</a>
+                  <a href="#">
+                    <span>Briovitas Herbarium</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li {{{ (Request::is('verificationBryovitaHerba/verified') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationBryovitaHerba/verified') }}">Verified</a>
+                    </li>
+                    <li {{{ (Request::is('verificationBryovitaHerba') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationBryovitaHerba') }}">Unverified</a>
+                    </li>
+                  </ul>
                 </li>
+
                 <li >
-                  <a >Liken Herbarium</a>
-                </li>
-              </ul>
-            </li>       
+                  <a href="#">
+                    <span>Lichen Herbarium</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li {{{ (Request::is('verificationLichenHerba/verified') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationLichenHerba/verified') }}">Verified</a>
+                    </li>
+                    <li {{{ (Request::is('verificationLichenHerba') ? 'class=active' : '') }}}>
+                      <a href="{{ url('verificationLichenHerba') }}">Unverified</a>
+                    </li>
+                  </ul>
+                </li>     
           @endif
         </ul>
       
@@ -195,5 +258,4 @@
    
     <!-- /.sidebar -->
   </aside>
-
 

@@ -63,6 +63,23 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        /*'ftp' => [ 
+            'driver' => 'ftp', 
+            'host' => 'ftp.example.com', 
+            'username' => 'your-username',
+            'password' => 'your-password',
+        ],*/
+
+        'rackspace' => [
+            'driver'    => 'rackspace',
+            'username'  => 'biotrop',
+            'key'       => 'biotropKMD',
+            'container' => 'your-container',
+            'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
+            'region'    => 'IAD',
+            'url_type'  => 'publicURL',
+        ],
+
     ],
 
 ];

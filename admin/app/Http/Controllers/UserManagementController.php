@@ -8,28 +8,16 @@ use App\User;
 
 class UserManagementController extends Controller
 {
-       /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
+     
     protected $redirectTo = '/user-management';
 
-         /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         $users = User::paginate(5);
@@ -37,53 +25,34 @@ class UserManagementController extends Controller
         return view('users-mgmt/index', ['users' => $users]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('users-mgmt/create');
     }
 
-    /** 
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
         $this->validateInput($request);
          User::create([
-            'username' => $request['username'],
-            'email' => $request['email'],
-            'password' => bcrypt($request['password']),
+            'username'  => $request['username'],
+            'email'     => $request['email'],
+            'password'  => bcrypt($request['password']),
             'firstname' => $request['firstname'],
-            'lastname' => $request['lastname'],
+            'lastname'  => $request['lastname'],
             'user_type' => $request['user_type']
         ]);
         return redirect()->intended('/user-management');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         $user = User::find($id);
@@ -95,26 +64,20 @@ class UserManagementController extends Controller
         return view('users-mgmt/edit', ['user' => $user]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $constraints = [
-            'username' => 'required|max:20',
-            'firstname'=> 'required|max:60',
-            'lastname' => 'required|max:60',
-            'user_type' => 'required|max:20'
+            'username'  => 'required|max:20',
+            'firstname' => 'required|max:60',
+            'lastname'  => 'required|max:60',
+            'user_type' => 'required|max:1'
             ];
         $input = [
-            'username' => $request['username'],
+            'username'  => $request['username'],
             'firstname' => $request['firstname'],
-            'lastname' => $request['lastname'],
+            'lastname'  => $request['lastname'],
             'user_type' => $request['user_type']
         ];
         if ($request['password'] != null && strlen($request['password']) > 0) {
@@ -128,30 +91,20 @@ class UserManagementController extends Controller
         return redirect()->intended('/user-management');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         User::where('id', $id)->delete();
          return redirect()->intended('/user-management');
     }
 
-    /**
-     * Search user from database base on some specific constraints
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *  @return \Illuminate\Http\Response
-     */
+   
     public function search(Request $request) {
-        $constraints = [
-            'username' => $request['username'],
-            'firstname' => $request['firstname'],
-            'lastname' => $request['lastname'],
-            'department' => $request['department']
+        $constraints    = [
+            'username'      => $request['username'],
+            'firstname'     => $request['firstname'],
+            'lastname'      => $request['lastname'],
+            'department'    => $request['department']
             ];
 
        $users = $this->doSearchingQuery($constraints);
@@ -173,11 +126,12 @@ class UserManagementController extends Controller
     }
     private function validateInput($request) {
         $this->validate($request, [
-        'username' => 'required|max:20',
-        'email' => 'required|email|max:255|unique:users',
-        'password' => 'required|min:6|confirmed',
-        'firstname' => 'required|max:60',
-        'lastname' => 'required|max:60'
+        'usernames'     => 'required|max:20',
+        'email'         => 'required|email|max:255|unique:users',
+        'password'      => 'required|min:6|confirmed',
+        'firstname'     => 'required|max:60',
+        'lastname'      => 'required|max:60',
+        'user_type'     => 'required|max:1'
     ]);
     }
 }

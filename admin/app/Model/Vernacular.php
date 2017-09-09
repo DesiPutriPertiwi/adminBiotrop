@@ -1,23 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Vernacular extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'vernacular';
+   
+    public $timestamps= false;
+    protected $table = 'venacular';
+    protected $primaryKey = 'id_venacular';
 
-
-    /**
-    * The attributes that aren't mass assignable.
-    *
-    * @var array
-    */
-    protected $guarded = [];
 }

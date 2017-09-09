@@ -3,19 +3,17 @@
 @section('action-content')
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
-    <script src="{{ asset('/select/bootstrap.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('/select/bootstrap.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('/select/npm.js')}}" type="text/javascript"></script>
+    
     <section class="content">
         <div class="box">
             <div class="box header">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-17 col-md-offset-1">
-                                    <div class="row bs-wizard" style="border-bottom">
-                                        <h4> Add new Collection</h4>
+                                <div class="col-md-17">
+                                    <div class="row bs-wizard" style="border-bottom" name="label">
+                                        <h4 value="1"> Add new Collection</h4>
                                         <div class="col-xs-6 bs-wizard-step active">
                                             <div class="text-center bs-wizard-stepnum">Step 1</div>
                                             <div class="progress"><div class="progress-bar"></div></div>
@@ -87,42 +85,42 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}" >
-                                                    <label for="state" class="col-md-2 col-md-offset-1" style="text-align= left ">Country</label>
+                                                <div class="form-group{{ $errors->has('id_state') ? ' has-error' : '' }}" >
+                                                    <label for="id_state" class="col-md-2 col-md-offset-1" style="text-align= left ">Country</label>
                                                     <div class="col-md-6">
-                                                        <select id="state" class="state" style="width: 430px ;  height:34px" action="{{ route('weedherba.destination') }} " name="state" value="{{ old('state') }}" autofocus>
-                                                            
+                                                        <select  class="states" style="width: 430px ;  height:34px" id="id_state" name="id_state" value="{{ old('id_state') }}" autofocus>
+                                                            @if(isset($state))
                                                                 <option value="0" disabled="true" selected="true">--Choouse a Country--</option>
                                                                 @foreach($state as $states)
                                                                     <option value="{{$states -> id_state}}">{{$states -> name}}</option>
                                                                 @endforeach
-                                                            
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('name_province') ? ' has-error' : '' }}" >
-                                                    <label for="name_province" class="col-md-2 col-md-offset-1" style="text-align= left ">Province</label>
+                                                <div class="form-group{{ $errors->has('id_prov') ? ' has-error' : '' }}" >
+                                                    <label for="id_prov" class="col-md-2 col-md-offset-1" style="text-align= left ">Province</label>
                                                     <div class="col-md-6">
-                                                        <select id="id_prov"  style="width: 430px ;  height:34px" class="prov" name="id_prov" value="{{ old('id_prov') }}"autofocus>
+                                                        <select style="width: 430px ;  height:34px" class="province" id="id_prov" name="id_prov" value="{{ old('id_prov') }}" autofocus>
                                                             <option value="0" disabled="true" selected="true">--Choouse a Province--</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('name_city') ? ' has-error' : '' }}" >
-                                                    <label for="name_city" class="col-md-2 col-md-offset-1" style="text-align= left ">City</label>
+                                                <div class="form-group{{ $errors->has('id_city') ? ' has-error' : '' }}" >
+                                                    <label for="id_city" class="col-md-2 col-md-offset-1" style="text-align= left ">City</label>
                                                     <div class="col-md-6">
-                                                        <select id="name_city" style="width: 430px ;  height:34px" class="city" name="name_city" value="{{ old('name_city') }}" autofocus>
+                                                        <select style="width: 430px ;  height:34px" class="city"  id="id_city" name="id_city" value="{{ old('id_city') }}"  autofocus>
                                                             <option value="0" disabled="true" selected="true">--Choouse a City--</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('name_district') ? ' has-error' : '' }}" >
-                                                    <label for="name_district" class="col-md-2 col-md-offset-1" style="text-align= left ">District</label>
+                                                <div class="form-group{{ $errors->has('id_district') ? ' has-error' : '' }}" >
+                                                    <label for="id_district" class="col-md-2 col-md-offset-1" style="text-align= left ">District</label>
                                                     <div class="col-md-6">
-                                                        <select id="name_district" style="width: 430px ;  height:34px" class="districts" name="name_district" value="{{ old('name_district') }}"autofocus>
+                                                        <select style="width: 430px ;  height:34px" class="districts" id="id_district" name="id_district" value="{{ old('id_district') }}" autofocus>
                                                             <option value="0" disabled="true" selected="true">--Choouse a District--</option>
                                                         </select>
                                                     </div>
@@ -271,74 +269,121 @@
                  </div>
              </div>
          </div>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
          <script type="text/javascript">
             $(document).ready(function(){
 
-                $(document).on('change','.state',function(){
-                    // console.log("hmm its change");
+                //----Province----
+                $(document).on('change','.states',function(){
+                    console.log("hmm its change");
 
-                    var state_id=$(this).val();
-                    // console.log(cat_id);
+                    var states_id=$(this).val();
+                    console.log(states_id);
                     var div=$(this).parent();
-
+                    
                     var op=" ";
 
-                    $.ajax({
+                     $.ajax({
                         type:'get',
-                        url:'{!!URL::to('findDestination')!!}',
-                        data:{'id':state_id},
+                        url:'{!!URL::to('herbarium-management/weedherba/create/findProv')!!}',
+                        dataType:'json',
+                        data:{'id':states_id},
+                        
                         success:function(data){
-                            //console.log('success');
+                            console.log('success');
 
                             //console.log(data);
-
-                            //console.log(data.length);
-                            op+='<option value="0" selected disabled>choose</option>';
+                            console.log(data.length);  
+                            op+='<option value="0" selected disabled>--Choose a Province--</option>';
                             for(var i=0;i<data.length;i++){
-                            op+='<option value="'+data[i].id+'">'+data[i].prov+'</option>';
-                        }
+                                op+='<option value="'+data[i].id_prov+'">'+data[i].name+'</option>';
+                            }
+                            //console.log(op);
+                            div.find('.province').html(" ");
+                            $('.province').append(op);
+                            //console.log(div);
 
-                        div.find('.prov').html(" ");
-                        div.find('.prov').append(op);
                         },
                         error:function(){
 
                         }
-                    });
+                     });
                 });
 
-               /* $(document).on('change','.prov',function () {
-                    var prov_id=$(this).val();
+                //----City----
+                $(document).on('change','.province',function(){
+                    console.log("hmm its change2");
 
-                    var a=$(this).parent();
-                    console.log(prov_id);
-                    var op="";
-                    $.ajax({
+                    var provs_id=$(this).val();
+                    console.log(provs_id);
+                    var div=$(this).parent().parent();
+                    
+                    var op=" ";
+
+                     $.ajax({
                         type:'get',
-                        url:'{!!URL::to('findDestination')!!}',
-                        data:{'id':prov_id},
-                        dataType:'json',//return data will be json
+                        url:'{!!URL::to('herbarium-management/weedherba/create/findCity')!!}',
+                        dataType:'json',
+                        data:{'id_prov':provs_id},
+                        
                         success:function(data){
-                            console.log("price");
-                            console.log(data.price);
+                            console.log('success');
 
-                            // here price is coloumn name in products table data.coln name
-
-                            a.find('.prod_price').val(data.price);
-
+                            //console.log(data);
+                            console.log(data.length);  
+                            op+='<option value="0" selected disabled>--Choose a City--</option>';
+                            for(var i=0;i<data.length;i++){
+                                op+='<option value="'+data[i].id_city+'">'+data[i].name+'</option>';
+                            }
+                            //console.log(op);
+                            div.find('.city').html(" ");
+                            $('.city').append(op);
+                            //console.log(div);
                         },
                         error:function(){
 
                         }
-                    });
+                     });
+                });
 
+                //----Districts----
+                $(document).on('change','.city',function(){
+                    console.log("hmm its change3");
 
-                });*/
+                    var citys_id=$(this).val();
+                    console.log(citys_id);
+                    var div=$(this).parent().parent().parent();
+                    
+                    var op=" ";
 
+                     $.ajax({
+                        type:'get',
+                        url:'{!!URL::to('herbarium-management/weedherba/create/findDists')!!}',
+                        dataType:'json',
+                        data:{'id_citys':citys_id},
+                        
+                        success:function(data){
+                            console.log('success');
+
+                            //console.log(data);
+                            console.log(data.length);  
+                            op+='<option value="0" selected disabled>--Choose a Districts--</option>';
+                            for(var i=0;i<data.length;i++){
+                                op+='<option value="'+data[i].id_districts+'">'+data[i].name+'</option>';
+                            }
+                            //console.log(op);
+                            div.find('.districts').html(" ");
+                            $('.districts').append(op);
+                            //console.log(div);
+                        },
+                        error:function(){
+
+                        }
+                     });
+
+                });
             });
-        </script>
-
+         </script>
     </section>
 
 @endsection

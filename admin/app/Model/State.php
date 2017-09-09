@@ -9,6 +9,8 @@ class State extends Model
     public $timestamps= false;
 
     protected $table = 'state';
-    
-    protected $fillable = ['name'];
+    protected $primaryKey = 'id_state';
+   // protected $fillable = ['name'];
+
+
 }

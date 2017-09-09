@@ -30,7 +30,6 @@ class LoginController extends Controller
     public function username(){
         return "username";
     }
-
      /**
      * Determine if the user has too many failed login attempts.
      *
@@ -38,7 +37,7 @@ class LoginController extends Controller
      * @return bool
      */
     protected function hasTooManyLoginAttempts ($request) {
-        $maxLoginAttempts = 5;
+        $maxLoginAttempts = 30;
         $lockoutTime = 5; // 5 minutes
         return $this->limiter()->tooManyAttempts(
             $this->throttleKey($request), $maxLoginAttempts, $lockoutTime

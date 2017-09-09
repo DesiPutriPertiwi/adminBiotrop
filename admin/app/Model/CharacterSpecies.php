@@ -1,23 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class CharacterSpecies extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'character_species';
-
-
-    /**
-    * The attributes that aren't mass assignable.
-    *
-    * @var array
-    */
-    protected $guarded = [];
+    public $timestamps = false;
+    protected $table = 'characteristic_species';
+    protected $primaryKey = 'id_character';
 }
