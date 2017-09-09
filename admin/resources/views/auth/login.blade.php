@@ -40,7 +40,7 @@
   <div class="container">
       <div class="col-md-8 col-md-offset-2" style="margin-top:100px">
         <div class="panel panel-primary">
-          <div class="panel-heading text-center"><h3>Log-in System Herbarium Management</h3> </div>
+          <div class="panel-heading text-center"><h3>Herbarium Management System</h3> </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
