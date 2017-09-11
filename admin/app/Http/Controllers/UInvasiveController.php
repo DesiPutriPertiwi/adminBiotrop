@@ -23,11 +23,11 @@ class UInvasiveController extends Controller
       ->join('characteristic_species', 'species.character_id', '=', 'characteristic_species.id_character')
       ->select('speciment_ias.*', 'species.name_species', 'species.habitat', 'control_ias.chemical_ctrl', 'control_ias.manual_ctrl',
      'control_ias.biologycal_ctrl', 'genus.name_genus', 'family.name_family', 'species.species_synonim', 'species.origin_species',
-      'species.description_species', 'species.ecology', 'characteristic_species.picture_species', 	
-				 'characteristic_species.picture_species2', 	
+      'species.description_species', 'species.ecology', 'characteristic_species.picture_species',
+				 'characteristic_species.picture_species2',
 				 'characteristic_species.picture_species3',
-				 'characteristic_species.picture_species4',	
-				 'characteristic_species.picture_species5',	
+				 'characteristic_species.picture_species4',
+				 'characteristic_species.picture_species5',
 				 'characteristic_species.picture_species6')
       ->paginate(10);
 
@@ -49,25 +49,6 @@ class UInvasiveController extends Controller
     return $family;
   }
 
-  // public function search(Request $request){
-  //   $query =  DB::table('speciment_ias')
-  //     ->join('species', 'speciment_ias.species_id', '=', 'species.id_species')
-  //     ->join('genus', 'species.genus_id', '=', 'genus.id_genus')
-  //     ->join('family', 'genus.family_id', '=', 'family.id_family')
-  //     ->join('control_ias', 'speciment_ias.control_id', '=', 'control_ias.id_controll')
-  //     ->select('speciment_ias.*', 'species.name_species', 'species.habitat', 'control_ias.chemical_ctrl', 'control_ias.manual_ctrl',
-  //    'control_ias.biologycal_ctrl', 'genus.name_genus', 'family.name_family', 'species.species_synonim', 'species.origin_species',
-  //     'species.description_species', 'species.ecology');
-  //       $cari = $request->input('search');
-  //
-  //       $searchs = $query->where('', 'LIKE', '%'.$cari.'%')->get();
-  //       if(!empty($searchs)){
-  //           return view('invasive',compact('searchs'));
-  //       }
-  //       else{
-  //           return redirect()->back();
-  //         }
-  //       }
 
   public function search(Request $request) {
         $constraints = [
@@ -85,14 +66,20 @@ class UInvasiveController extends Controller
     }
 
     private function doSearchingQuery($constraints) {
-        $query =  DB::table('speciment_ias')
+        $query =   DB::table('speciment_ias')
           ->join('species', 'speciment_ias.species_id', '=', 'species.id_species')
           ->join('genus', 'species.genus_id', '=', 'genus.id_genus')
           ->join('family', 'genus.family_id', '=', 'family.id_family')
           ->join('control_ias', 'speciment_ias.control_id', '=', 'control_ias.id_controll')
+          ->join('characteristic_species', 'species.character_id', '=', 'characteristic_species.id_character')
           ->select('speciment_ias.*', 'species.name_species', 'species.habitat', 'control_ias.chemical_ctrl', 'control_ias.manual_ctrl',
          'control_ias.biologycal_ctrl', 'genus.name_genus', 'family.name_family', 'species.species_synonim', 'species.origin_species',
-          'species.description_species', 'species.ecology');
+          'species.description_species', 'species.ecology', 'characteristic_species.picture_species',
+    				 'characteristic_species.picture_species2',
+    				 'characteristic_species.picture_species3',
+    				 'characteristic_species.picture_species4',
+    				 'characteristic_species.picture_species5',
+    				 'characteristic_species.picture_species6');
 
         $fields = array_keys($constraints);
         $index = 0;

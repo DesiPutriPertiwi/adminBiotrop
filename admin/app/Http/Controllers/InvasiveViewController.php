@@ -21,22 +21,21 @@ class InvasiveViewController extends Controller
         ->join('verified', 'speciment_ias.verifiedData_id', '=', 'verified.id_verified')
         ->select(
                 'speciment_ias.*',
-                'species.name_species', 
-                'species.habitat', 
-                'control_ias.chemical_ctrl', 
-                'control_ias.manual_ctrl', 
-                'control_ias.biologycal_ctrl', 
-                'genus.name_genus', 
-                'family.name_family', 
-                'verified.status', 
-                'species.species_synonim', 
-                'species.origin_species', 
-                'species.description_species', 
+                'species.name_species',
+                'species.habitat',
+                'control_ias.chemical_ctrl',
+                'control_ias.manual_ctrl',
+                'control_ias.biologycal_ctrl',
+                'genus.name_genus',
+                'family.name_family',
+                'verified.status',
+                'species.species_synonim',
+                'species.origin_species',
+                'species.description_species',
                 'species.ecology');
-        // dd($speciment_ias);
-        
+
         $family         = $speciment_ias->name_family->count();
-        dd($family);
+
         $data['tasks'] = [
                 [
                         'name' => 'Family',

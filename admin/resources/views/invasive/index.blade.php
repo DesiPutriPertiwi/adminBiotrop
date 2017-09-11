@@ -47,6 +47,7 @@
             <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
               <thead>
                 <tr role="row">
+                  <th> No </th>
                   <th width="15%" class="sorting text-center" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Species: activate to sort column ascending">Species Name</th>
                   <th width="25%" class="sorting hidden-xs text-center" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Synonim: activate to sort column ascending">Invaded Habitat</th>
                   <th width="25%" class="sorting hidden-xs text-center" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Common_name: activate to sort column ascending">Distribution</th>
@@ -56,9 +57,10 @@
               </thead>
               <tbody>
               @foreach ($speciment_ias as $ias)
-                @if ($ias->user_id == Auth::user()->id)                
+                @if ($ias->user_id == Auth::user()->id)
                   <tr role="row" class="odd">
-                    <td class="sorting_1 text-left">{{ $ias->name_species }}</td>
+                    <td class="text-center">{{$loop->index+1}}</td>
+                    <td class="sorting_1 text-center"><i>{{ $ias->name_species }}</i></td>
                     <td class="sorting hidden-xs text-left">{!!$ias -> habitat!!}</td>
                     <td class="sorting hidden-xs text-left">{!!$ias-> distribution!!}</td>
                     <td class="sorting  text-center">
@@ -81,7 +83,7 @@
                     </td>
                   </tr>
                 @endif
-              @endforeach   
+              @endforeach
               </tbody>
             </table>
           </div>

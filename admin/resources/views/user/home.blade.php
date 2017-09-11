@@ -4,7 +4,7 @@
 <div class="jumbotron text-center" style="margin-bottom:100px">
     <img src="http://ictb.biotrop.org/templates/theme02/images/foto_biotrop.jpg" id="showgambar" style="width:100%;max-height:400px;float:left;" />
 </div>
-<br><br><br>
+<br>
 
 <div class="container" >
   <div class="text-center" style="margin-top:300px"><strong><h1>Our Collections</h1></strong></div>
@@ -18,11 +18,7 @@
         <h2> Invasive Alien Species </h2>
         <h4> <p class="text-muted text-justify">Invasive alien species (IAS) are species whose introduction and/or spread outside their natural past or present distribution threatens biological diversity.IAS occur in all taxonomic groups, including animals, plants, fungi and microorganisms, and can affect all types of ecosystems. While a small percentage of organisms transported to new environments become invasive, the negative impacts can be extensive and over time, these additions become substantial. </p></h4>
       </div><br><br>
-      <div class=" col-md-12 text-center">
-        <h4><p> kami memiliki {{$total}} herbarium yang terdiri dari 4 jenis herbarium yaitu weed herbarium,
-          forest herbarium, liken herbarium, briovitas dengan jumlah collector sebanyak {{$collector}}
-         </p>
-      </div>
+
     </div>
 </div>
 
@@ -52,6 +48,8 @@
    				  </div>
 			</div>
 @endforeach
+@foreach($terbaru as $terbaru)
+
     <!-- Modal Detail Paket-->
       <div class="modal fade in" id="ModalHerbarium{{$terbaru->id_herbarium}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" value="">
         <div class="modal-dialog modal-lg">
@@ -255,8 +253,10 @@
         </div>
       </div>
     </div>
+@endforeach
     </div>
 </div>
+
 </div>
 </div>
 <style>

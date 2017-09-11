@@ -9,6 +9,8 @@ class Herbarium extends Model
     public $timestamps =false;
     protected $table = 'speciment_herbarium';
     protected $primaryKey = 'id_herbarium';
+    protected $fillable = ['type_herbarium', 'label', 'notes', 'duplicate_id', 'species_id', 'collector_id', 'location_id',
+                            'user_id', 'authorIdentification_id', 'verifiedData_id', 'utilization', 'commen_id', 'delete_at', 'create_at', 'update_at'];
     public function collect()
     {
         return $this->belongsTo('App\Model\Collector', 'collector_id', 'id_collector');

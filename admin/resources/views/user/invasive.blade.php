@@ -73,7 +73,7 @@
 @foreach($iass as $ias)
             <tbody>
               <td class="text-center">{{$loop->index+1}}</td>
-              <td class="text-center"><a href="" data-toggle="modal" data-target="#ModalImage{{$ias->id_ias}}" ><img src="{{asset('ias/' .$ias->picture_species2)}}" style="width:60px;height:60px;float:center;"></a></td>
+              <td class="text-center"><a href="" data-toggle="modal" data-target="#ModalImage{{$ias->id_ias}}" ><img src="{{asset('ias/' .$ias->picture_species)}}" style="width:60px;height:60px;float:center;"></a></td>
               <td class="text-center"><i>{{$ias -> name_species}}</i></td>
               <td class="text-center">{{$ias -> name_family}}</td>
               <td class="text-justify">{!!$ias -> habitat!!}</td>
@@ -216,6 +216,7 @@
 </div>
 @endforeach
 
+<!-- modal image -->
 @foreach($iass as $ias)
 <div class="modal fade in" id="ModalImage{{$ias->id_ias}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" value="">
   <div class="modal-dialog modal-lg">
@@ -243,20 +244,20 @@
                       </ol>
 
                       <div class="carousel-inner">
-                      @if($ias -> picture_species2 != null)
+                      @if($ias -> picture_species != null)
                         <div class="item active"   style="text-align: center">
-                          <img src="{{asset('ias/'.$ias->picture_species2)}}" style="width:100%" class="img-responsive"/>
+                          <img src="{{asset('ias/'.$ias->picture_species)}}" style="width:100%" class="img-responsive"/>
                         </div>
                       @endif
-                      @if($ias -> picture_species3 != null)
+                      @if($ias -> picture_species2 != null)
                         <div class="item"   style="text-align: center">
-                          <img src="{{asset('ias/'.$ias->picture_species3)}}" style="width:100%"  class="img-responsive">
+                          <img src="{{asset('ias/'.$ias->picture_species2)}}" style="width:100%"  class="img-responsive">
                         </div>
                         @endif
-        
-                        @if($ias -> picture_species4 != null)
+
+                        @if($ias -> picture_species3 != null)
                         <div class="item"   style="text-align: center">
-                          <img src="{{asset('ias/'.$ias->picture_species4)}}" style="width:100%" class="img-responsive">
+                          <img src="{{asset('ias/'.$ias->picture_species3)}}" style="width:100%" class="img-responsive">
                         </div>
                         @endif
                       </div>

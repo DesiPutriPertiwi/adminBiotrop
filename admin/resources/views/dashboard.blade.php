@@ -32,26 +32,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -70,7 +50,7 @@ desired effect
       <ol class="breadcrumb">
         @if(Auth::user()-> user_type  == 0)
             <li><a href="#"><i class="fa fa-dashboard"></i>Admin</a></li>
-        @elseif (Auth::user()-> user_type  == 1)   
+        @elseif (Auth::user()-> user_type  == 1)
             <li><a href="#"><i class="fa fa-dashboard"></i>Operator</a></li>
         @elseif (Auth::user()-> user_type  == 2)
             <li><a href="#"><i class="fa fa-dashboard"></i>Verificator</a></li>
@@ -133,7 +113,7 @@ desired effect
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="info-box bg-yellow">
                         <div class="panel-heading">
@@ -158,7 +138,7 @@ desired effect
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="info-box bg-purple">
                         <div class="panel-heading">

@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2017 at 05:14 AM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.0.21
+-- Generation Time: Sep 11, 2017 at 04:26 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -154,9 +152,9 @@ INSERT INTO `author_identification` (`id_author`, `name_author`, `email_author`,
 (115, 'fadfasfa', 'sdfsf@kj.com', '08969786', '2017-08-17', NULL),
 (116, 'fadfasfa', 'sdfsf@kj.com', '08969786', '2017-08-17', NULL),
 (117, 'determinate', 'email@gmeil.com', '0897987987', '2017-08-23', '<p>japan baru raya</p>'),
-(118, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style=\"text-align: left;\">dgdffgd</p>'),
-(119, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style=\"text-align: left;\">dgdffgd</p>'),
-(120, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style=\"text-align: left;\">dgdffgd</p>'),
+(118, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style="text-align: left;">dgdffgd</p>'),
+(119, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style="text-align: left;">dgdffgd</p>'),
+(120, 'fdgdgd', 'gdf@gg.ohj', '086563', '2017-08-15', '<p style="text-align: left;">dgdffgd</p>'),
 (121, 'sfssf', NULL, NULL, '2017-08-08', NULL),
 (122, 'sfssf', NULL, NULL, '2017-08-08', NULL),
 (123, 'antara', 'antara@gmail.com', '098978787676', '2017-08-15', '<p>jalan pekalongan baru&nbsp;</p>'),
@@ -423,7 +421,12 @@ INSERT INTO `characteristic_species` (`id_character`, `description_leaf`, `descr
 (162, NULL, NULL, NULL, NULL, 'Herbarium-sheets-.jpg', NULL, NULL, NULL, NULL, NULL),
 (163, NULL, NULL, NULL, NULL, 'Herbarium-sheets-.jpg', NULL, NULL, NULL, NULL, NULL),
 (164, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(165, NULL, NULL, NULL, NULL, 'digitas sg.png', NULL, NULL, NULL, NULL, NULL);
+(165, NULL, NULL, NULL, NULL, 'digitas sg.png', NULL, NULL, NULL, NULL, NULL),
+(166, NULL, NULL, NULL, NULL, '10962-004-23CDAEDB.jpg', NULL, NULL, NULL, NULL, NULL),
+(167, NULL, NULL, NULL, NULL, '10962-004-23CDAEDB.jpg', NULL, NULL, NULL, NULL, NULL),
+(168, NULL, NULL, NULL, NULL, '10962-004-23CDAEDB.jpg', NULL, NULL, NULL, NULL, NULL),
+(169, NULL, NULL, NULL, NULL, '10962-004-23CDAEDB.jpg', NULL, NULL, NULL, NULL, NULL),
+(170, NULL, NULL, NULL, NULL, '10962-004-23CDAEDB.jpg', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1153,38 +1156,9 @@ CREATE TABLE `control_ias` (
 --
 
 INSERT INTO `control_ias` (`id_controll`, `chemical_ctrl`, `manual_ctrl`, `biologycal_ctrl`) VALUES
-(1, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(2, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(3, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(4, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(5, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(6, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(7, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(8, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(9, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(10, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(11, '<p>test 123dsd</p>', '<p>&nbsp;test 123s</p>', '<p>&nbsp;test 1235</p>'),
-(12, '<p>ada</p>', '<p>ada</p>', '<p>ada</p>'),
-(13, NULL, NULL, NULL),
-(14, '<p>baru <em>ini</em><strong> aja</strong></p>', '<p>baru <em>ini</em><strong> aja</strong></p>', '<p>baru <em>ini</em><strong> aja</strong></p>'),
-(15, '<p>chemical control&nbsp;</p>', '<p>manual control</p>', '<p>biologycal control</p>'),
-(16, '<p>percobaan3</p>', '<p>percobaan6</p>', '<p>percobaan4</p>'),
-(17, 'satu', 'satu', 'satu'),
-(18, '<p>dsasadada</p>', '<p>dsasadada</p>', '<p>dsasadada</p>'),
-(19, '<p>dsasadada</p>', '<p>dsasadada</p>', '<p>dsasadada</p>'),
-(20, '<p>contol secara kimia</p>', '<p>manual <strong>control</strong></p>', '<p><em>biologycal</em></p>'),
-(21, '<p>chemical baru&nbsp;</p>', '<p>manual baru&nbsp;</p>', '<p>biological baru&nbsp;</p>'),
-(22, '<p>chemical baru&nbsp;</p>', '<p>manual baru&nbsp;</p>', '<p>biological baru&nbsp;</p>'),
-(23, NULL, NULL, NULL),
-(24, '<p>s</p>', '<p>s</p>', '<p>s</p>'),
-(25, '<p>safsfs</p>', '<p>sfsfsf</p>', '<p>sfsfas</p>'),
-(26, '<p>ghdfhdfgh</p>', '<p>fdhdf</p>', '<p>hfghdf</p>'),
-(27, NULL, NULL, NULL),
-(28, NULL, NULL, NULL),
-(29, '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>'),
-(30, '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>'),
-(31, '<p>g</p>', '<p>g</p>', '<p>g</p>'),
-(32, '<p>r</p>', '<p>r</p>', '<p>r</p>');
+(33, NULL, NULL, NULL),
+(34, NULL, NULL, NULL),
+(35, '<p>&nbsp;-</p>', '<p>&nbsp;-</p>', '<p>&nbsp;-</p>');
 
 -- --------------------------------------------------------
 
@@ -4996,7 +4970,7 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99352803', '993528', 'Galis'),
 ('99352804', '993528', 'Pamekasan'),
 ('99352805', '993528', 'Proppo'),
-('99352806', '993528', 'Palenga\"an'),
+('99352806', '993528', 'Palenga"an'),
 ('99352807', '993528', 'Pegantenan'),
 ('99352808', '993528', 'Larangan'),
 ('99352809', '993528', 'Pakong'),
@@ -5025,7 +4999,7 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99352919', '993529', 'Gapura'),
 ('99352920', '993529', 'Gayam'),
 ('99352921', '993529', 'Nonggunong'),
-('99352922', '993529', 'Ra\"as'),
+('99352922', '993529', 'Ra"as'),
 ('99352923', '993529', 'Masalembu'),
 ('99352924', '993529', 'Arjasa'),
 ('99352925', '993529', 'Sapeken'),
@@ -5370,7 +5344,7 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99520429', '995204', 'Lantung'),
 ('99520501', '995205', 'Dompu'),
 ('99520502', '995205', 'Kempo'),
-('99520503', '995205', 'Hu(\'u'),
+('99520503', '995205', 'Hu(''u'),
 ('99520504', '995205', 'Kilo'),
 ('99520505', '995205', 'Woja'),
 ('99520506', '995205', 'Pekat'),
@@ -5452,7 +5426,7 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99530207', '995302', 'Amanuban Barat'),
 ('99530208', '995302', 'Amanatun Selatan'),
 ('99530209', '995302', 'Amanatun Utara'),
-('99530210', '995302', 'KI(\'E'),
+('99530210', '995302', 'KI(''E'),
 ('99530211', '995302', 'Kuanfatu'),
 ('99530212', '995302', 'Fatumnasi'),
 ('99530213', '995302', 'Polen'),
@@ -6404,7 +6378,7 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99710407', '997104', 'Melonguane'),
 ('99710408', '997104', 'Gemeh'),
 ('99710409', '997104', 'Damau'),
-('99710410', '997104', 'Tampan(\' Amma'),
+('99710410', '997104', 'Tampan('' Amma'),
 ('99710411', '997104', 'Salibabu'),
 ('99710412', '997104', 'Kalongan'),
 ('99710413', '997104', 'Miangas'),
@@ -6945,13 +6919,13 @@ INSERT INTO `districts` (`id_districts`, `city_id`, `name`) VALUES
 ('99732603', '997326', 'Nanggala'),
 ('99732604', '997326', 'Rindingallo'),
 ('99732605', '997326', 'Buntao'),
-('99732606', '997326', 'Sa(\'dan'),
+('99732606', '997326', 'Sa(''dan'),
 ('99732607', '997326', 'Sanggalangi'),
 ('99732608', '997326', 'Sopai'),
 ('99732609', '997326', 'Tikala'),
 ('99732610', '997326', 'Balusu'),
 ('99732611', '997326', 'Tallunglipu'),
-('99732612', '997326', 'Dende(\' Piongan Napo'),
+('99732612', '997326', 'Dende('' Piongan Napo'),
 ('99732613', '997326', 'Buntu Pepasan'),
 ('99732614', '997326', 'Baruppu'),
 ('99732615', '997326', 'Kesu'),
@@ -8469,168 +8443,72 @@ INSERT INTO `duplicate` (`id_dupt`, `number_duptAll`, `dupt_form`, `number_form`
 
 CREATE TABLE `family` (
   `id_family` int(11) NOT NULL,
-  `name_family` varchar(255) DEFAULT NULL,
+  `name_family` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `ordo_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `family`
 --
 
 INSERT INTO `family` (`id_family`, `name_family`, `ordo_id`) VALUES
-(1, 'fadsfdaf', NULL),
-(2, 'fadsfdaf', NULL),
-(3, 'fadsfdaf', NULL),
-(4, 'fadsfdaf', NULL),
-(5, 'fadsfdaf', NULL),
-(6, 'fadsfdaf', NULL),
-(7, 'fadsfdaf', NULL),
-(8, 'fadsfdaf', NULL),
-(9, 'fadsfdaf', NULL),
-(10, 'fadsfdaf', NULL),
-(11, 'fadsfdaf', NULL),
-(12, 'fadsfdaf', NULL),
-(13, 'fadsfdaf', NULL),
-(14, 'fadsfdaf', NULL),
-(15, 'fadsfdaf', NULL),
-(16, 'fadsfdaf', NULL),
-(17, 'fadsfdaf', NULL),
-(18, 'fadsfdaf', NULL),
-(19, 'fadsfdaf', NULL),
-(20, 'fadsfdaf', NULL),
-(21, 'fadsfdaf', NULL),
-(22, 'fadsfdaf', NULL),
-(23, 'fadsfdaf', NULL),
-(24, 'fadsfdaf', NULL),
-(25, 'fadsfdaf', NULL),
-(26, 'fadsfdaf', NULL),
-(27, 'fadsfdaf', NULL),
-(28, 'fadsfdaf', NULL),
-(29, 'fadsfdaf', NULL),
-(30, 'fadsfdaf', NULL),
-(31, 'fadsfdaf', NULL),
-(32, 'fadsfdaf', NULL),
-(33, 'fadsfdaf', NULL),
-(34, 'fadsfdaf', NULL),
-(35, 'fadsfdaf', NULL),
-(36, 'fadsfdaf', NULL),
-(37, 'fadsfdaf', NULL),
-(38, 'fadsfdaf', NULL),
-(39, 'fadsfdaf', NULL),
-(40, 'dfdfs', NULL),
-(41, 'test', NULL),
-(42, 'test', NULL),
-(43, 'test', NULL),
-(44, 'test', NULL),
-(45, 'test', NULL),
-(46, 'test', NULL),
-(47, 'test', NULL),
-(48, 'test', NULL),
-(49, 'test', NULL),
-(50, 'test', NULL),
-(51, 'test', NULL),
-(52, 'test', NULL),
-(53, 'test', NULL),
-(54, 'dfsgdfs', NULL),
-(55, 'baru', NULL),
-(56, 'family', NULL),
-(57, 'percobaan', NULL),
-(58, 'test', NULL),
-(59, 'dsasadada', NULL),
-(60, 'dsasadada', NULL),
-(61, 'coba speciment', NULL),
-(62, 'herbarium', NULL),
-(63, 'herbarium', NULL),
-(64, 'herbarium', NULL),
-(65, 'herbarium', NULL),
-(66, 'herbarium', NULL),
-(67, 'herbarium', NULL),
-(68, 'test', NULL),
-(69, 'test', NULL),
-(70, 'test', NULL),
-(71, 'test', NULL),
-(72, 'test', NULL),
-(73, 'test', NULL),
-(74, 'test', NULL),
-(75, 'test', NULL),
-(76, 'test', NULL),
-(77, 'test', NULL),
-(78, 'test', NULL),
-(79, 'test', NULL),
-(80, 'test', NULL),
-(81, 'satu', NULL),
-(82, 'familybaru', NULL),
-(83, 'familybaru', NULL),
-(84, 'fggdg', NULL),
-(85, 'tahap satu', NULL),
-(86, 'sgsgs', NULL),
-(87, 'dfsdfds', NULL),
-(88, 'dsfsdafs', NULL),
-(89, 'dfdgsgd', NULL),
-(90, 'dgdgd', NULL),
-(91, 'dgdgd', NULL),
-(92, 'setuju', NULL),
-(93, 'setuju', NULL),
-(94, 'gsds', NULL),
-(95, 'gsds', NULL),
-(96, 'gsds', NULL),
-(97, 'gsds', NULL),
-(98, 'gsds', NULL),
-(99, 'gsds', NULL),
-(100, 'gsds', NULL),
-(101, 'gsds', NULL),
-(102, NULL, NULL),
-(103, NULL, NULL),
-(104, NULL, NULL),
-(105, NULL, NULL),
-(106, NULL, NULL),
-(107, NULL, NULL),
-(108, 'fdhfgh', NULL),
-(109, 'fdhfgh', NULL),
-(110, 'teman', NULL),
-(111, 'lichen', NULL),
-(112, 'licneh familly', NULL),
-(113, 'sfsaf', NULL),
-(114, 'brisfds', NULL),
-(115, 'dgdgd', NULL),
-(116, 'dgdgd', NULL),
-(117, 'dgdgd', NULL),
-(118, 'sdfsafsf', NULL),
-(119, 'pagi', NULL),
-(120, 'pagi', NULL),
-(121, 'dfdsf', NULL),
-(122, 'dfdsf', NULL),
-(123, 'dfdsf', NULL),
-(124, 'dfdsf', NULL),
-(125, 'dfdsf', NULL),
-(126, 'dfdsf', NULL),
-(127, 'dfdsf', NULL),
-(128, NULL, NULL),
-(129, NULL, NULL),
-(130, NULL, NULL),
-(131, 'khgk', NULL),
-(132, 'khgk', NULL),
-(133, 'khgk', NULL),
-(134, NULL, NULL),
-(135, 'r', NULL),
-(136, 'g', NULL),
-(137, NULL, NULL),
-(138, 'r', NULL),
-(139, 'i', NULL),
-(140, 'i', NULL),
-(141, 'i', NULL),
-(142, 'ii', NULL),
-(143, 'ii', NULL),
-(144, NULL, NULL),
-(145, NULL, NULL),
-(146, 'f', NULL),
-(147, 'f', NULL),
-(148, 'petnai', NULL),
-(149, 'petnai', NULL),
-(150, 'brio', NULL),
-(151, 'brio', NULL),
-(152, 'dfaf', NULL),
-(153, NULL, NULL);
+(1, 'Actinodiscaceae', NULL),
+(2, 'Asterolampraceae', NULL),
+(3, 'Biddulphiaceae', NULL),
+(4, 'Chaetoceraceae', NULL),
+(5, 'Chaetocerotaceae', NULL),
+(6, 'Coscinodiscaceae', NULL),
+(7, 'Cymatosiraceae', NULL),
+(8, 'Eupodiscaceae', NULL),
+(9, 'Hemiaulaceae', NULL),
+(10, 'Melosiraceae', NULL),
+(11, 'Rhizosoleniaceae', NULL),
+(12, 'Thalassionemataceae', NULL),
+(13, 'Thalassiosiraceae', NULL),
+(14, 'Acrasiaceae', NULL),
+(15, 'Guttulinaceae', NULL),
+(16, 'Agyriaceae', NULL),
+(17, 'Arthoniaceae', NULL),
+(18, 'Chrysothricaceae', NULL),
+(19, 'Roccellaceae', NULL),
+(20, 'Boliniaceae', NULL),
+(21, 'Catabotrydaceae', NULL),
+(22, 'Calosphaeriaceae', NULL),
+(23, 'Capnodiaceae', NULL),
+(24, 'Chaetothyriaceae', NULL),
+(25, 'Herpotrichiellaceae', NULL),
+(26, 'Coryneliaceae', NULL),
+(27, 'Incertae sedis', NULL),
+(28, 'Melanconidaceae', NULL),
+(29, 'Valsaceae', NULL),
+(30, 'Botryosphaeriaceae', NULL),
+(31, 'Coccoideaceae', NULL),
+(32, 'Dothideaceae', NULL),
+(33, 'Dothioraceae', NULL),
+(34, 'Incertae sedis', NULL),
+(35, 'Elaphomycetaceae', NULL),
+(36, 'Erysiphaceae', NULL),
+(37, 'Trichocomaceae', NULL),
+(38, 'Gyalectaceae', NULL),
+(39, 'Halosphaeriaceae', NULL),
+(40, 'Ascocorticiaceae', NULL),
+(41, 'Bulgariaceae', NULL),
+(42, 'Cudoniaceae', NULL),
+(43, 'Dermateaceae', NULL),
+(44, 'Helotiaceae', NULL),
+(45, 'Hemiphacidiaceae', NULL),
+(46, 'Hyaloscyphaceae', NULL),
+(47, 'Loramycetaceae', NULL),
+(48, 'Phacidiaceae', NULL),
+(49, 'Rutstroemiaceae', NULL),
+(50, 'Sclerotiniaceae', NULL),
+(51, 'Vibrisseaceae', NULL),
+(52, 'Bionectriaceae', NULL),
+(53, 'Ceratostomataceae', NULL),
+(54, 'Clavicipitaceae', NULL),
+(55, 'Hypocreaceae', NULL),
+(56, 'Nectriaceae', NULL),
+(57, 'Asteraceae', NULL);
 
 -- --------------------------------------------------------
 
@@ -8640,165 +8518,34 @@ INSERT INTO `family` (`id_family`, `name_family`, `ordo_id`) VALUES
 
 CREATE TABLE `genus` (
   `id_genus` int(11) NOT NULL,
-  `name_genus` varchar(255) DEFAULT NULL,
-  `family_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name_genus` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `family_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `genus`
 --
 
 INSERT INTO `genus` (`id_genus`, `name_genus`, `family_id`) VALUES
-(1, 'afdasdfas', NULL),
-(2, 'afdasdfas', NULL),
-(3, 'afdasdfas', NULL),
-(4, 'afdasdfas', NULL),
-(5, 'afdasdfas', NULL),
-(6, 'afdasdfas', NULL),
-(7, 'afdasdfas', NULL),
-(8, 'afdasdfas', NULL),
-(9, 'afdasdfas', NULL),
-(10, 'afdasdfas', NULL),
-(11, 'afdasdfas', NULL),
-(12, 'afdasdfas', NULL),
-(13, 'afdasdfas', 17),
-(14, 'afdasdfas', NULL),
-(15, 'afdasdfas', NULL),
-(16, 'afdasdfas', NULL),
-(17, 'afdasdfas', NULL),
-(18, 'afdasdfas', NULL),
-(19, 'afdasdfas', 23),
-(20, 'afdasdfas', 24),
-(21, 'afdasdfas', 25),
-(22, 'afdasdfas', 26),
-(23, 'afdasdfas', 27),
-(24, 'afdasdfas', 28),
-(25, 'afdasdfas', 29),
-(26, 'afdasdfas', 30),
-(27, 'afdasdfas', 31),
-(28, 'afdasdfas', 32),
-(29, 'afdasdfas', 33),
-(30, 'afdasdfas', 34),
-(31, 'afdasdfas', 35),
-(32, 'afdasdfas', 36),
-(33, 'afdasdfas', 37),
-(34, 'afdasdfas', 38),
-(35, 'afdasdfas', 39),
-(36, 'safafds', 40),
-(37, 'test123', 41),
-(38, 'test123', 42),
-(39, 'test123', 43),
-(40, 'test123', 44),
-(41, 'test123', 45),
-(42, 'test123', 46),
-(43, 'test123', 47),
-(44, 'test123', 48),
-(45, 'test123', 49),
-(46, 'test123', 50),
-(47, 'test123', 51),
-(48, 'test123', 52),
-(49, 'test123', 53),
-(50, 'ada', NULL),
-(51, 'gdsgds', 54),
-(52, 'baru', 55),
-(53, 'genus', 56),
-(54, 'test', 57),
-(55, 'coba', 58),
-(56, 'dsasadada', 59),
-(57, 'dsasadada', 60),
-(58, 'genus 1', 61),
-(59, 'herbarium', 62),
-(60, 'herbarium', 63),
-(61, 'herbarium', 64),
-(62, 'herbarium', 65),
-(63, 'herbarium', 66),
-(64, 'herbarium', 67),
-(65, 'test', 68),
-(66, 'test', 69),
-(67, 'test', 70),
-(68, 'test', 71),
-(69, 'test', 72),
-(70, 'test', 73),
-(71, 'test', 74),
-(72, 'test', 75),
-(73, 'test', 76),
-(74, 'test', 77),
-(75, 'test', 78),
-(76, 'test', 79),
-(77, 'test', 80),
-(78, 'satu', 81),
-(79, 'genus baru', 82),
-(80, 'genus baru', 83),
-(81, 'dgdsfgds', 84),
-(82, 'tahap satu', 85),
-(83, 'gsgs', 86),
-(84, 'fsdfdssdf', 87),
-(85, 'fdasfasf', 88),
-(86, 'gdfgd', 89),
-(87, 'gdgdgd', 90),
-(88, 'gdgdgd', 91),
-(89, 'setuju', 92),
-(90, 'setuju', 93),
-(91, 'gs', 94),
-(92, 'gs', 95),
-(93, 'gs', 96),
-(94, 'gs', 97),
-(95, 'gs', 98),
-(96, 'gs', 99),
-(97, 'gs', 100),
-(98, 'gs', 101),
-(99, NULL, 102),
-(100, NULL, 103),
-(101, NULL, 104),
-(102, NULL, 105),
-(103, NULL, 106),
-(104, NULL, 107),
-(105, 'fhfhdh', 108),
-(106, 'fhfhdh', 109),
-(107, 'teman', 110),
-(108, 'lichen', 111),
-(109, 'lichen genus', 112),
-(110, 'sfsdfd', 113),
-(111, 'brios', 114),
-(112, 'dfd', 115),
-(113, 'dfd', 116),
-(114, 'dfd', 117),
-(115, 'yhjg', 118),
-(116, 'pagi', 119),
-(117, 'pagi', 120),
-(118, NULL, 121),
-(119, NULL, 122),
-(120, NULL, 123),
-(121, NULL, 124),
-(122, NULL, 125),
-(123, NULL, 126),
-(124, NULL, 127),
-(125, NULL, 128),
-(126, NULL, 129),
-(127, NULL, 130),
-(128, 'uu', 131),
-(129, 'uu', 132),
-(130, 'uu', 133),
-(131, NULL, 134),
-(132, 'r', 135),
-(133, 'g', 136),
-(134, NULL, 137),
-(135, 'r', 138),
-(136, 'i', 139),
-(137, 'i', 140),
-(138, 'i', 141),
-(139, 'i', 142),
-(140, 'i', 143),
-(141, NULL, 144),
-(142, NULL, 145),
-(143, 'f', 146),
-(144, 'f', 147),
-(145, 'petnai', 148),
-(146, 'petnai', 149),
-(147, 'brio', 150),
-(148, 'brio', 151),
-(149, NULL, 152),
-(150, NULL, 153);
+(141, 'Acrasis', 14),
+(161, 'Placynthiella', 16),
+(162, 'Rimularia', 16),
+(163, 'Sarea', 16),
+(164, 'Schaereria', 16),
+(165, 'Trapelia', 16),
+(166, 'Trapeliopsis', 16),
+(171, 'Arthonia', 17),
+(181, 'Chrysothrix', 18),
+(191, 'Bactrospora', 19),
+(192, 'Cresponea', 19),
+(193, 'Dirina', 19),
+(194, 'Enterographa', 19),
+(195, 'Epiphora', 19),
+(196, 'Lecanactis', 19),
+(197, 'Opegrapha', 19),
+(198, 'Schismatomma', 19),
+(199, 'Syncesia', 19),
+(200, 'Acanthospermum', 57);
 
 -- --------------------------------------------------------
 
@@ -9130,18 +8877,18 @@ INSERT INTO `province` (`id_prov`, `state_id`, `name`) VALUES
 
 CREATE TABLE `species` (
   `id_species` int(11) NOT NULL,
-  `genus_id` int(11) DEFAULT NULL,
+  `genus_id` int(11) NOT NULL,
   `name_species` varchar(255) DEFAULT NULL,
   `subspecies` varchar(255) DEFAULT NULL,
   `variety` varchar(255) DEFAULT NULL,
   `origin_species` varchar(255) DEFAULT NULL,
   `species_synonim` varchar(255) DEFAULT NULL,
   `vernacular_id` int(11) DEFAULT NULL,
-  `description_species` varchar(255) DEFAULT NULL,
+  `description_species` longtext,
   `agricimport` varchar(255) DEFAULT NULL,
   `habitat` varchar(255) DEFAULT NULL,
   `phenology` varchar(255) DEFAULT NULL,
-  `ecology` varchar(255) DEFAULT NULL,
+  `ecology` longtext,
   `biology` varchar(255) DEFAULT NULL,
   `inflorencence` varchar(255) DEFAULT NULL,
   `habitus` varchar(255) DEFAULT NULL,
@@ -9153,147 +8900,9 @@ CREATE TABLE `species` (
 --
 
 INSERT INTO `species` (`id_species`, `genus_id`, `name_species`, `subspecies`, `variety`, `origin_species`, `species_synonim`, `vernacular_id`, `description_species`, `agricimport`, `habitat`, `phenology`, `ecology`, `biology`, `inflorencence`, `habitus`, `character_id`) VALUES
-(1, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, NULL, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', NULL, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 20, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 26, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 23),
-(14, 21, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 27, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24),
-(15, 22, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 28, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 25),
-(16, 23, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 29, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 26),
-(17, 24, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 30, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 27),
-(18, 25, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 31, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 28),
-(19, 26, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 32, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 29),
-(20, 27, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 33, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 30),
-(21, 28, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 34, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 31),
-(22, 29, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 35, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 32),
-(23, 30, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 36, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 33),
-(24, 31, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 37, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 34),
-(25, 32, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 38, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 35),
-(26, 33, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 39, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 36),
-(27, 34, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 40, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 37),
-(28, 35, 'fdasfas', 'fasfdsaf', 'asfasf', 'asdfasdf', 'asdfsadf', 41, '<p>sdfdsafasdfa</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 38),
-(29, 37, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 46),
-(30, 38, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 47),
-(31, 39, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 48),
-(32, 40, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 49),
-(33, 41, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 50),
-(34, 42, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 51),
-(35, 43, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 52),
-(36, 44, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 53),
-(37, 45, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 54),
-(38, 46, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 55),
-(39, 47, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 56),
-(40, 48, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 57),
-(41, 49, 'past', NULL, NULL, 'next', '<p>last</p>', NULL, '<p>test 1231</p>', NULL, '<p>test 123</p>', NULL, '<p>test 123f</p>', NULL, NULL, NULL, 58),
-(42, 50, 'ada', NULL, NULL, 'ada', '<p>ada</p>', NULL, '<p>ada</p>', NULL, '<p>ada</p>', NULL, '<p>ada</p>', NULL, NULL, NULL, 59),
-(43, 51, 'species aja', NULL, NULL, 'origin', '<p>gdfgds</p>', NULL, NULL, NULL, '<p>dgds</p>', NULL, '<p>dgds</p>', NULL, NULL, NULL, 66),
-(44, 52, 'baru', NULL, NULL, 'baru', '<ol>\r\n<li>baru <em>ini</em><strong> aja</strong></li>\r\n<li><strong>baru ini <em>aja</em></strong></li>\r\n</ol>', NULL, '<p><strong>baru <em>ini</em> aja</strong></p>', NULL, '<p>baru <em>ini</em><strong> ajabaru <em>ini</em> aja</strong></p>', NULL, '<p>baru <em>ini</em><strong> aja</strong></p>', NULL, NULL, NULL, 67),
-(45, 53, 'species', NULL, NULL, 'origin', '<p>synonim</p>', NULL, '<p>description</p>', NULL, '<p>invaded Hebitat</p>', NULL, '<p>ecology</p>', NULL, NULL, NULL, 68),
-(46, 54, 'satu', NULL, NULL, 'tiga', '<p>percobaan</p>', NULL, '<p>percobaan1</p>', NULL, '<p>percobaan12</p>', NULL, '<p>percobaan8</p>', NULL, NULL, NULL, 69),
-(47, 55, 'coba', NULL, NULL, 'satu', 'satu', NULL, 'satu', NULL, 'satu', NULL, 'satu', NULL, NULL, NULL, 70),
-(48, 56, 'dsasadada', NULL, NULL, 'dsasadada', '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, NULL, NULL, 71),
-(49, 57, 'dsasadada', NULL, NULL, 'dsasadada', '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, '<p>dsasadada</p>', NULL, NULL, NULL, 72),
-(50, 58, 'species baru', NULL, NULL, 'jalan', '<p>new</p>', NULL, '<p>baru coba-coba</p>', NULL, '<p>jalan raya</p>', NULL, '<p>ecology</p>', NULL, NULL, NULL, 73),
-(51, 59, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 42, '<p>herbarium tanamaan <em>langaka,&nbsp;</em>susah di cari. hanaya daerah <strong>tertentu</strong></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 74),
-(52, 60, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 43, '<p>herbarium tanamaan <em>langaka,&nbsp;</em>susah di cari. hanaya daerah <strong>tertentu</strong></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 75),
-(53, 61, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 44, '<p>herbarium tanamaan <em>langaka,&nbsp;</em>susah di cari. hanaya daerah <strong>tertentu</strong></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 76),
-(54, 62, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 45, '<p>herbarium tanamaan <em>langaka,&nbsp;</em>susah di cari. hanaya daerah <strong>tertentu</strong></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 77),
-(55, 63, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 46, '<p>herbarium tanamaan <em>langaka,&nbsp;</em>susah di cari. hanaya daerah <strong>tertentu</strong></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 78),
-(56, 64, 'herbarium', 'herbarium', 'herbarium', 'herbarium', 'herbarium', 47, 'herbarium', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 79),
-(57, 65, 'test', 'test', 'test', 'test', 'test', 48, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 80),
-(58, 66, 'test', 'test', 'test', 'test', 'test', 49, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 81),
-(59, 67, 'test', 'test', 'test', 'test', 'test', 50, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 82),
-(60, 68, 'test', 'test', 'test', 'test', 'test', 51, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 83),
-(61, 69, 'test', 'test', 'test', 'test', 'test', 52, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 84),
-(62, 70, 'test', 'test', 'test', 'test', 'test', 53, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 85),
-(63, 71, 'test', 'test', 'test', 'test', 'test', 54, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 86),
-(64, 72, 'test', 'test', 'test', 'test', 'test', 55, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 87),
-(65, 73, 'test', 'test', 'test', 'test', 'test', 56, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 88),
-(66, 74, 'test', 'test', 'test', 'test', 'test', 57, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 89),
-(67, 75, 'test', 'test', 'test', 'test', 'test', 58, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 90),
-(68, 76, 'test', 'test', 'test', 'test', 'test', 59, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 91),
-(69, 77, 'test', 'test', 'test', 'test', 'test', 60, '<p>testtesttesttesttesttesttesttesttest</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 165),
-(70, 78, 'satu', 'satu', 'satu', 'satu', 'satu', 61, '<p>satu</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 165),
-(71, 79, 'species baru', NULL, NULL, 'origin baru', '<p>synonim baru&nbsp;</p>', NULL, '<p>description baru</p>', NULL, '<p>invaded baru</p>', NULL, '<p>ecology baru&nbsp;</p>', NULL, NULL, NULL, 94),
-(72, 80, 'species baru terdistribusi', NULL, NULL, 'origin baru', '<p>synonim baru&nbsp;</p>', NULL, '<p>description baru</p>', NULL, '<p>invaded baru</p>', NULL, '<p>ecology baru&nbsp;</p>', NULL, NULL, NULL, 95),
-(73, 81, 'gdgdsfd', NULL, NULL, 'dgd', '<p>dgdg</p>', NULL, NULL, NULL, '<p>dgdfg</p>', NULL, NULL, NULL, NULL, NULL, 96),
-(74, 82, 'tahap satutahap satu', 'tahap satu', 'tahap satu', NULL, NULL, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 97),
-(75, 83, 'gs', 'gsgs', 'gsgs', 'gsgs', NULL, 63, '<p>sgs</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 98),
-(76, 84, 'sfsfsfs', NULL, NULL, 's', '<p>s</p>', NULL, '<p>s</p>', NULL, '<p>s</p>', NULL, '<p>s</p>', NULL, NULL, NULL, 99),
-(77, 85, 'safsdfsa', NULL, NULL, 'fsfsfs', '<p>sfss</p>', NULL, '<p>sfsfs</p>', NULL, '<p>fafsfs</p>', NULL, '<p>sfsfs</p>', NULL, NULL, NULL, 100),
-(78, 86, 'ffghfhfg', NULL, NULL, 'hfdghf', '<p>hfdghfhf</p>', NULL, '<p>hfdghf</p>', NULL, '<p>fghfdhfd</p>', NULL, '<p>gfhfghdf</p>', NULL, NULL, NULL, 101),
-(79, 87, 'dgdgd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 102),
-(80, 88, 'dgdgd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 103),
-(81, 89, 'setuju', NULL, NULL, 'setuju', '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, NULL, NULL, 104),
-(82, 90, 'setuju', NULL, NULL, 'setuju', '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, '<p>setuju</p>', NULL, NULL, NULL, 105),
-(83, 91, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 64, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 106),
-(84, 92, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 65, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 107),
-(85, 93, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 66, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 108),
-(86, 94, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 67, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 109),
-(87, 95, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 68, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 110),
-(88, 96, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 69, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 111),
-(89, 97, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 70, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 112),
-(90, 98, 'gsdds', 'dgds', 'sdgs', 'sfgs', 'dsfgs', 71, '<p>sgdsgd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 113),
-(91, 99, NULL, NULL, NULL, NULL, NULL, 72, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 114),
-(92, 100, NULL, NULL, NULL, NULL, NULL, 73, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 115),
-(93, 101, NULL, NULL, NULL, NULL, NULL, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 116),
-(94, 102, NULL, NULL, NULL, NULL, NULL, 75, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 117),
-(95, 103, NULL, NULL, NULL, NULL, NULL, 76, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 118),
-(96, 104, NULL, NULL, NULL, NULL, NULL, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 119),
-(97, 106, 'fhdf', 'ghdfh', 'dfhdfhd', 'ghdhdh', 'dhdh', 79, '<p>ghgfhd</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 121),
-(98, 107, 'teman', 'teman', 'teman', 'teman', 'teman', 80, '<p>ruka taman teman&nbsp;</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 122),
-(99, 108, 'lichen baru', 'subspecies', 'variety', 'origin', 'synonim', 81, '<p>lichen umut&nbsp;</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 123),
-(100, 109, 'species genus', 'subspecies genus', 'variety', 'origin', 'synonim', 82, '<p>vena&nbsp;</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 124),
-(101, 110, 'brio', 'asdfa', 'sfdsfs', 'fsfsfs', 'fsfss', 83, '<p>fsfsfs</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 125),
-(102, 111, 'bryovitas', 'dfafas', 'agsadgsg', 'sgsdgs', 'gsgsg', 84, '<p>gsgsgs</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 126),
-(103, 112, 'briovitassss', 'ddfdfdsfdf', 'dfdfdf', 'fhfhg', 'jghjghj', 85, '<p>hjghjgj</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 127),
-(104, 113, 'briovitassss', 'ddfdfdsfdf', 'dfdfdf', 'fhfhg', 'jghjghj', 86, '<p>hjghjgj</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 128),
-(105, 114, 'briovitassss', 'ddfdfdsfdf', 'dfdfdf', 'fhfhg', 'jghjghj', 87, '<p>hjghjgj</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 129),
-(106, 115, 'jghjg', 'gjgj', 'gjgj', 'gjg', 'gjg', 88, '<p>&nbsp;jgjg</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 130),
-(107, 116, 'pagi', 'pagi', 'pagi', 'pagi', 'pagi', 89, '<p>pagi</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 131),
-(108, 117, 'pagi', 'pagi', 'pagi', 'pagi', 'pagi', 90, '<p>pagi</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 132),
-(109, 118, NULL, NULL, NULL, NULL, NULL, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 133),
-(110, 119, NULL, NULL, NULL, NULL, NULL, 92, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 134),
-(111, 120, NULL, NULL, NULL, NULL, NULL, 93, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 135),
-(112, 121, NULL, NULL, NULL, NULL, NULL, 94, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 136),
-(113, 122, NULL, NULL, NULL, NULL, NULL, 95, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 137),
-(114, 123, NULL, NULL, NULL, NULL, NULL, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 138),
-(115, 124, NULL, NULL, NULL, NULL, NULL, 97, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 139),
-(116, 125, NULL, NULL, NULL, NULL, NULL, 98, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 140),
-(117, 126, NULL, NULL, NULL, NULL, NULL, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 141),
-(118, 127, NULL, NULL, NULL, NULL, NULL, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 142),
-(119, 128, 'uu', 'uu', 'uu', 'uu', 'uuu', 101, '<p>uu</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 143),
-(120, 129, 'uu', 'uu', 'uu', 'uu', 'uuu', 102, '<p>uu</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 144),
-(121, 130, 'uu', 'uu', 'uu', 'uu', 'uuu', 103, '<p>uu</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 145),
-(122, 131, NULL, NULL, NULL, NULL, NULL, 104, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 146),
-(123, 132, 'r', 'r', 'r', NULL, NULL, 105, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 147),
-(124, 133, 'g', NULL, NULL, 'g', '<p>g</p>', NULL, '<p>g</p>', NULL, '<p>g</p>', NULL, '<p>g</p>', NULL, NULL, NULL, 148),
-(125, 134, NULL, NULL, NULL, NULL, NULL, 106, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 149),
-(126, 135, 'rr', NULL, NULL, 'r', '<p>r</p>', NULL, '<p>r</p>', NULL, '<p>r</p>', NULL, '<p>r</p>', NULL, NULL, NULL, 150),
-(127, 136, 'i', 'i', 'i', 'i', 'i', 107, '<p>i</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 151),
-(128, 137, 'i', 'i', 'i', 'i', 'i', 108, '<p>i</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 152),
-(129, 138, 'i', 'i', 'i', 'i', 'i', 109, '<p>i</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 153),
-(130, 139, 'i', 'i', 'i', 'i', 'i', 110, '<p>i</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 154),
-(131, 140, 'i', 'i', 'i', 'i', 'i', 111, '<p>i</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 155),
-(132, 141, NULL, NULL, NULL, NULL, NULL, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 156),
-(133, 142, NULL, NULL, NULL, NULL, NULL, 113, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 157),
-(134, 143, 'fungsi', 'f', 'f', 'f', 'f', 114, '<p>f</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 158),
-(135, 144, 'farm', 'f', 'f', NULL, NULL, 115, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 159),
-(136, 145, 'petnaipetnai', 'petnai', 'petnai', NULL, NULL, 116, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 160),
-(137, 146, 'petnaipetnai', 'petnai', 'petnai', 'petnai', 'petnai', 117, '<p>petnai</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 161),
-(138, 147, 'game', 'g', 'g', 'hfhfh', 't', 118, '<p>y</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 162),
-(139, 148, 'game', 'g', 'g', 'hfhfh', 't', 119, '<p>y</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 163),
-(140, 149, 'Rempah', NULL, NULL, NULL, NULL, 120, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 164),
-(141, 150, 'Jamu', NULL, NULL, NULL, NULL, 121, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 165);
+(142, 141, 'Amaranthus hybridus', 'nilotica', NULL, 'Africa and Continental Asia', '<p>Amaranthus cruentus L.</p>\r\n<p>A. paniculatus L.</p>\r\n<p>A. speciosus Sims.</p>', NULL, '<p><em>Tree</em>, with an umbelliform crown., branching almost from the base, with a dark, fissured bark and a deep taproot, 5.00-10.00 m tall . Tops of branchlets at first finely hairy, soon glabrous.&nbsp;<em>Leaf&nbsp;</em>compound, bipinnate., a&nbsp; petiolar gland is present between the two lowest pairs of pinnae, pinnae 2-8 pairs, leaflets 12-28 pairs, linear, 2-5 mm long.&nbsp;<em>Head flowers</em>&nbsp; bright yellow, axillary or the higher ones racemed or panicled, 1-1.50 cm diam.&nbsp;<em>Fruits</em>&nbsp;are indehiscent and flat pods of 6-25 cm length and 1-1.50 cm width, containing 8-15 seeds of 6-7 mm diameter.</p>', NULL, '<p>Grassland, savanna. It is reported as important colonizer at Baluran National Park in East Java and Wasur National Park Papua.</p>', NULL, '<p>Propagation by seeds which are disperse by mammals Establishment depends on sufficient precipitation but 1-year-old plants are drought and fire resistant, and tolerate grazing. The tree easily re-sprouts from the base if damaged and is nitrogen-fixing.&nbsp;<em>A. nilotica</em>&nbsp;is&nbsp; fast-growing, but the productivity varies according to environment.</p>', NULL, NULL, NULL, 170),
+(143, 161, 'Acmella uliginosa', NULL, NULL, 'Africa and Continental Asia', '<p><em>Acacia arabica</em>&nbsp;(Lmk. ) Willd.</p>', NULL, '<p><em>Tree</em>, with an umbelliform crown., branching almost from the base, with a dark, fissured bark and a deep taproot, 5.00-10.00 m tall . Tops of branchlets at first finely hairy, soon glabrous.&nbsp;<em>Leaf&nbsp;</em>compound, bipinnate., a&nbsp; petiolar gland is present between the two lowest pairs of pinnae, pinnae 2-8 pairs, leaflets 12-28 pairs, linear, 2-5 mm long.&nbsp;<em>Head flowers</em>&nbsp; bright yellow, axillary or the higher ones racemed or panicled, 1-1.50 cm diam.&nbsp;<em>Fruits</em>&nbsp;are indehiscent and flat pods of 6-25 cm length and 1-1.50 cm width, containing 8-15 seeds of 6-7 mm diameter.</p>', NULL, '<p>Grassland, savanna. It is reported as important colonizer at Baluran National Park in East Java and Wasur National Park Papua.</p>', NULL, '<p>Propagation by seeds which are disperse by mammals Establishment depends on sufficient precipitation but 1-year-old plants are drought and fire resistant, and tolerate grazing. The tree easily re-sprouts from the base if damaged and is nitrogen-fixing.&nbsp;<em>A. nilotica</em>&nbsp;is&nbsp; fast-growing, but the productivity varies according to environment.</p>', NULL, NULL, NULL, 169),
+(144, 162, 'Acacia nilotica', NULL, NULL, 'Africa and Continental Asia', '<p><em>Acacia arabica</em>&nbsp;(Lmk. ) Willd.</p>', NULL, '<p><em>Tree</em>, with an umbelliform crown., branching almost from the base, with a dark, fissured bark and a deep taproot, 5.00-10.00 m tall . Tops of branchlets at first finely hairy, soon glabrous.&nbsp;<em>Leaf&nbsp;</em>compound, bipinnate., a&nbsp; petiolar gland is present between the two lowest pairs of pinnae, pinnae 2-8 pairs, leaflets 12-28 pairs, linear, 2-5 mm long.&nbsp;<em>Head flowers</em>&nbsp; bright yellow, axillary or the higher ones racemed or panicled, 1-1.50 cm diam.&nbsp;<em>Fruits</em>&nbsp;are indehiscent and flat pods of 6-25 cm length and 1-1.50 cm width, containing 8-15 seeds of 6-7 mm diameter.</p>', NULL, '<p>Grassland, savanna. It is reported as important colonizer at Baluran National Park in East Java and Wasur National Park Papua.</p>', NULL, '<p>Propagation by seeds which are disperse by mammals Establishment depends on sufficient precipitation but 1-year-old plants are drought and fire resistant, and tolerate grazing. The tree easily re-sprouts from the base if damaged and is nitrogen-fixing.&nbsp;<em>A. nilotica</em>&nbsp;is&nbsp; fast-growing, but the productivity varies according to environment.</p>', NULL, NULL, NULL, 168);
 
 -- --------------------------------------------------------
 
@@ -9320,27 +8929,6 @@ CREATE TABLE `speciment_herbarium` (
   `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `speciment_herbarium`
---
-
-INSERT INTO `speciment_herbarium` (`id_herbarium`, `type_herbarium`, `label`, `notes`, `duplicate_id`, `species_id`, `collector_id`, `location_id`, `user_id`, `authorIdentification_id`, `verifiedData_id`, `utilization`, `commen_id`, `delete_at`, `create_at`, `update_at`) VALUES
-(1, 1, '00321', '<p>testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest123</p>', 76, 69, 5, 88, 1, 95, 23, NULL, NULL, '2017-08-28 13:29:11', '2017-08-28 13:29:11', '2017-08-30 08:47:08'),
-(2, 1, '0898', '<p>satu</p>', 77, 70, 6, 88, 13, 96, 24, NULL, NULL, '2017-08-28 14:24:13', '2017-08-28 14:24:13', '2017-08-30 08:47:09'),
-(3, 2, '008971', NULL, 78, 74, 7, 78, 14, 17, 28, NULL, NULL, '2017-08-29 07:27:11', '2017-08-29 07:27:11', '2017-09-07 14:02:00'),
-(4, 1, '0008877', '<p>sgsg</p>', 79, 75, 18, 74, 1, 61, 29, NULL, NULL, '2017-08-30 01:31:06', '2017-08-30 01:31:06', '2017-08-30 16:00:41'),
-(9, 4, '018', '<p>lichen notee sss</p>', 97, 99, 33, 24, 13, 28, 53, NULL, NULL, '2017-08-31 01:43:59', '2017-08-31 01:43:59', '2017-08-31 04:34:55'),
-(12, 4, '00954', '<p>gsgasg</p>', 100, 102, 37, 9, 13, 124, 56, NULL, NULL, '2017-08-31 01:53:38', '2017-08-31 01:53:38', '2017-08-31 03:47:49'),
-(13, 3, '0066', '<p>jgjfgjg</p>', 101, 103, 40, 22, 14, 130, 57, NULL, NULL, '2017-08-31 02:06:43', '2017-08-31 02:06:43', '2017-09-06 14:37:07'),
-(19, 1, '0976', NULL, 121, 123, 111, 185, 14, 200, 77, NULL, NULL, '2017-09-06 16:41:54', '2017-09-06 16:41:54', '2017-09-07 14:42:15'),
-(20, 1, '18796767', NULL, 122, 125, 112, 186, 14, 201, 79, NULL, NULL, '2017-09-07 03:45:32', '2017-09-07 03:45:32', '2017-09-07 03:46:46'),
-(25, 1, '009887', '<p>i</p>', 127, 131, 114, 188, 14, 203, 85, NULL, NULL, '2017-09-07 05:07:31', '2017-09-07 05:07:31', '2017-09-07 05:11:38'),
-(27, 1, '12', '<p>f</p>', 130, 134, 123, 197, 14, 212, 88, NULL, NULL, '2017-09-07 06:15:12', '2017-09-07 06:15:12', '2017-09-07 06:15:12'),
-(28, 2, '000876', NULL, 131, 135, 124, 198, 14, 213, 89, NULL, NULL, '2017-09-07 12:39:32', '2017-09-07 12:39:32', '2017-09-07 14:22:21'),
-(29, 2, '00877', NULL, 132, 136, 125, 199, 14, 214, 90, NULL, NULL, '2017-09-07 12:48:38', '2017-09-07 12:48:38', '2017-09-07 16:38:15'),
-(33, 3, '000754', NULL, 136, 140, 127, 201, 14, 216, 94, NULL, NULL, '2017-09-07 15:06:24', '2017-09-07 15:06:24', '2017-09-07 15:06:24'),
-(34, 3, '7876', NULL, 137, 141, 129, 203, 14, 218, 95, NULL, NULL, '2017-09-07 16:47:55', '2017-09-07 16:47:55', '2017-09-07 16:47:55');
-
 -- --------------------------------------------------------
 
 --
@@ -9355,7 +8943,7 @@ CREATE TABLE `speciment_ias` (
   `prevention` text COLLATE utf8_unicode_ci,
   `utilization` text COLLATE utf8_unicode_ci,
   `risk_analisis` text COLLATE utf8_unicode_ci,
-  `reference` text COLLATE utf8_unicode_ci,
+  `reference` longtext COLLATE utf8_unicode_ci,
   `verifiedData_id` int(11) DEFAULT NULL,
   `contact_person` text COLLATE utf8_unicode_ci,
   `distribution` text COLLATE utf8_unicode_ci,
@@ -9371,18 +8959,9 @@ CREATE TABLE `speciment_ias` (
 --
 
 INSERT INTO `speciment_ias` (`id_ias`, `control_id`, `comment`, `species_id`, `prevention`, `utilization`, `risk_analisis`, `reference`, `verifiedData_id`, `contact_person`, `distribution`, `common_name`, `user_id`, `create_at`, `update_at`, `delete_at`) VALUES
-(1, 7, NULL, 37, '<p>&nbsp;test 1237</p>', '<p>&nbsp;test 123test 123</p>', '<p>&nbsp;test 123we</p>', '<p>isi dulu ya</p>\r\n<p>barangkali bisa, <strong>moga aja</strong></p>', 1, '<p>&nbsp;test 123test 123test 123test 123 aja</p>', '<p>test 1233</p>', 'nest bisa', 14, '2017-08-28 07:07:25', '2017-09-07 05:13:35', '2017-08-28 07:07:25'),
-(8, 14, NULL, 44, '<p>baru <em>ini</em><strong> aja</strong></p>', '<p>baru <em>ini</em><strong> aja</strong></p>', '<p>baru <em>ini</em><strong> aja</strong></p>', '<p>baru <em>ini</em><strong> aja</strong></p>', 3, '<p>baru <em>ini</em><strong> aja</strong></p>', '<p><strong>baru <em>ini</em> aja</strong></p>', 'baru', 1, '2017-08-28 03:14:30', '2017-09-07 05:23:05', '2017-08-28 03:14:30'),
-(9, 15, NULL, 45, '<p>prevention</p>', '<p>uses</p>', '<p>risk analysis</p>', '<p>reference</p>', 4, '<p>contact person</p>', '<p>distribution</p>', 'common name', 1, '2017-08-28 03:37:58', '2017-09-07 05:23:04', '2017-08-28 03:37:58'),
-(10, 20, NULL, 50, '<p>test dulu ya</p>', '<p>apa nih</p>', '<p>coba yak</p>', '<p>tadaaa</p>', 5, '<p>cilub ba</p>', '<p>baru coba dulu ya</p>', 'baru', 14, '2017-08-28 08:04:46', '2017-09-07 05:22:21', '2017-08-28 08:04:46'),
-(11, 22, NULL, 72, '<p>PREVENTION BARU</p>', '<p>uses baru&nbsp;</p>', '<p>risk baru</p>', '<p>referance baru&nbsp;</p>', 26, '<p>contact baru&nbsp;</p>', '<p>distribution baru&nbsp;</p>', 'name baru', 1, '2017-08-29 04:35:25', '2017-09-07 05:22:20', '2017-08-29 04:35:25'),
-(12, 24, NULL, 76, '<p>s</p>', '<p>s</p>', '<p>s</p>', '<p>s</p>', 30, '<p>s</p>', '<p>s</p>', 'tes', 13, '2017-08-30 03:00:44', '2017-09-07 05:22:20', '2017-08-30 03:00:44'),
-(13, 25, NULL, 77, '<p>dfsfs</p>', '<p>sdfsdf</p>', '<p>dsfsa</p>', '<p>sfsfsa</p>', 31, '<p>fsfs</p>', '<p>fsfss</p>', 'fsfsafs', 1, '2017-08-30 03:06:35', '2017-09-07 05:22:20', '2017-08-30 03:06:35'),
-(14, 26, NULL, 78, '<p>hfdghdhgd</p>', '<p>hfdhdf</p>', '<p>fdghdfhdf</p>', '<p>hdghd</p>', 32, '<p>dfghd</p>', '<p>ghfhfd</p>', 'hfhf', 14, '2017-08-30 03:08:56', '2017-09-07 05:22:20', '2017-08-30 03:08:56'),
-(17, 29, NULL, 81, '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>', 35, '<p>setuju</p>', '<p>setuju</p>', 'setuju', 14, '2017-08-30 04:07:09', '2017-09-07 05:22:20', '2017-08-30 04:07:09'),
-(18, 30, NULL, 82, '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>', '<p>setuju</p>', 36, '<p>setuju</p>', '<p>setuju</p>', 'setuju', 1, '2017-08-30 04:09:05', '2017-09-07 05:22:20', '2017-08-30 04:09:05'),
-(19, 31, NULL, 124, '<p>g</p>', '<p>g</p>', '<p>g</p>', '<p>g</p>', 78, '<p>g</p>', '<p>g</p>', 'g', 13, '2017-09-06 17:12:00', '2017-09-07 05:22:19', '2017-09-06 17:12:00'),
-(20, 32, NULL, 126, '<p>r</p>', '<p>r</p>', '<p>r</p>', '<p>t</p>', 80, '<p>r</p>', '<p>r</p>', 'r', 14, '2017-09-07 04:47:21', '2017-09-07 05:12:50', '2017-09-07 04:47:21');
+(1, 33, NULL, 142, NULL, NULL, NULL, '1.Backer , C. A. & R. C. Bakhuizen Van Den Brink.  1965.  Flora of Java. N.V. P. Noordhoff. Groningen, Netherlands.\r\n2. Lemmens and N.W. Soetjipto (Eds).  1992.   PROSEA.  Plant Resources of South East Asia  No. 3.  Dye and tannin-producing plants.  Prosea Foundation, Bogor, Indonesia and Pudoc-DLO, Wageningen, the Netherlands.\r\n3. Mutaqin, I.Z.  2001. Upaya Penanggulangan Tanaman Eksotik Acasia nilotica di Kawasan Taman Nasional Baluran.  In Keanekaragaman Hayati dan Pengendalian Jenis Asing Invasif.  The Nature Conservasy.  Jakarta, Indonesia.\r\n4. Nielsen, I.C.  1992.  Flora Malesiana I.  Spermatophyta : Mimosaceae.  11 (1).  Foundation Flora Malesiana.\r\n5. Siregar, C and S. Tjitrosoedirdjo. 1999. Acasia nilotica invasion in Baluran National Park East Java Indonesia. BIOTROP Special Publication No. 61: 101-109\r\nTjitrosemito, S. 2001. Masalah Tumbuhan Eksotik di Taman Nasional Baluran dan Saran Pengendaliannya. Makalah disampaikan pada Seminar Nasional Taman Nasional Baluran Sebagai Aset Pembangunan Daerah dan Pendidikan, Universitas Jember, 11 Agustus 2001.\r\n6.Weber, E.  2003.  Invasive Plant Species of the World.  A Reference Guide to Environmental Weeds.  CAB International Publishing', 2, NULL, 'In 1850 was introduced to Java, out of cultivation and  spread also\r\noutside of Java islands Timor and Papua.', NULL, 1, '2017-09-11 05:00:00', '2017-09-11 13:18:37', '2017-09-11 12:00:01'),
+(2, 33, NULL, 143, NULL, NULL, NULL, '1.Backer , C. A. & R. C. Bakhuizen Van Den Brink.  1963.  Flora of Java.  Vol. I. N.V. P. Noordhoff. Groningen, Netherlands.\r\n2. Soerjani, M.,  A. J. G. H. Kostermans & Gembong Tjitrosoepomo (Eds.).  1987.  Weeds of Rice in Indonesia. Balai Pustaka. Jakarta.\r\n3. Voogd, C.N.A. de. 1950. Tanaman Apakah Ini Gerangan. Buku kecil untuk taman berkelana. N.V. Uitgeverij W. van Hoeve, Bandung’s Gravenhage (translated by Soetan Sanif).\r\n4. Waterhouse, B.M. & A.A. Mitchell.  1998.  Northern Australia Quarantine Strategy.  Weeds Target List.  Miscellaneous Publication 6/98.', 2, NULL, 'Throughout Indonesia except Kalimantan, as far as known', NULL, 1, '2017-09-12 17:00:00', '2017-09-11 12:07:42', '2017-09-11 12:02:50'),
+(3, 33, NULL, 144, NULL, NULL, NULL, 'Backer , C. A. & R. C. Bakhuizen Van Den Brink.  1963.  Flora of Java.  Vol. I. N.V. P. Noordhoff. Groningen, Netherlands.\r\nSoerjani, M.,  A. J. G. H. Kostermans & Gembong Tjitrosoepomo (Eds.).  1987.  Weeds of Rice in Indonesia. Balai Pustaka. Jakarta.\r\nVoogd, C.N.A. de. 1950. Tanaman Apakah Ini Gerangan. Buku kecil untuk taman berkelana. N.V. Uitgeverij W. van Hoeve, Bandung’s Gravenhage (translated by Soetan Sanif).\r\nWaterhouse, B.M. & A.A. Mitchell.  1998.  Northern Australia Quarantine Strategy.  Weeds Target List.  Miscellaneous Publication 6/98. ', 2, NULL, 'Throughout Indonesia except Kalimantan, as far as known', NULL, 1, '2017-09-11 17:00:00', '2017-09-11 12:07:54', '2017-09-11 12:02:50');
 
 -- --------------------------------------------------------
 
@@ -9693,8 +9272,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `lastname`, `firstname`, `remember_token`, `deleted_at`, `created_at`, `updated_at`, `user_type`) VALUES
 (1, 'adminBiotrop', 'admin@gmail.com', '$2y$10$V4T0lubS6Vy2afUS3zMPkOOBWfMlN03.KEoi/JwRzBu.KO/m2CtWa', 'Mr', 'admin', 'pfEf3foKxn8tLWD1pc4o7GWlPmFdleYODHMhXRK0N1SRzFl1vRNhhZqst3HP', '2017-09-07 18:59:23', '2017-09-07 18:59:23', '2017-09-07 18:59:23', 0),
 (13, 'anata_sari', 'anata@gmail.com', '$2y$10$QC4KX8JBVs9lvCbas.OOweZiQlFHqpGMogvlvmoBfSq8/w5ov2yaW', 'sari', 'anata', 'Zm81WBViGL4VhmcSIx0MGHWd9mLi7Go4QDZg8HrReriI5qyAzB7A25JmAIln', '2017-09-08 02:41:29', '2017-09-08 02:41:29', '2017-09-08 02:41:29', 1),
-(14, 'putri_ica', 'ica@gmail.com', '$2y$10$mJdS3HV6PF4TbCoLedKarOZig9QEwnJIEiVPrR8iShbU2jmmHOlNG', 'ica', 'putri', 'niKL5yQYENBBPXICpwdHOyhnIFgsFgjIxMLJiLsGs27OXCpM5m41AGLIFBrF', '2017-09-08 02:36:39', '2017-09-08 02:36:39', '2017-09-08 02:36:39', 2),
-(15, 'sas', 'sas@gmail.com', '$2y$10$s71UD0OH41UCg85zT4hlAeenCP30AjYCbwJSOk8VK9rgXekOsyYi6', 'sas', 'sas', NULL, NULL, '2017-08-23 22:04:28', '2017-08-23 22:04:28', 1);
+(14, 'putri_ica', 'ica@gmail.com', '$2y$10$mJdS3HV6PF4TbCoLedKarOZig9QEwnJIEiVPrR8iShbU2jmmHOlNG', 'ica', 'putri', 'niKL5yQYENBBPXICpwdHOyhnIFgsFgjIxMLJiLsGs27OXCpM5m41AGLIFBrF', '2017-09-08 02:36:39', '2017-09-08 02:36:39', '2017-09-08 02:36:39', 2);
 
 -- --------------------------------------------------------
 
@@ -9935,7 +9513,10 @@ INSERT INTO `verified` (`id_verified`, `status`, `create_at`, `update_at`, `dele
 (92, 0, '2017-09-07 14:57:20', '2017-09-07 14:57:20', '2017-09-07 14:57:20'),
 (93, 0, '2017-09-07 14:58:48', '2017-09-07 14:58:48', '2017-09-07 14:58:48'),
 (94, 0, '2017-09-07 15:06:24', '2017-09-07 15:06:24', '2017-09-07 15:06:24'),
-(95, 0, '2017-09-07 16:47:55', '2017-09-07 16:47:55', '2017-09-07 16:47:55');
+(95, 0, '2017-09-07 16:47:55', '2017-09-07 16:47:55', '2017-09-07 16:47:55'),
+(96, 0, '2017-09-11 10:27:15', '2017-09-11 10:27:15', '2017-09-11 10:27:15'),
+(97, 0, '2017-09-11 10:29:18', '2017-09-11 10:29:18', '2017-09-11 10:29:18'),
+(98, 0, '2017-09-11 10:31:00', '2017-09-11 10:31:00', '2017-09-11 10:31:00');
 
 --
 -- Indexes for dumped tables
@@ -10001,15 +9582,13 @@ ALTER TABLE `duplicate`
 -- Indexes for table `family`
 --
 ALTER TABLE `family`
-  ADD PRIMARY KEY (`id_family`),
-  ADD KEY `familly_fk0` (`ordo_id`);
+  ADD PRIMARY KEY (`id_family`);
 
 --
 -- Indexes for table `genus`
 --
 ALTER TABLE `genus`
-  ADD PRIMARY KEY (`id_genus`),
-  ADD KEY `genus_fk0` (`family_id`);
+  ADD PRIMARY KEY (`id_genus`);
 
 --
 -- Indexes for table `herbarium_type`
@@ -10049,7 +9628,6 @@ ALTER TABLE `province`
 --
 ALTER TABLE `species`
   ADD PRIMARY KEY (`id_species`),
-  ADD KEY `species_fk0` (`genus_id`),
   ADD KEY `species_fk1` (`vernacular_id`),
   ADD KEY `character_id` (`character_id`);
 
@@ -10122,7 +9700,7 @@ ALTER TABLE `author_identification`
 -- AUTO_INCREMENT for table `characteristic_species`
 --
 ALTER TABLE `characteristic_species`
-  MODIFY `id_character` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `id_character` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 --
 -- AUTO_INCREMENT for table `class`
 --
@@ -10137,7 +9715,7 @@ ALTER TABLE `collector`
 -- AUTO_INCREMENT for table `control_ias`
 --
 ALTER TABLE `control_ias`
-  MODIFY `id_controll` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_controll` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `duplicate`
 --
@@ -10147,12 +9725,12 @@ ALTER TABLE `duplicate`
 -- AUTO_INCREMENT for table `family`
 --
 ALTER TABLE `family`
-  MODIFY `id_family` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id_family` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `genus`
 --
 ALTER TABLE `genus`
-  MODIFY `id_genus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id_genus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 --
 -- AUTO_INCREMENT for table `herbarium_type`
 --
@@ -10172,22 +9750,22 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `species`
 --
 ALTER TABLE `species`
-  MODIFY `id_species` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id_species` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 --
 -- AUTO_INCREMENT for table `speciment_herbarium`
 --
 ALTER TABLE `speciment_herbarium`
-  MODIFY `id_herbarium` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_herbarium` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `speciment_ias`
 --
 ALTER TABLE `speciment_ias`
-  MODIFY `id_ias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_ias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `venacular`
 --
@@ -10197,7 +9775,7 @@ ALTER TABLE `venacular`
 -- AUTO_INCREMENT for table `verified`
 --
 ALTER TABLE `verified`
-  MODIFY `id_verified` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id_verified` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 --
 -- Constraints for dumped tables
 --
@@ -10215,12 +9793,6 @@ ALTER TABLE `districts`
   ADD CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`id_city`);
 
 --
--- Constraints for table `genus`
---
-ALTER TABLE `genus`
-  ADD CONSTRAINT `genus_ibfk_1` FOREIGN KEY (`family_id`) REFERENCES `family` (`id_family`);
-
---
 -- Constraints for table `location`
 --
 ALTER TABLE `location`
@@ -10236,7 +9808,6 @@ ALTER TABLE `province`
 -- Constraints for table `species`
 --
 ALTER TABLE `species`
-  ADD CONSTRAINT `species_ibfk_1` FOREIGN KEY (`genus_id`) REFERENCES `genus` (`id_genus`),
   ADD CONSTRAINT `species_ibfk_2` FOREIGN KEY (`vernacular_id`) REFERENCES `venacular` (`id_venacular`),
   ADD CONSTRAINT `species_ibfk_3` FOREIGN KEY (`character_id`) REFERENCES `characteristic_species` (`id_character`);
 
@@ -10261,7 +9832,6 @@ ALTER TABLE `speciment_ias`
   ADD CONSTRAINT `speciment_ias_ibfk_4` FOREIGN KEY (`control_id`) REFERENCES `control_ias` (`id_controll`),
   ADD CONSTRAINT `speciment_ias_ibfk_5` FOREIGN KEY (`verifiedData_id`) REFERENCES `verified` (`id_verified`),
   ADD CONSTRAINT `speciment_ias_ibfk_6` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,6 +1,4 @@
 @extends('user.layouts.app-template')
-
-
 @section('user.content')
 
 <section>
@@ -22,14 +20,7 @@
 										<p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
 								</div>
 						</div>
-							<!-- /.row -->
-							<!-- <div class="col-lg-8 mb-4" id="map"> -->
-									<!-- Embedded Google Map -->
-										<!-- <iframe width="150%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=-6.634598, 106.825015&amp;spn=-6.634598, 106.825015&amp;t=m&amp;z=4&amp;output=embed"></iframe>
-								</div> -->
-								<div style="width: 1000px; height: 500px;">
-									
-								</div>
+								<div style="width: 1000px; height: 500px;">{!! Mapper::render() !!}</div>
 				</div>
 			</div>
 		</div>

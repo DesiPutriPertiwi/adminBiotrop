@@ -179,7 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-      //  Unisharp\Ckeditor\ServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +232,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Mapper'=> Cornford\Googlmapper\Facades\MapperFacade::class,
     ],
 
 ];
