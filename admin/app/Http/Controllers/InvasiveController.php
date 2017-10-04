@@ -16,6 +16,7 @@ use App\Model\ControlIas;
 use App\Model\InvasiveAS;
 use App\Model\Verified;
 use App\User;
+use App\Model\AuthorIdent;
 use DateTime;
 
 class InvasiveController extends Controller
@@ -53,7 +54,7 @@ class InvasiveController extends Controller
     ->paginate(5);
     //dd($speciment_ias);
    return view('invasive/index', ['speciment_ias'=> $speciment_ias]);
-    }
+    } 
 
     public function create()
     {
@@ -62,8 +63,9 @@ class InvasiveController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $this->validateInput($request);
-       
+        
         $file = $request->file('image');
         $fileName = $file->getClientOriginalName();
         $request->file('image')->move("ias/",$fileName);
@@ -107,6 +109,10 @@ class InvasiveController extends Controller
         }else{ 
             $fileName5 =null;
         }
+
+        $author   = new AuthoIdet;
+        $author   -> name_author                                    = $request  ->input('author'); 
+        $author   ->save();
 
         $charac   = new CharacterSpecies;
         $charac   -> picture_species                                = $fileName;
@@ -159,6 +165,7 @@ class InvasiveController extends Controller
         $ias     -> reference                                       = $request   ->input('reference');   
         $ias     -> verifiedData_id                                 = $verif     ->id_verified;
         $ias     -> user_id                                         = $request   ->input('user');
+        $ias     -> author_id                                       = $author    ->id_author;
         $ias     -> save();
         
         //dd($request);      
@@ -189,36 +196,35 @@ class InvasiveController extends Controller
     public function update(Request $request, $id_ias)
     {
         $constraints = [
-            'family'            => 'required|max:50',
-            'genus'             => 'required|max:50',
-            'species'           => 'required|max:50',
-            'synonim'           => 'max:1000',
-            'origin'            => 'max:50',
-            'invaded_habitat'   => 'max:1000',
-            'ecology'           => 'max:1000',
-            'description'       => 'max:1500',
-            'chemical_ctrl'     => 'max:1000',
-            'manual_ctrl'       => 'max:1000',
-            'biological_ctrl'   => 'max:1000',
-            'common_name'       => 'max:50',
-            'distribution'      => 'max:1000',
-            'prevention'        => 'max:1000',
-            'utilization'       => 'max:1000',
-            'risk_analisis'     => 'max:1500',
-            'contact'           => 'max:100',
-            'reference'         => 'max:1500',
-            'gambar[1]'         => 'image|mimes:jpeg,bmp,png',
-            'gambar[2]'         => 'image|mimes:jpeg,bmp,png',
-            'gambar[3]'         => 'image|mimes:jpeg,bmp,png',
-            'gambar[4]'         => 'image|mimes:jpeg,bmp,png',
-            'gambar[5]'         => 'image|mimes:jpeg,bmp,png',
-            'gambar[6]'         => 'image|mimes:jpeg,bmp,png',
+            'family'            => 'required|max:500',
+            'genus'             => 'required|max:500',
+            'species'           => 'required|max:500',
+            'synonim'           => 'max:10000',
+            'origin'            => 'max:500',
+            'invaded_habitat'   => 'max:10000',
+            'ecology'           => 'max:10000',
+            'description'       => 'max:15000',
+            'chemical_ctrl'     => 'max:10000',
+            'manual_ctrl'       => 'max:10000',
+            'biological_ctrl'   => 'max:10000',
+            'common_name'       => 'max:500',
+            'distribution'      => 'max:10000',
+            'prevention'        => 'max:10000',
+            'utilization'       => 'max:10000',
+            'risk_analisis'     => 'max:15000',
+            'contact'           => 'max:10000',
+            'reference'         => 'max:15000',
+            'gambar[1]'         => 'image|mimes:jpeg,bmp,png,jpg',
+            'gambar[2]'         => 'image|mimes:jpeg,bmp,png,jpg',
+            'gambar[3]'         => 'image|mimes:jpeg,bmp,png,jpg',
+            'gambar[4]'         => 'image|mimes:jpeg,bmp,png,jpg',
+            'gambar[5]'         => 'image|mimes:jpeg,bmp,png,jpg',
+            'gambar[6]'         => 'image|mimes:jpeg,bmp,png,jpg',
             ];
 
         $this->validate($request, $constraints);
 
         $speciment_ias  = InvasiveAS::Find($id_ias);
-        
         $speciment_ias  -> common_name                        = $request   ->input('common_name');
         $speciment_ias  -> distribution                       = $request   ->input('distribution');
         $speciment_ias  -> prevention                         = $request   ->input('prevention');
@@ -227,6 +233,10 @@ class InvasiveController extends Controller
         $speciment_ias  -> contact_person                     = $request   ->input('contact');
         $speciment_ias  -> reference                          = $request   ->input('reference');
         $speciment_ias  -> save();
+
+        $author     = AuthorIdet::where('id_author','=', $speciment_ias->author_id)->first();
+        $author     -> name_author                            = $request  ->input('author'); 
+        $author     -> save();
 
         $species    = Species::where('id_species', '=', $speciment_ias->species_id)->first();
         $species   -> name_species                            = $request   ->input('species');
@@ -348,7 +358,7 @@ class InvasiveController extends Controller
         return $query->paginate(5);
     }
 
-     public function specimen(){
+    public function specimen(){
         $specimen = InvasiveAS::select('id_ias')->count();
         return $specimen;
     }
@@ -364,24 +374,24 @@ class InvasiveController extends Controller
     
     private function validateInput($request) {
         $this->validate($request, [
-            'family'            => 'required|max:50',
-            'genus'             => 'required|max:50',
-            'species'           => 'required|max:50',
-            'synonim'           => 'max:1000',
-            'origin'            => 'max:50',
-            'invaded_habitat'   => 'max:1000',
-            'ecology'           => 'max:1000',
-            'description'       => 'max:1500',
-            'chemical_ctrl'     => 'max:1000',
-            'manual_ctrl'       => 'max:1000',
-            'biological_ctrl'   => 'max:1000',
-            'common_name'       => 'max:50',
-            'distribution'      => 'max:1000',
-            'prevention'        => 'max:1000',
-            'utilization'       => 'max:1000',
-            'risk_analisis'     => 'max:1500',
-            'contact'           => 'max:100',
-            'reference'         => 'max:1500',
+            'family'            => 'required|max:500',
+            'genus'             => 'required|max:500',
+            'species'           => 'required|max:500',
+            'synonim'           => 'max:10000',
+            'origin'            => 'max:500',
+            'invaded_habitat'   => 'max:10000',
+            'ecology'           => 'max:10000',
+            'description'       => 'max:15000',
+            'chemical_ctrl'     => 'max:10000',
+            'manual_ctrl'       => 'max:10000',
+            'biological_ctrl'   => 'max:10000',
+            'common_name'       => 'max:500',
+            'distribution'      => 'max:10000',
+            'prevention'        => 'max:10000',
+            'utilization'       => 'max:10000',
+            'risk_analisis'     => 'max:15000',
+            'contact'           => 'max:10000',
+            'reference'         => 'max:15000',
             'gambar[1]'         => 'image|mimes:jpeg,bmp,png,jpg',
             'gambar[2]'         => 'image|mimes:jpeg,bmp,png,jpg',
             'gambar[3]'         => 'image|mimes:jpeg,bmp,png,jpg',

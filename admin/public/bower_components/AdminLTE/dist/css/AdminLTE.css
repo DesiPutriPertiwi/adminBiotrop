@@ -4943,3 +4943,15 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+
+
+  /*.user-panel1{position:relative;width:100%;padding:0px;overflow:hidden}
+  .user-panel1:before,.user-panel:after{content:" ";display:table}
+  .user-panel1:after{clear:both}.user-panel>
+  .image>img{width:100%;max-width:45px;height:auto}
+  .user-panel1>.info{padding:5px 5px 5px 15px;line-height:1;position:absolute;left:55px}
+  .user-panel1>.info>p{font-weight:600;margin-bottom:9px}
+  .user-panel1>.info>a{text-decoration:none;padding-right:5px;margin-top:3px;font-size:11px}
+  .user-panel1>.info>a>.fa,
+  .user-panel1>.info>a>.ion,.user-panel>
+  .info>a>.glyphicon{margin-right:3px}*/

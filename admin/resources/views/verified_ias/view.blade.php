@@ -11,10 +11,10 @@
                             <i class="fa fa-cloud-download"> </i>
                             Download
                         </a>
-                        <a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
-                            <i class="fa fa-print"> </i>
+                        <!--<a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
+                            <!--<i class="fa fa-print"> </i>
                             Print
-                        </a>
+                        </a>-->
                     </div>
 
                     <div class="col-sm-8">
@@ -350,6 +350,24 @@
                     </div>
                 </div>
 
+                <!--Comment-->
+                <div class="box box-default col-md-12" >
+                    <div class="box-body">
+                        <div class="col-md-14">
+                            <h5 style="text:arial narrow"><b>Comment  :</b></h5>
+                             <div class="col-md-12">
+                                <textarea id="agency" type="date" class="agency" name="agency" value="{{ old('agency') }}"> </textarea>
+
+                                @if ($errors->has('agency'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('agency') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!--Butoon Back-->
                 <div class="form-group" >
                     <div class="col-md-12 col-md-offset-7 text-right" style="margin-top:50px"> 

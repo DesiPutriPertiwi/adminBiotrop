@@ -19,15 +19,15 @@
                             <i class="fa fa-cloud-download"> </i>
                             Download
                         </a>
-                        <a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
-                            <i class="fa fa-print"> </i>
+                        <!--<a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
+                            <!--<i class="fa fa-print"> </i>
                             Print
-                        </a>
+                        </a>-->
                     </div>
 
                     <div class="col-sm-8">
                         <h2 class="col-md-offset-1">
-                            <i>{{$speciment_ias->species->name_species}}</i>
+                            <i>{{$speciment_ias->species->name_species}}</i>, {{$speciment_ias->author->name_author}} 
                         </h2>
                     </div>
                 </div>
@@ -115,9 +115,36 @@
                                     </div>
                                 @endif
 
+                                @if(isset($speciment_ias->destribution))
+                                <div class="col-md-12" style="margin-top:10px">
+                                    <label for="notes" class="col-md-3 col-md-offset-1" style="text-align:left">Distribution</label>
+                                    <span class="col-md-8" align="justify">
+                                        {!!$speciment_ias->destribution!!}
+                                    </span>
+                                </div>
+                                @endif
+
+                                @if(isset($speciment_ias->species->habitat))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="habitat" class="col-md-3 col-md-offset-1" style="text-align:left">Invaded Habitat</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->species->habitat!!}
+                                        </span>
+                                    </div>
+                                @endif
+
+                                @if(isset($speciment_ias->species->ecology))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="ecology" class="col-md-3 col-md-offset-1" style="text-align:left">Ecology</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->species->ecology!!}
+                                        </span>
+                                    </div>
+                                @endif
+
                             </div>
     
-                            <div id="myCarousel" class="carousel slide col-md-4" data-ride="carousel" style="max-height:700px">
+                            <div id="myCarousel" class="carousel slide col-md-4" data-ride="carousel" style="max-height:1000px">
                             <!-- Indicators-->
                             <ol class="carousel-indicators">
                                 @if(isset($speciment_ias->species->character->picture_species))
@@ -213,158 +240,133 @@
                 </div>
 
                 <!--Geology-->
-                <div class="box box-default col-md-12" style="margin-top:10px">
-                     <div class="box-header with-border">
-                        <h5 style="text:arial narrow"><b>Geology  :</b></h5>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <div class="box box-default col-md-12" style="margin-top:10px">
+                        <div class="box-header with-border">
+                            <h5 style="text:arial narrow"><b>Geology  :</b></h5>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">             
+                            <div class="col-md-8">
+                                @if(isset($speciment_ias->location->districts->city->prov->name))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Province</label>
+                                        <span class="col-md-8" align="justify">
+                                            {{$speciment_ias->location->districts->city->prov->name}}
+                                        </span>
+                                    </div>
+                                @endif
+                                
+                                @if(isset($speciment_ias->location->vilage))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Vilage</label>
+                                        <span class="col-md-8" align="justify">
+                                            {{$speciment_ias->location->vilage}}
+                                        </span>
+                                    </div>
+                                @endif
+
+                                @if(isset($speciment_ias->location->latitude))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Latitude</label>
+                                        <span class="col-md-8" align="justify">
+                                            {{$speciment_ias->location->latitude}}
+                                        </span>
+                                    </div>
+                                @endif
+
+                                @if(isset($speciment_ias->location->longitude))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Longitude</label>
+                                        <span class="col-md-8" align="justify">
+                                            {{$speciment_ias->location->longitude}}
+                                        </span>
+                                    </div>
+                                @endif
+
+                                @if(isset($speciment_ias->location->atitude))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Atitude</label>
+                                        <span class="col-md-8" align="justify">
+                                            {{$speciment_ias->location->atitude}}
+                                        </span>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    <div class="box-body">             
-                        <div class="col-md-8">
-                            @if(isset($speciment_ias->destribution))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="notes" class="col-md-3 col-md-offset-1" style="text-align:left">Distribution</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->destribution!!}
-                                    </span>
-                                </div>
-                            @endif
 
-                            @if(isset($speciment_ias->species->habitat))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="habitat" class="col-md-3 col-md-offset-1" style="text-align:left">Invaded Habitat</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->species->habitat!!}
-                                    </span>
-                                </div>
-                            @endif
-
-                            @if(isset($speciment_ias->species->ecology))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="ecology" class="col-md-3 col-md-offset-1" style="text-align:left">Ecology</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->species->ecology!!}
-                                    </span>
-                                </div>
-                            @endif
-
-                            @if(isset($speciment_ias->location->districts->city->prov->name))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Province</label>
-                                    <span class="col-md-8" align="justify">
-                                        {{$speciment_ias->location->districts->city->prov->name}}
-                                    </span>
-                                </div>
-                            @endif
-                            
-                            @if(isset($speciment_ias->location->vilage))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Vilage</label>
-                                    <span class="col-md-8" align="justify">
-                                        {{$speciment_ias->location->vilage}}
-                                    </span>
-                                </div>
-                            @endif
-
-                            @if(isset($speciment_ias->location->latitude))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Latitude</label>
-                                    <span class="col-md-8" align="justify">
-                                        {{$speciment_ias->location->latitude}}
-                                    </span>
-                                </div>
-                            @endif
-
-                            @if(isset($speciment_ias->location->longitude))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Longitude</label>
-                                    <span class="col-md-8" align="justify">
-                                        {{$speciment_ias->location->longitude}}
-                                    </span>
-                                </div>
-                            @endif
-
-                            @if(isset($speciment_ias->location->atitude))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Atitude</label>
-                                    <span class="col-md-8" align="justify">
-                                        {{$speciment_ias->location->atitude}}
-                                    </span>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                        
                         
 
                 <!--Risk and Controll-->
-                <div class="box box-default col-md-12">
-                    <div class="box-header with-border">
-                        <h5 style="text:arial narrow"><b>Risk and Controll  :</b></h5>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @if($speciment_ias->risk_analisis != null && $speciment_ias->control->chemical_ctrl !=null && $speciment_ias->utilization != null && $speciment_ias->prevention != null)
+                    <div class="box box-default col-md-12">
+                        <div class="box-header with-border">
+                            <h5 style="text:arial narrow"><b>Risk and Controll  :</b></h5>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="box-body">
-                        <div class="col-md-8">
-                            @if(isset($speciment_ias->risk_analisis))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="risk_analisis" class="col-md-3 col-md-offset-1" style="text-align:left">Risk Analysis</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->risk_analisis!!}
-                                    </span>
-                                </div>
-                            @endif
+                        <div class="box-body">
+                            <div class="col-md-8">
+                                @if(isset($speciment_ias->risk_analisis))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="risk_analisis" class="col-md-3 col-md-offset-1" style="text-align:left">Risk Analysis</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->risk_analisis!!}
+                                        </span>
+                                    </div>
+                                @endif
 
-                            @if(isset($speciment_ias->control->chemical_ctrl))
-                                <div class="col-md-12" style="  margin-top:10px">
-                                    <label for="control" class="col-md-3 col-md-offset-1" style="text-align:left">Chemical Control</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->control->chemical_ctrl!!}
-                                    </span>
-                                </div>
-                            @endif
+                                @if(isset($speciment_ias->control->chemical_ctrl))
+                                    <div class="col-md-12" style="  margin-top:10px">
+                                        <label for="control" class="col-md-3 col-md-offset-1" style="text-align:left">Chemical Control</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->control->chemical_ctrl!!}
+                                        </span>
+                                    </div>
+                                @endif
 
-                            @if(isset($speciment_ias->control->manual_ctrl))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Manual Control</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->control->manual_ctrl!!}
-                                    </span>
-                                </div>
-                            @endif
+                                @if(isset($speciment_ias->control->manual_ctrl))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Manual Control</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->control->manual_ctrl!!}
+                                        </span>
+                                    </div>
+                                @endif
 
-                            @if(isset($speciment_ias->control->biologycal_ctrl))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Biologycal Control</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->control->biologycal_ctrl!!}
-                                    </span>
-                                </div>
-                            @endif
+                                @if(isset($speciment_ias->control->biologycal_ctrl))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Biologycal Control</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->control->biologycal_ctrl!!}
+                                        </span>
+                                    </div>
+                                @endif
 
-                            @if(isset($speciment_ias->utilization))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Uses</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->utilization!!}
-                                    </span>
-                                </div>
-                            @endif
+                                @if(isset($speciment_ias->utilization))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Uses</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->utilization!!}
+                                        </span>
+                                    </div>
+                                @endif
 
-                            @if(isset($speciment_ias->location->atitude))
-                                <div class="col-md-12" style="margin-top:10px">
-                                    <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Prevention</label>
-                                    <span class="col-md-8" align="justify">
-                                        {!!$speciment_ias->prevention!!}
-                                    </span>
-                                </div>
-                            @endif
+                                @if(isset($speciment_ias->prevention))
+                                    <div class="col-md-12" style="margin-top:10px">
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Prevention</label>
+                                        <span class="col-md-8" align="justify">
+                                            {!!$speciment_ias->prevention!!}
+                                        </span>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                </div>  
+                    </div>  
+                @endif
 
                 <!--Data Set-->
                 <div class="box box-default col-md-12">

@@ -24,4 +24,9 @@ class InvasiveAS extends Model
     {
         return $this->belongsTo('App\Model\Verified', 'verifiedData_id', 'id_verified');
     }
+
+    public function author()
+    {
+        return $this->belongsTo('App\Model\AuthorIdent', 'author_id', 'id_author');
+    }
 }

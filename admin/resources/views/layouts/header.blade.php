@@ -4,10 +4,19 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Seameo</b>Biotrop</span>
+      <span class="logo-mini"><img src="{{ asset("/image/logo-biotrop.png") }}" class="img-picture" width="45px" hight="45px"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg" style="font-family: arial black" >
-       <h3> SEAMEO <b>BIOTROP</b></h3>
+      
+      <div class="user-panel1">
+          <div class="pull-left  image">
+            <img src="{{ asset("/image/logo-biotrop.png") }}" class="img-picture">
+          </div>
+          <div  style="padding:10px">
+            <span style="font-family:sans-serif" >
+            <h5><b>SEAMEO BIOTROP</b></h5>
+          </DIV>
+      </div>
+      
       </span>
     </a>
 

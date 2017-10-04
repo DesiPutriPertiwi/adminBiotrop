@@ -7,7 +7,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Seameo Biotrop | Herbarium Collection & IAS</title>
+    <link rel="icon" href="{!!asset('image/logo-biotrop.png')!!}"/>
+    <title>Seameo Biotrop | Herbarium Collection & IAS </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -140,22 +141,22 @@
 
     <!--show image-->
     <script type="text/javascript">
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#showgambar').attr('src', e.target.result);
-            }
+              reader.onload = function (e) {
+                  $('#showgambar').attr('src', e.target.result);
+              }
 
-            reader.readAsDataURL(input.files[0]);
+              reader.readAsDataURL(input.files[0]);
+          }
         }
-      }
-    $("#inputgambar").change(function () {
-        readURL(this);
-    });
+        $("#inputgambar").change(function () {
+            readURL(this);
+        });
     </script>
-
+    
     <!--Slide show-->
     <script>
         var slideIndex = 1;

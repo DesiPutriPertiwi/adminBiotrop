@@ -1,13 +1,50 @@
 @extends('user.layouts.app-template')
 @section('user.content')
 
-<div class="jumbotron text-center" style="margin-bottom:100px">
-    <img src="http://ictb.biotrop.org/templates/theme02/images/foto_biotrop.jpg" id="showgambar" style="width:100%;max-height:400px;float:left;" />
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-height:1000px">
+    <!-- Indicators-->
+    <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0"></li>
+          <li data-target="#myCarousel" data-slide-to="1"class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides-->
+    <div class="carousel-inner">
+        <div class="item">
+            <a href="{{url('/imageuih', $pic1)}}" target="_blank">
+                <img class="img-rounded img-responsive" src="{{asset('biotrop/' .$pic1)}}" id="showgambar" style="width:100%;max-height:100%;float:left;" />
+            </a>
+        </div>
+  
+        <div class="item active">
+            <a href="{{url('/imageuih',$pic2)}}" target="_blank">
+                <img class="img-rounded img-responsive" src="{{asset('biotrop/' .$pic2)}}" id="showgambar" style="width:100%;max-height:100%;float:left;" />
+            </a>
+        </div>
+    
+        <div class="item">
+            <a href="{{url('/imageuih',$pic3)}}" target="_blank">
+                <img class="img-rounded img-responsive" src="{{asset('biotrop/' .$pic3)}}" id="showgambar" style="width:100%;max-height:100%;float:left;" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Left and right controls-->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
-<br>
+
 
 <div class="container" >
-  <div class="text-center" style="margin-top:300px"><strong><h1>Our Collections</h1></strong></div>
+  <div class="text-center"><strong><h1>Our Collections</h1></strong></div>
     <div class="row">
       <div class="col-md-6 text-center">
         <h2> Herbarium </h2>
@@ -25,30 +62,30 @@
 <!-- Portfolio Section -->
  <div class="container">
    <div class="panel-body">
-  	 <div class="panel-heading"><h3>News Collections</h3></div>
+  	 <div class="panel-heading"><h3>Collections</h3></div>
      	 <div class="row">
+        
 @foreach($terbaru as $terbaru)
-  			<div class="col-sm-6 col-md-4">
-  				  <div class="img-responsive img-thumbnail thumbnail" style="width:400px; height:550px;">
-   					   <img src="{{asset('herba/'.$terbaru->picture_species)}}" style="width:400px;height:350px;float:left;" />
-    					  <div class="caption text-center">
-    					   <h3><i> {{$terbaru -> name_species}} </i></h3>
-                      <tr>
-                        <td>Collector name </td>
-                        <td>: {{$terbaru -> name_collector}}</td>
-                      </tr><br>
-                      <tr>
-                        <td >Determine by </td>
-                        <td >: {{$terbaru ->name_author }}</td>
-                      </tr>
-                    <br><br>
-                       <a href="" class="btn btn-primary" role="button" data-toggle="modal" data-target="#ModalHerbarium{{$terbaru->id_herbarium}}"
-                         style="text-align: center">detail</a>
-     					  </div>
-   				  </div>
-			</div>
-@endforeach
-@foreach($terbaru as $terbaru)
+          <div class="col-sm-6 col-md-4">
+              <div class="img-responsive img-thumbnail thumbnail" style="width:400px; height:550px;">
+                <img src="{{asset('herba/'.$terbaru->picture_species)}}" style="width:400px;height:350px;float:left;" />
+                  <div class="caption text-center">
+                  <h3><i> {{$terbaru -> name_species}} </i></h3>
+                        <tr>
+                          <td>Collector name </td>
+                          <td>: {{$terbaru -> name_collector}}</td>
+                        </tr><br>
+                        <tr>
+                          <td >Determine by </td>
+                          <td >: {{$terbaru ->name_author }}</td>
+                        </tr>
+                      <br><br>
+                        <a href="" class="btn btn-primary" role="button" data-toggle="modal" data-target="#ModalHerbarium{{$terbaru->id_herbarium}}"
+                          style="text-align: center">detail</a>
+                  </div>
+              </div>
+        </div>
+
 
     <!-- Modal Detail Paket-->
       <div class="modal fade in" id="ModalHerbarium{{$terbaru->id_herbarium}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" value="">
@@ -155,7 +192,7 @@
                  <table class="table table-striped">
                    <tr>
                      <td class="center">Country</td>
-                     <td class="center">: {{$terbaru ->name}}</td>
+                     <td class="center">: {{$terbaru->name}}</td>
                    </tr>
                    <tr>
                      <td class="center">Province</td>
@@ -199,42 +236,54 @@
                <div  id="myCarousel" class="carousel slide" style="text-align:center">
                  <!-- Indicators -->
                   <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    @if(isset($terbaru -> picture_species))
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    @endif
+                    @if(isset($terbaru -> picture_species2))
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                    @endif
+                    @if(isset($terbaru -> picture_species3))
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    @endif
+                    @if(isset($terbaru -> picture_species4))
+                       <li data-target="#myCarousel" data-slide-to="3"></li>
+                    @endif
+                    @if(isset($terbaru -> picture_species5))
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                    @endif
+                    @if(isset($terbaru -> picture_species6))
+                      <li data-target="#myCarousel" data-slide-to="5"></li>
+                    @endif
                   </ol>
                   <div class="carousel-inner">
                      @if($terbaru -> picture_species != null)
                     <div class="item active"   style="text-align: center">
-                     <img src="{{asset('img/'.$terbaru->picture_species)}}" style="width:100%" class="img-responsive"/>
+                     <img src="{{asset('herba/'.$terbaru->picture_species)}}" style="width:100%" class="img-responsive"/>
                     </div>
                     @endif
                     @if($terbaru -> picture_species2 != null)
                     <div class="item"   style="text-align: center">
-                      <img src="{{asset('img/'.$terbaru->picture_species2)}}" style="width:100%"  class="img-responsive">
+                      <img src="{{asset('herba/'.$terbaru->picture_species2)}}" style="width:100%"  class="img-responsive">
                     </div>
                     @endif
                     @if($terbaru -> picture_species3 != null)
                     <div class="item"   style="text-align: center">
-                      <img src="{{asset('img/'.$terbaru->picture_species3)}}" style="width:100%" class="img-responsive">
+                      <img src="{{asset('herba/'.$terbaru->picture_species3)}}" style="width:100%" class="img-responsive">
                     </div>
                     @endif
                     @if($terbaru -> picture_species4 != null)
                     <div class="item"   style="text-align: center">
-                      <img src="{{asset('img/'.$terbaru->picture_species4)}}" style="width:100%" class="img-responsive">
+                      <img src="{{asset('herba/'.$terbaru->picture_species4)}}" style="width:100%" class="img-responsive">
                     </div>
                     @endif
                     @if($terbaru -> picture_species5 != null)
                     <div class="item"   style="text-align: center">
-                      <img src="{{asset('img/'.$terbaru->picture_species5)}}" style="width:100%" class="img-responsive">
+                      <img src="{{asset('herba/'.$terbaru->picture_species5)}}" style="width:100%" class="img-responsive">
                     </div>
                     @endif
                     @if($terbaru -> picture_species6 != null)
                     <div class="item"   style="text-align: center">
-                      <img src="{{asset('img/'.$terbaru->picture_species6)}}" style="width:100%" class="img-responsive">
+                      <img src="{{asset('herba/'.$terbaru->picture_species6)}}" style="width:100%" class="img-responsive">
                     </div>
                     @endif
               </div>
@@ -252,7 +301,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
 @endforeach
     </div>
 </div>

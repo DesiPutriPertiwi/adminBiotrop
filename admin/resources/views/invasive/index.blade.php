@@ -57,7 +57,7 @@
               </thead>
               <tbody>
               @foreach ($speciment_ias as $ias)
-                @if ($ias->user_id == Auth::user()->id)
+               
                   <tr role="row" class="odd">
                     <td class="text-center">{{$loop->index+1}}</td>
                     <td class="sorting_1 text-center"><i>{{ $ias->name_species }}</i></td>
@@ -82,7 +82,7 @@
                         </form>
                     </td>
                   </tr>
-                @endif
+                
               @endforeach
               </tbody>
             </table>

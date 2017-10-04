@@ -21,6 +21,8 @@ Route::get('/', 'DashboardController@index');
 // Route::get('/system-management/{option}', 'SystemMgmtController@index');
 Route::get('/profile', 'ProfileController@index');
 
+Route::get('biotrop-management', 'PictureBiotropController@createpic')->name('biotrop-management.createpic');
+Route::post('biotrop-management/picture', 'PictureBiotropController@picture')->name('biotrop-management.picture');
 
 Route::post('user-management/search', 'UserManagementController@search')->name('user-management.search');
 Route::resource('user-management', 'UserManagementController');
@@ -183,25 +185,25 @@ Route::get('coba', 'WeedHerbaController@coba');
 ///------------------------------------///
 //user
 
-Route::get('/user', function () {
+Route::get('/Herbarium&IAS', function () {
     return view('user/home');
 });
 
-Route::get('user/about', 'UAboutController@index')-> name('about');
-Route::get('/user', 'UHomeController@index')->name('home');
-Route::get('user/invasive', 'UInvasiveController@index')->name('invasive');
-Route::get('user/herbarium/weed', 'UWeedController@index')-> name('weedherbarium');
-Route::get('user/herbarium/forest', 'UForestController@index')-> name('forestherbarium');
-Route::get('user/herbarium/liken', 'ULikenController@index')-> name('likenherbarium');
-Route::get('user/herbarium/briovitas', 'UBriovitasController@index')-> name('briovitasherbarium');
+Route::get('Herbarium&IAS/about', 'UAboutController@index')-> name('about');
+Route::get('/Herbarium&IAS', 'UHomeController@index')->name('home');
+Route::get('Herbarium&IAS/invasive', 'UInvasiveController@index')->name('invasive');
+Route::get('Herbarium&IAS/herbarium/weed', 'UWeedController@index')-> name('weedherbarium');
+Route::get('Herbarium&IAS/herbarium/forest', 'UForestController@index')-> name('forestherbarium');
+Route::get('Herbarium&IAS/herbarium/liken', 'ULikenController@index')-> name('likenherbarium');
+Route::get('Herbarium&IAS/herbarium/briovitas', 'UBriovitasController@index')-> name('briovitasherbarium');
 // Datatables
-Route::get('user/nyoba', 'UNyobaController@index');
+Route::get('Herbarium&IAS/nyoba', 'UNyobaController@index');
 //maps
 // Route::get('/herbarium/weed/{id_herbarium}', 'WeedController@maps')->name('mapsweed');
 
 //search
-Route::post('user/herbarium/weed/search', 'UWeedController@search')->name('weedherbarium.search');
-Route::post('user/herbarium/forest/search', 'UForestController@search')->name('forestherbarium.search');
-Route::post('user/herbarium/liken/search', 'ULikenController@search')->name('likenherbarium.search');
-Route::post('user/herbarium/briovitas/search', 'UBriovitasController@search')->name('briovitasherbarium.search');
-Route::get('user/invasive/search', 'UInvasiveController@search')->name('invasive.search');
+Route::post('Herbarium&IAS/herbarium/weed/search', 'UWeedController@search')->name('weedherbarium.search');
+Route::post('Herbarium&IAS/herbarium/forest/search', 'UForestController@search')->name('forestherbarium.search');
+Route::post('Herbarium&IAS/herbarium/liken/search', 'ULikenController@search')->name('likenherbarium.search');
+Route::post('Herbarium&IAS/herbarium/briovitas/search', 'UBriovitasController@search')->name('briovitasherbarium.search');
+Route::get('Herbarium&IAS/invasive/search', 'UInvasiveController@search')->name('invasive.search');

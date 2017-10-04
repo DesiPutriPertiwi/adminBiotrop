@@ -9,6 +9,7 @@
         <div class="col-sm-8">
             <h3 class="box-title">List of users</h3>
         </div>
+        
         <div class="col-sm-4 text-right">
             <a class="btn btn-primary"  href="{{ route('user-management.create') }}">Add new user</a>
         </div>

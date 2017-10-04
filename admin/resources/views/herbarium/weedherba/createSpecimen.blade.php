@@ -234,7 +234,7 @@
                                             
                                             <div class="form-group" >
                                                 <div class="col-md-12 col-md-offset-8 text-right">
-                                                    <button type="button" class="col-md-2 btn btn-secondary" onclick="window.location='{{ url("herbarium-management/lichenherba/create") }}'" >Previous</button>
+                                                    <button type="button" class="col-md-2 btn btn-secondary" onclick="window.location='{{ url("herbarium-management/weedherba/create") }}'" >Previous</button>
                                                     <button type="submit" class="col-md-2 btn btn-primary" style="margin-left:10px" >Next</button>
                                                 </div>
                                             </div>

@@ -61,7 +61,7 @@
                   <a href="{{ url('herbarium-management/forestherba') }}">Forest Herbarium</a>
                 </li>
                 <li {{{ (Request::is('herbarium-management/brivitasherba') ? 'class=active' : '') }}}>
-                  <a href="{{ url('herbarium-management/briovitasherba') }}">Briovitas Herbarium</a>
+                  <a href="{{ url('herbarium-management/briovitasherba') }}">Bryophyta Herbarium</a>
                 </li>
                 <li {{{ (Request::is('herbarium-management/lichenherba') ? 'class=active' : '') }}}>
                   <a href="{{ url('herbarium-management/lichenherba') }}">Lichen Herbarium</a>
@@ -73,6 +73,13 @@
               <a href="{{ route('user-management.index') }}">
                 <i class="fa fa-link"></i> 
                 <span>User Management</span>
+              </a>
+            </li>
+
+            <li {{{ (Request::is('biotrop-management') ? 'class=active' : '') }}}>
+              <a href="{{ url('biotrop-management') }}">
+                <i class="fa fa-camera-retro"></i> 
+                <span>Biotrop Management</span>
               </a>
             </li>
             

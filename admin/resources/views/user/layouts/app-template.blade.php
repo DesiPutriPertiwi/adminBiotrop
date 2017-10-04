@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" maximum-scale=1, user-scalable="no">
 
         <meta name="csrf-token" content="<?= csrf_token() ?>">
+        <link rel="icon" href="{!!asset('image/logo-biotrop.png')!!}"/>
         <title>Herbarium @yield('title')</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="{{ asset('css2/app.css') }}" rel="stylesheet" type="text/css">

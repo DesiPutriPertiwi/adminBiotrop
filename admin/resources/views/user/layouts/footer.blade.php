@@ -20,7 +20,7 @@
                 </div>
             </div>
                 <div>
-                    <br> <h6><p class="text-center text-white">Copyright &copy; 2017.All rights reserved.</p> </h6>
+                    <br> <h6><p class="text-center text-white"><strong>Copyright &copy; 2017 <a href="https://www.biotrop.org/">SEAMEO BIOTROP</a>.</strong> All rights reserved.</p> </h6>
                 </div>
         </div>
         </div>

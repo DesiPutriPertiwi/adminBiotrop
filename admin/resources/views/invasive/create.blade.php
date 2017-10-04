@@ -24,7 +24,19 @@
                                         <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ route('invasive.store') }}" style="margin-top:10px">
                                             {{ csrf_field() }}
 
-                                                <input type="hidden" name="user" value="{{Auth::user()-> user_type}}">
+                                                <input type="hidden" name="user" value="{{Auth::user()-> id}}">
+
+                                                <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}" >
+                                                    <label for="author" class="col-md-2 col-md-offset-1">Author Identification</label>
+                                                    <div class="col-md-5">
+                                                        <input id="author" type="text" placeholder="Author name" class="form-control" name="author" value="{{ old('author') }}" autofocus>
+                                                        @if ($errors->has('author'))
+                                                            <span class="help-block">
+                                                                <strong>{{ $errors->first('author') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
 
                                                 <div class="form-group{{ $errors->has('family') ? ' has-error' : '' }}" >
                                                     <label for="family" class="col-md-2 col-md-offset-1">Family</label>

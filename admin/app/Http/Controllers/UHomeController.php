@@ -19,6 +19,7 @@ use App\Model\City;
 use App\Model\Province;
 use App\Model\State;
 use App\Model\HerbariumType;
+use App\Model\Picture;
 
 class UHomeController extends Controller
 {
@@ -68,12 +69,20 @@ class UHomeController extends Controller
 				 'characteristic_species.picture_species4',	
 				 'characteristic_species.picture_species5',	
 				 'characteristic_species.picture_species6');
-
+		
  		$terbaru = $homes->where('status', 2)->orderBy('verified.create_at', 'desc')->take(3)->get();
+		// dd($terbaru);
 		$totalherba = $this->total();
-		// dd($totalherba);
+		
 		$totalcollec = $this->collector();
- 		return view('user/home', ['terbaru'=> $terbaru, 'total' => $totalherba, 'collector' => $totalcollec]);
+		
+		$picture1 = Picture::where('id_picture', 1)->pluck('pic_biot')->first();
+		// dd($picture1);
+		$picture2 = Picture::where('id_picture', 2)->pluck('pic_biot')->first();
+		$picture3 = Picture::where('id_picture', 3)->pluck('pic_biot')->first();
+
+		
+ 		return view('user/home', ['terbaru'=> $terbaru, 'total' => $totalherba, 'collector' => $totalcollec, 'pic1' => $picture1, 'pic2' => $picture2, 'pic3' => $picture3]);
  	}
 
   public function total(){

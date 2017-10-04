@@ -200,6 +200,21 @@ class WeedHerbaController extends Controller
     //     $state = $speciment_herbarium->location->districts->city->prov->state->orderBy('name', 'asc')->get();
     //     return view('herbarium/weedherba/edit', ['speciment_herbarium' => $speciment_herbarium, 'state' => $state]);
     // }
+    protected function edit($id_herba)
+    {
+        $speciment_herbarium = Herbarium::find($id_herba);
+        if ($speciment_herbarium == null || count($speciment_herbarium) == 0) {
+            return redirect()->intended('/herbarium-management/weedherba');
+        }
+        $collect = $speciment_herbarium->collector_id;
+        // dd($collect);
+        $author  = $speciment_herbarium->authorIdentification_id;
+        $location= $speciment_herbarium->location_id;
+        $state = $speciment_herbarium->location->districts->city->prov->state->orderBy('name', 'asc')->get();
+        $data =['collect'=>$collect, 'author'=>$author, 'location'=>$location];
+        // dd($data);
+        return view('herbarium/weedherba/edit', ['speciment_herbarium' => $speciment_herbarium, 'data'=>$data, "state"=>$state]);
+    }
 
    
     public function update(Request $request, $id_herba)
@@ -235,20 +250,7 @@ class WeedHerbaController extends Controller
         return view('/herbarium/weedherba/edits',['speciment_herbarium' => $speciment_herba, 'data'=>$data]);
     }
 
-    protected function edit($id_herba)
-    {
-        $speciment_herbarium = Herbarium::find($id_herba);
-        if ($speciment_herbarium == null || count($speciment_herbarium) == 0) {
-            return redirect()->intended('/herbarium-management/weedherba');
-        }
-        $collect = $speciment_herbarium->collector_id->get();
-        $author  = $speciment_herbarium->authorIdentification_id->get();
-        $location= $speciment_herbarium->location_id->get();
-        $data =['collect'=>$collect->id_collector, 'author'=>$author->id_author, 'location'=>$location->id_location];
-        // dd($data);
-        return view('herbarium/weedherba/update', ['speciment_herbarium' => $speciment_herbarium]);
-    }
-
+    
      protected function updatestep(Request $request, $id_herba)
     {
         // dd($request);

@@ -7,7 +7,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Seameo Biotrop | Herbarium Collection & IAS</title>
+  <link rel="icon" href="{!!asset('image/logo-biotrop.png')!!}"/>
+  <title>Seameo Biotrop | Herbarium Collection & IAS </title>
+  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -123,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><h2>{{ $brio }}</h2></div>
-                                    <div><h4>Briovitas Herbarium</h4></div>
+                                    <div><h4>Bryophyta Herbarium</h4></div>
                                 </div>
                             </div>
                         </div>

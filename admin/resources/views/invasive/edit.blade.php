@@ -1,7 +1,14 @@
 @extends('invasive.base')
 
 @section('action-content')
-
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        (function($){
+            $(function(){
+            $('.button-collapse').sideNav();
+            }); //end of document rady
+        })(jQuery); //end of jQuery name searchreplace
+    </script>
     <section class="content">
         <div class="box">
             <div class="box header">
@@ -11,13 +18,24 @@
                             <div class="row">
                                 <div class="col-md-17">
                                     <div class="row bs-wizard" style="border-bottom" name="label">
-                                        <h4 value="1"> Add new Collection</h4>
+                                        <h4 value="1"> Edit Collection</h4>
                                     </div>
                                     <div class="box">
                                         <form enctype="multipart/form-data"  class="form-horizontal" role="form" method="POST" action="{{ route('invasive.update', ['$id_ias' => $speciment_ias]) }}" style="margin-top:10px">
                                             <input type="hidden" name="_method" value="PATCH">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        
+
+                                                <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}" >
+                                                    <label for="author" class="col-md-2 col-md-offset-1">Author Identification</label>
+                                                    <div class="col-md-6">
+                                                        <input id="author" type="text" placeholder="Author name" class="form-control" name="author" value="{{ $speciment_ias->author->name_author }}" autofocus>
+                                                        @if ($errors->has('author'))
+                                                            <span class="help-block">
+                                                                <strong>{{ $errors->first('author') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
                                                
                                                 <div class="form-group{{ $errors->has('family') ? ' has-error' : '' }}" >
                                                     <label for="family" class="col-md-2 col-md-offset-1">Family</label>

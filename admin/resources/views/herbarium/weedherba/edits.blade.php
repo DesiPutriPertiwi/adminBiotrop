@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-md-17 col-md-offset-1">
                                     <div class="row bs-wizard" style="border-bottom" name="label">
-                                        <h4 value="1"> Add new Collection</h4>
+                                        <h4 value="1"> Edit Collection</h4>
                                         <div class="col-xs-6 bs-wizard-step complete">
                                             <div class="text-center bs-wizard-stepnum">Step 1</div>
                                             <div class="progress"><div class="progress-bar"></div></div>
@@ -114,7 +114,7 @@
                                                 </div>
                                             </div>
             
-                                            <div class="form-group{{ $errors->has('species') ? ' has-error' : '' }}">
+                                            <div class="input_fields_wrap_name form-group{{ $errors->has('species') ? ' has-error' : '' }}">
                                                 <label for="species" class="col-md-2 col-md-offset-1" style="text-align:left">Species</label>
                                                  <div class="col-md-6">
                                                     <i>                                                   
@@ -126,6 +126,8 @@
                                                         </span>
                                                     @endif
                                                 </div>
+                                                <a class="add_field_button_name  col-md-offset-9">Add New Name</a>
+                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
                                             </div>
         
                                             <div class="form-group{{ $errors->has('subspecies') ? ' has-error' : '' }}"  >
@@ -221,19 +223,19 @@
                                             </div>
 
                                             <div class="form-group" > 
-                                                    <div class="input_fields_wrap col-md-7 col-md-offset-3">
-                                                        <div class="col-md-6">
-                                                            <input type="file" name="image" id="inputgambar" accept="image/*" value=""/>
-                                                            <input type="hidden" value="{{ csrf_token() }}" name="_token">
-                                                            <img src="http://placehold.it/200x200" id="showgambar" style="width: 100%;height:100%;float:left;"/>
-                                                        </div>
-                                                        
+                                                <div class="input_fields_wrap col-md-7 col-md-offset-3">
+                                                    <div class="col-md-6">
+                                                        <input type="file" name="image" id="inputgambar" accept="image/*" value=""/>
+                                                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                                                        <img src="http://placehold.it/200x200" id="showgambar" style="width: 100%;height:100%;float:left"/>
                                                     </div>
+                                                </div>
                                             </div>
                                             
-                                            <div class="form-group" >
+                                            
+                                            <div class="form-group">
                                                 <div class="col-md-12 col-md-offset-8 text-right">
-                                                    <button type="button" class="col-md-2 btn btn-secondary" onclick="window.location='{{route('weedherba.edit',['$id_herba' => $speciment_herbarium->id_herbarium]}}'" >Previous</button>
+                                                    <button type="button" class="col-md-2 btn btn-secondary" onclick="window.location''" >Previous</button>
                                                     <button type="submit" class="col-md-2 btn btn-primary" style="margin-left:10px" >Next</button>
                                                 </div>
                                             </div>
@@ -251,7 +253,37 @@
          </div>
     </section>
 
-     <!--Add field-->
+     <!--Add field Name Species-->
+        <script>
+                $(document).ready(function() {
+                    var max_fields      = 6; //maximum input boxes allowed
+                    var wrapper         = $(".input_fields_wrap_name"); //Fields wrapper
+                    var add_button      = $(".add_field_button_name"); //Add button ID
+
+                    var x = 1; //initlal text box count
+                    $(add_button).click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x < max_fields){ //max input box allowed
+                            x++; //text box increment
+                            $("#rm").remove(); 
+                        
+                                $(wrapper).append('<div class="form-group{{ $errors->has('species+x+') ? ' has-error' : '' }}"><label for="species'+x+'" class="col-md-2 col-md-offset-1" style="text-align:left">Species'+x+'</label><div class="col-md-6"><i><input id="species'+x+'" type="text" placeholder="Species name" class="form-control" name="species'+x+'" value="{{$speciment_herbarium->species->name_species}}" require></i></div></div>'); //add input box
+                            // $(wrapper).append('<div class="col-md-2 col-md-offset-2">')
+                        
+                        }
+                    });
+
+                    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                        e.preventDefault(); $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+
+                        })
+                });
+            </script>
+
+     <!--Add field Image-->
         <script>
                 $(document).ready(function() {
                     var max_fields      = 6; //maximum input boxes allowed
@@ -279,6 +311,6 @@
 
                         })
                 });
-            </script>
-    
+        </script>
 @endsection
+

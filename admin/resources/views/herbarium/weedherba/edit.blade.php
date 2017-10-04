@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-md-17">
                                     <div class="row bs-wizard" style="border-bottom" name="label">
-                                        <h4 value="1"> Add new Collection</h4>
+                                        <h4 value="1"> Edit Collection</h4>
                                         <div class="col-xs-6 bs-wizard-step active">
                                             <div class="text-center bs-wizard-stepnum">Step 1</div>
                                             <div class="progress"><div class="progress-bar"></div></div>
@@ -179,12 +179,12 @@
                                                         @endif
                                                     </div>
                                                 </div>
-
+<!--
                                                 <div class="form-group{{ $errors->has('tim_collector') ? ' has-error' : '' }}" >
                                                     <label for="tim_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Maps</label>
                                                     <div class="col-md-6">
                                                     </div>
-                                                </div>
+                                                </div>-->
 
                                             <!--Determinate-->
                                             <label style="text-align= right margin-button:5px">

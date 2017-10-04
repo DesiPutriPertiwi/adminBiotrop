@@ -54,7 +54,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($speciment_herbarium as $herba)
-                                        @if($herba->user_type == Auth::user()->user_type)
+                                       
                                             @if($herba->type == 1)
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1 text-center">{{ $herba->label }}</td>
@@ -81,7 +81,7 @@
                                                     </td>
                                                 </tr>
                                             @endif
-                                        @endif
+                                        
                                     @endforeach
                                 </tbody>
                             </table>

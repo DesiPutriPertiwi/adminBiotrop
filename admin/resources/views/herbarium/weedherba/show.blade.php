@@ -8,12 +8,12 @@
                     <div class="dt-button btn-group col-sm-offset-10">
                         <a class="btn btn-default button-download buttons-html5 btn-md hidden-print" href="{{route('weedherba.showlabel', ['id_herba'=>$speciment_herbarium->id_herbarium])}}" tabindex="0" aria-controls="datatable-buttons">
                             <i class="fa fa-cloud-download"> </i>
-                            Label
+                            Download Label
                         </a>
-                        <a class="btn btn-default buttons-print btn-md hidden-print" href="window.print();" tabindex="0" aria-controls="datatable-buttons" > <!--href="window.print();"-->
-                            <i class="fa fa-print"> </i>
+                        <!--<a class="btn btn-default buttons-print btn-md hidden-print" href="window.print();" tabindex="0" aria-controls="datatable-buttons" > <!--href="window.print();"-->
+                            <!--<i class="fa fa-print"> </i>
                             Print
-                        </a>
+                        </a>-->
                     </div>
 
                     <div class="col-sm-8">
@@ -99,7 +99,7 @@
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="synonim" class="col-md-3 col-md-offset-1" style="text-align:left">Synonim</label>
                                         <span class="col-md-8" align="justify">
-                                            {{$speciment_herbarium->species->species_synonim}}
+                                            {!!$speciment_herbarium->species->species_synonim!!}
                                         </span>
                                     </div>
                                 @endif

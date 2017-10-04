@@ -9,12 +9,12 @@
                     <div class="dt-button btn-group col-sm-offset-10 hidden-print">
                         <a class="btn btn-default button-download buttons-html5 btn-md " tabindex="0" aria-controls="datatable-buttons" href="#" >
                             <i class="fa fa-cloud-download"> </i>
-                            Download
+                            Download Label
                         </a>
-                        <a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
-                            <i class="fa fa-print"> </i>
+                        <!--<a class="btn btn-default buttons-print btn-md " tabindex="0" aria-controls="datatable-buttons"> <!--href="window.print();"-->
+                            <!--<i class="fa fa-print"> </i>
                             Print
-                        </a>
+                        </a>-->
                     </div>
 
                     <div class="col-sm-8">
@@ -395,6 +395,24 @@
                             </div>
                         </div>
                     </div>
+
+                <!--Comment-->
+                <div class="box box-default col-md-12" >
+                    <div class="box-body">
+                        <div class="col-md-14">
+                            <h5 style="text:arial narrow"><b>Comment  :</b></h5>
+                             <div class="col-md-12">
+                                <textarea id="agency" type="date" class="agency" name="agency" value="{{ old('agency') }}"> </textarea>
+
+                                @if ($errors->has('agency'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('agency') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--Butoon verif-->
                 <div class="form-group" >

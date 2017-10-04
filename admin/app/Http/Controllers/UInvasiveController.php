@@ -38,14 +38,19 @@ class UInvasiveController extends Controller
  	}
   public function specimen(){
     $specimen = InvasiveAS::select('id_ias')->count();
+    
     return $specimen;
   }
   public function species(){
-    $species = Species::select('id_species')->count();
+    $species= InvasiveAS::select('species_id')->count();
     return $species;
   }
   public function family(){
-    $family = Family::select('id_family')->count();
+    $ias =InvasiveAS::select('species_id')->first();
+    $family = count($ias->species->genus->family->name_family);
+    
+    // $family = Genus::where('id_genus', $species)->select('family_id')->count();
+    
     return $family;
   }
 

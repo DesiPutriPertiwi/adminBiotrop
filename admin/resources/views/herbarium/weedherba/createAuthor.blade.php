@@ -177,17 +177,21 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group{{ $errors->has('tim_collector') ? ' has-error' : '' }}" >
+                                                <!--<div class="form-group{{ $errors->has('tim_collector') ? ' has-error' : '' }}" >
                                                     <label for="tim_collector" class="col-md-2 col-md-offset-1" style="text-align= left ">Maps</label>
                                                     <div class="col-md-6">
                                                     </div>
-                                                </div>
+                                                </div>-->
 
                                             <!--Determinate-->
+                                            
                                             <label style="text-align= right margin-button:5px">
                                                 <h5 style="text:arial narrow">Determinate Data :</h5>
                                             </label>
-                                                <div class="form-group{{ $errors->has('name_author') ? ' has-error' : '' }}" >
+                                            <a class="add_field_button  col-md-offset-8">Add More Fields</a>
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+                                            <div class="input_fields_wrap">
+                                                <div class=" form-group{{ $errors->has('name_author') ? ' has-error' : '' }}" >
                                                     <label for="name_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Detemine Name</label>
                                                     <div class="col-md-6">
                                                         <input id="name_author" type="text" class="form-control" placeholder="Determine Name" name="name_author" value="{{ old('name_author') }}" require autofocus>
@@ -251,7 +255,7 @@
                                                         @endif
                                                     </div>
                                                 </div> 
-
+                                            </div>
                                             <div class="form-group">
                                                 <br><br><br><br><br>
                                                 <div class="col-md-12 col-md-offset-8 text-right" >
@@ -384,6 +388,42 @@
                 });
             });
          </script>
-    </section>
 
+          <!--Add field-->
+         <script>
+                $(document).ready(function() {
+                    var max_fields      = 6; //maximum input boxes allowed
+                    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+                    var add_button      = $(".add_field_button"); //Add button ID
+
+                    var x = 1; //initlal text box count
+                    $(add_button).click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x < max_fields){ //max input box allowed
+                            x++; //text box increment
+                            $("#rm").remove(); 
+                        
+                                $(wrapper).append('<div class="form-group{{ $errors->has('name_author+x+') ? ' has-error' : '' }}" ><label for="name_author'+x+'" class="col-md-2 col-md-offset-1" style="text-align= left ">Detemine Name '+x+'</label><div class="col-md-6"><input id="name_author'+x+'" type="text" class="form-control" placeholder="Determine Name" name="name_author'+x+'" value="{{ old('name_author+x+') }}" require autofocus></div></div><div class="form-group{{ $errors->has('email_author+x+') ? ' has-error' : '' }}" ><label for="email_author'+x+'" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determine Email '+x+'</label><div class="col-md-6"><input id="email_author'+x+'" type="email" class="form-control"   placeholder="Email" name="email_author'+x+'" value="{{ old('email_author+x+') }}"autofocus></div></div><div class="form-group{{ $errors->has('phone_author+x+') ? ' has-error' : '' }}" ><label for="phone_author'+x+'" class="col-md-2 col-md-offset-1" style="text-align= left ">Detemine Phone '+x+'</label><div class="col-md-6"><input id="phone_author'+x+'" type="text" class="form-control" placeholder="Phone Number" name="phone_author'+x+'" value="{{ old('phone_author+x+') }}" autofocus></div></div><div class="form-group{{ $errors->has('date_ident+x+') ? ' has-error' : '' }}" ><label for="date_ident'+x+'" class="col-md-2 col-md-offset-1" style="text-align= left ">Determine Date '+x+'</label><div class="col-md-6"><input id="date_ident'+x+'" type="date" class="date_ident'+x+'" name="date_ident'+x+'" value="{{ old('date_ident+x+') }}" required autofocus></div></div><div class="form-group{{ $errors->has('agency+x+') ? ' has-error' : '' }}" ><label for="agency'+x+'" class="col-md-2 col-md-offset-1" style="text-align= left ">Address '+x+'</label><div class="col-md-6"><textarea id="agency'+x+'" type="date" class="agency'+x+'" name="agency'+x+'" value="{{ old('agency+x+') }}"> </textarea></div></div>-->'); //add input box
+                            // $(wrapper).append('<div class="col-md-2 col-md-offset-2">')
+                        
+                        }
+                    });
+
+                    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                        e.preventDefault(); $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+                        $("#divs").remove(); x--;
+
+                        })
+                });
+         </script>
+    </section> 
 @endsection
+<!--
+<div class="form-group{{ $errors->has('name_author') ? ' has-error' : '' }}" ><label for="name_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Detemine Name</label><div class="col-md-6"><input id="name_author" type="text" class="form-control" placeholder="Determine Name" name="name_author" value="{{ old('name_author') }}" require autofocus></div></div>
+
+<div class="form-group{{ $errors->has('email_author') ? ' has-error' : '' }}" ><label for="email_author" class="col-md-2 col-md-offset-1"  style="text-align= left ">Determine Email</label><div class="col-md-6"><input id="email_author" type="email" class="form-control"   placeholder="Email" name="email_author" value="{{ old('email_author') }}"autofocus></div></div>
+
+
+<div class="form-group{{ $errors->has('phone_author') ? ' has-error' : '' }}" ><label for="phone_author" class="col-md-2 col-md-offset-1" style="text-align= left ">Detemine Phone</label><div class="col-md-6"><input id="phone_author" type="text" class="form-control" placeholder="Phone Number" name="phone_author" value="{{ old('phone_author') }}" autofocus></div></div><div class="form-group{{ $errors->has('date_ident') ? ' has-error' : '' }}" ><label for="date_ident" class="col-md-2 col-md-offset-1" style="text-align= left ">Determine Date</label><div class="col-md-6"><input id="date_ident" type="date" class="date_ident" name="date_ident" value="{{ old('date_ident') }}" required autofocus></div></div><div class="form-group{{ $errors->has('agency') ? ' has-error' : '' }}" ><label for="agency" class="col-md-2 col-md-offset-1" style="text-align= left ">Address</label><div class="col-md-6"><textarea id="agency" type="date" class="agency" name="agency" value="{{ old('agency') }}"> </textarea></div></div>-->
